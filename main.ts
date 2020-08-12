@@ -6,7 +6,7 @@ load dependency
 */
 
 //% color="#006400" weight=20 icon="\uf1b9"
-namespace TuoYubit {
+namespace TuoYuCar {
 
     const PWM_ADD = 0x01
     const MOTOR = 0x02
@@ -99,7 +99,7 @@ namespace TuoYubit {
         //% blockId="Car_Stop" block="Stop"
         Car_Stop = 5,
         //% blockId="Car_SpinLeft" block="SpinLeft"
-        Car_     = 6,
+        Car_SpinLeft = 6,
         //% blockId="Car_SpinRight" block="SpinRight"
         Car_SpinRight = 7
     }
