@@ -1,10 +1,3 @@
-/*
-Copyright (C): 2010-2019, Shenzhen Yahboom Tech
-modified from liusen
-load dependency
-"Tinybit": "file:../pxt-Tinybit"
-*/
-
 //% color="#006400" weight=20 icon="\uf1b9"
 namespace TuoYuCar {
 
@@ -174,7 +167,7 @@ namespace TuoYuCar {
      * @param index
      */   
 
-    //% blockId=Tinybit_RGB_Car_Program block="RGB_Car_Program"
+    //% blockId=TuoYuCar_RGB_Car_Program block="RGB_Car_Program"
     //% weight=99
     //% blockGap=10
     //% color="#006400"
@@ -187,7 +180,7 @@ namespace TuoYuCar {
         return yahStrip;  
     }  
 
-    //% blockId=Tinybit_RGB_Car_Big block="RGB_Car_Big|value %value"
+    //% blockId=TuoYuCar_RGB_Car_Big block="RGB_Car_Big|value %value"
     //% weight=98
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -228,7 +221,7 @@ namespace TuoYuCar {
             }
         }
     }
-    //% blockId=Tinybit_RGB_Car_Big2 block="RGB_Car_Big2|value1 %value1|value2 %value2|value3 %value3"
+    //% blockId=TuoYuCar_RGB_Car_Big2 block="RGB_Car_Big2|value1 %value1|value2 %value2|value3 %value3"
     //% weight=97
     //% blockGap=10
     //% value1.min=0 value1.max=255 value2.min=0 value2.max=255 value3.min=0 value3.max=255
@@ -238,7 +231,7 @@ namespace TuoYuCar {
         setPwmRGB(value1, value2, value3);
 
     }
-    //% blockId=Tinybit_Music_Car block="Music_Car|%index"
+    //% blockId=TuoYuCar_Music_Car block="Music_Car|%index"
     //% weight=95
     //% blockGap=10
     //% color="#006400"
@@ -270,7 +263,7 @@ namespace TuoYuCar {
     
     
     
-    //% blockId=Tinybit_CarCtrl block="CarCtrl|%index"
+    //% blockId=TuoYuCar_CarCtrl block="CarCtrl|%index"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
@@ -287,7 +280,7 @@ namespace TuoYuCar {
         }
     }
     
-    //% blockId=Tinybit_CarCtrlSpeed block="CarCtrlSpeed|%index|speed %speed"
+    //% blockId=TuoYuCar_CarCtrlSpeed block="CarCtrlSpeed|%index|speed %speed"
     //% weight=92
     //% blockGap=10
     //% speed.min=0 speed.max=255
@@ -305,7 +298,7 @@ namespace TuoYuCar {
         }
     }
     
-    //% blockId=Tinybit_CarCtrlSpeed2 block="CarCtrlSpeed2|%index|speed1 %speed1|speed2 %speed2"
+    //% blockId=TuoYuCar_CarCtrlSpeed2 block="CarCtrlSpeed2|%index|speed1 %speed1|speed2 %speed2"
     //% weight=91
     //% blockGap=10
     //% speed1.min=0 speed1.max=255 speed2.min=0 speed2.max=255
@@ -325,7 +318,7 @@ namespace TuoYuCar {
         
    
     
-    //% blockId=Tinybit_Line_Sensor block="Line_Sensor|direct %direct|value %value"
+    //% blockId=TuoYuCar_Line_Sensor block="Line_Sensor|direct %direct|value %value"
     //% weight=89
     //% blockGap=10
     //% color="#006400"
@@ -360,7 +353,7 @@ namespace TuoYuCar {
 
     }
 
-    //% blockId=Tinybit_Voice_Sensor block="Voice Sensor return"
+    //% blockId=TuoYuCar_Voice_Sensor block="Voice Sensor return"
     //% weight=88
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
@@ -373,7 +366,7 @@ namespace TuoYuCar {
 
     }
         
-    //% blockId=Tinybit_Ultrasonic_Car block="ultrasonic return distance(cm)"
+    //% blockId=TuoYuCar_Ultrasonic_Car block="ultrasonic return distance(cm)"
     //% color="#006400"
     //% weight=87
     //% blockGap=10
