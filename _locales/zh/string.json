@@ -8,7 +8,6 @@
   "TuoYuCar.Voice_Sensor|block": "声音传感器返回",
   "TuoYuCar.Line_Sensor|block": "巡线传感器|位置 %direct|检测到 %value",
   "TuoYuCar.CarCtrl|block": "小车控制|%index",
-  "TuoYuCar.IICCtrl|block": "IIC控制|%index",
   "TuoYuCar.CarCtrlSpeed|block": "小车控制|%index|速度 %speed",
   "TuoYuCar.CarCtrlSpeed2|block": "小车控制|%index|左电机速度 %speed1|右电机速度 %speed2",
   "TuoYuCar.enColor.OFF|block": "灭",
