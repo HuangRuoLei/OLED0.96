@@ -181,15 +181,6 @@ namespace TuoYuCar {
      * *****************************************************************
      * @param index
      */   
-
-    //% blockId=TuoYuCar_RGB_Car_Program block="RGB_Car_Program"
-    //% weight=99
-    //% blockGap=10
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function IIC(value: data): void{
-         
-    }  
     //% blockId=TuoYuCar_RGB_Car_Program block="RGB_Car_Program"
     //% weight=99
     //% blockGap=10
