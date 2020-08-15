@@ -97,6 +97,21 @@ namespace TuoYuCar {
         Car_SpinRight = 7
     }
 
+    export enum IICState {
+        //% blockId="IIC_ultrasonic" block="ultrasonic"
+        IIC_ultrasonic = 1,
+        //% blockId="IIC_Red" block="Red"
+        IIC_Red = 2,
+        //% blockId="IIC_Ming" block="Ming"
+        IIC_Ming = 3,
+        //% blockId="IIC_Color" block="Color"
+        IIC_Color = 4,
+        //% blockId="IIC_Voice" block="Voice"
+        IIC_Voice = 5,
+        //% blockId="IIC_Display" block="Display"
+        IIC_Display = 6
+    }
+
     function setPwmRGB(red: number, green: number, blue: number): void {
 
         let buf = pins.createBuffer(4);
@@ -167,6 +182,14 @@ namespace TuoYuCar {
      * @param index
      */   
 
+    //% blockId=TuoYuCar_RGB_Car_Program block="RGB_Car_Program"
+    //% weight=99
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function IIC(value: data): void{
+         
+    }  
     //% blockId=TuoYuCar_RGB_Car_Program block="RGB_Car_Program"
     //% weight=99
     //% blockGap=10
@@ -262,6 +285,22 @@ namespace TuoYuCar {
     }
     
     
+
+    //% blockId=TuoYuCar_IICCtrl block="IICCtrl|%index"
+    //% weight=93
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function IICCtrl(index: IICState): void {
+        switch (index) {
+            case IICState.IIC_ultrasonic: Car_run(255, 255); break;
+            case IICState.IIC_Red: Car_back(255, 255); break;
+            case IICState.IIC_Ming: Car_left(255, 255); break;
+            case IICState.IIC_Color: Car_right(255, 255); break;
+            case IICState.IIC_Voice: Car_stop(); break;
+            case IICState.IIC_Display: Car_spinleft(255, 255); break;
+        }
+    }
     
     //% blockId=TuoYuCar_CarCtrl block="CarCtrl|%index"
     //% weight=93
