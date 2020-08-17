@@ -110,7 +110,9 @@ namespace TuoYuCar {
         IIC_Display = 6
     }
     export enum ultrasonicState{
+        //% blockId="OFF" block="OFF"
         Off = 0,
+        //% blockId="Open" block="Open"
         Open=1
     }
     function setPwmRGB(red: number, green: number, blue: number): void {
@@ -181,13 +183,24 @@ namespace TuoYuCar {
      * *****************************************************************
      * @param index
      */
-    
-    //% blockId=TuoYuCar_Ultrasonic="Ultrasonic|%index"
+    //% blockId=TuoYuCar_IIC_Display block="IIC_Display|value %value"
+    //% weight=103
+    //% blockGap=10
+    //% value.min=0 value.max=255
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function IIC_Display(value: number): void {
+        
+     pins.i2cWriteNumber(6, Number, NumberFormat.Int8LE, false);
+ 
+    }    
+
+    //% blockId=TuoYuCar_IIC_Ultrasonic block="IIC_Ultrasonic|%index"
     //% weight=101
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Ultrasonic(index: ultrasonicState): void {
+    export function IIC_Ultrasonic(index: ultrasonicState): void {
         switch (index) {
             case ultrasonicState.Off: pins.i2cWriteNumber(1, 0, NumberFormat.Int8LE, false); break;
             case ultrasonicState.Open: pins.i2cWriteNumber(1, 1, NumberFormat.Int8LE, false); break;
