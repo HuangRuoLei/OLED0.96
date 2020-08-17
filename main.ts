@@ -4,8 +4,7 @@ namespace TuoYuCar {
     const PWM_ADD = 0x01
     const MOTOR = 0x02
     const RGB = 0x01
-    
-    let yahStrip: neopixel.Strip;
+
 
     export enum enColor {
 
@@ -184,7 +183,7 @@ namespace TuoYuCar {
      */
     
     //% blockId=TuoYuCar_Ultrasonic="Ultrasonic|%index"
-    //% weight=103
+    //% weight=101
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -195,7 +194,7 @@ namespace TuoYuCar {
         }
     }
     //% blockId=TuoYuCar_IICCtrl block="IICCtrl|%index"
-    //% weight=101
+    //% weight=99
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -209,19 +208,6 @@ namespace TuoYuCar {
             case IICState.IIC_Display: Car_spinleft(255, 255); break;
         }
     }
-    //% blockId=TuoYuCar_RGB_Car_Program block="RGB_Car_Program"
-    //% weight=99
-    //% blockGap=10
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function RGB_Car_Program(): neopixel.Strip {
-         
-        if (!yahStrip) {
-            yahStrip = neopixel.create(DigitalPin.P12, 2, NeoPixelMode.RGB);
-        }
-        return yahStrip;  
-    }  
-
     //% blockId=TuoYuCar_RGB_Car_Big block="RGB_Car_Big|value %value"
     //% weight=98
     //% blockGap=10
