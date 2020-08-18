@@ -95,10 +95,10 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Chao_Sheng_Bo(index:ultrasonicState) {
+    export function Chao_Sheng_Bo(index:ultrasonicState,value:number,value1:number) {
         switch (index) {
-            case ultrasonicState.Off: IICWrite(1, 0);
-            case ultrasonicState.Open: IICWrite(1, 1);
+            case ultrasonicState.Off: IICWrite(value, value1);
+            case ultrasonicState.Open: IICWrite(value, value1);
         }
     }
 
