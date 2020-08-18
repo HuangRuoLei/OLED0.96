@@ -5,96 +5,6 @@ namespace TuoYuCar {
     const MOTOR = 0x02
     const RGB = 0x01
 
-
-    export enum enColor {
-
-        //% blockId="OFF" block="OFF"
-        OFF = 0,
-        //% blockId="Red" block="Red"
-        Red,
-        //% blockId="Green" block="Green"
-        Green,
-        //% blockId="Blue" block="Blue"
-        Blue,
-        //% blockId="White" block="White"
-        White,
-        //% blockId="Cyan" block="Cyan"
-        Cyan,
-        //% blockId="Pinkish" block="Pinkish"
-        Pinkish,
-        //% blockId="Yellow" block="Yellow"
-        Yellow,
-
-    }
-    export enum enMusic {
-
-        dadadum = 0,
-        entertainer,
-        prelude,
-        ode,
-        nyan,
-        ringtone,
-        funk,
-        blues,
-
-        birthday,
-        wedding,
-        funereal,
-        punchline,
-        baddy,
-        chase,
-        ba_ding,
-        wawawawaa,
-        jump_up,
-        jump_down,
-        power_up,
-        power_down
-    }
-    export enum enPos {
-
-        //% blockId="LeftState" block="LeftState"
-        LeftState = 0,
-        //% blockId="RightState" block="RightState"
-        RightState = 1
-    }
-
-    export enum enLineState {
-        //% blockId="White" block="White Line"
-        White = 0,
-        //% blockId="Black" block="Black Line"
-        Black = 1
-    }
-    
-    export enum enTouchState {
-        //% blockId="Get" block="Get"
-        Get = 0,
-        //% blockId="NoGet" block="NoGet"
-        NoGet = 1
-    }    
-    export enum enAvoidState {
-        //% blockId="OBSTACLE" block="Obstacle"
-        OBSTACLE = 1,
-        //% blockId="NOOBSTACLE" block="No Obstacle"
-        NOOBSTACLE = 0
-
-    }
-    
-    export enum CarState {
-        //% blockId="Car_Run" block="Run"
-        Car_Run = 1,
-        //% blockId="Car_Back" block="Back"
-        Car_Back = 2,
-        //% blockId="Car_Left" block="Left"
-        Car_Left = 3,
-        //% blockId="Car_Right" block="Right"
-        Car_Right = 4,
-        //% blockId="Car_Stop" block="Stop"
-        Car_Stop = 5,
-        //% blockId="Car_SpinLeft" block="SpinLeft"
-        Car_SpinLeft = 6,
-        //% blockId="Car_SpinRight" block="SpinRight"
-        Car_SpinRight = 7
-    }
     export enum IICState {
         //% blockId="IIC_ultrasonic" block="ultrasonic"
         IIC_ultrasonic = 1,
@@ -115,22 +25,7 @@ namespace TuoYuCar {
         //% blockId="Open" block="Open"
         Open=1
     }
-    export enum NumberFormat{
-        Int8LE = 1,
-        UInt8LE = 2,
-        Int16LE = 3,
-        UInt16LE=4
-    }
-    function setPwmRGB(red: number, green: number, blue: number): void {
 
-        let buf = pins.createBuffer(4);
-        buf[0] = RGB;
-        buf[1] = red;
-        buf[2] = green;
-        buf[3] = blue;
-        
-        pins.i2cWriteBuffer(PWM_ADD, buf);
-    }
 
     function setPwmMotor(mode: number, speed1: number, speed2: number): void {
         if (mode < 0 || mode > 6)
@@ -185,10 +80,6 @@ namespace TuoYuCar {
         setPwmMotor(6, speed1, speed2);
     }
 
-    /**
-     * *****************************************************************
-     * @param index
-     */
 
     //% blockId=TuoYuCar_IIII block="IIII|%index"
     //% weight=89
@@ -199,7 +90,7 @@ namespace TuoYuCar {
         let b = pins.createBuffer(5);
         b[0] = 1;
         b[1] = b[2] = b[3] = b[4] = 0;
-        pins.i2cWriteBuffer(6, b);
+        pins.i2cWriteBuffer(b[0], b[1]);
     }
 
 
