@@ -190,7 +190,7 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function IIC_Display(value: number): void {
-        pins.i2cWriteBuffer(6, Number);
+        pins.i2cWriteBuffer(6, 1);
  
     }    
 
