@@ -115,6 +115,12 @@ namespace TuoYuCar {
         //% blockId="Open" block="Open"
         Open=1
     }
+    export enum NumberFormat{
+        Int8LE = 1,
+        UInt8LE = 2,
+        Int16LE = 3,
+        UInt16LE=4
+    }
     function setPwmRGB(red: number, green: number, blue: number): void {
 
         let buf = pins.createBuffer(4);
@@ -178,6 +184,10 @@ namespace TuoYuCar {
 
         setPwmMotor(6, speed1, speed2);
     }
+    function IIC_Write(address: number, value: number, format: NumberFormat, repeated: boolean) {
+        pins.i2cWriteNumber(address, value, format, repeated);
+    }
+    
     /**
      * *****************************************************************
      * @param index
