@@ -196,8 +196,10 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function IIII() {
-        let b=pins.createBuffer(5);
-        pins.i2cWriteBuffer(0, b);
+        let b = pins.createBuffer(5);
+        b[0] = 1;
+        b[1] = b[2] = b[3] = b[4] = 0;
+        pins.i2cWriteBuffer(6, b);
     }
 
 
