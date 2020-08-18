@@ -90,7 +90,7 @@ namespace TuoYuCar {
      * @param index
      */
 
-    //% blockId=TuoYuCar_Chao_Sheng_Bo block="Chao_Sheng_Bo|%index"
+    //% blockId=TuoYuCar_Chao_Sheng_Bo block="Chao_Sheng_Bo|%index|value %value|value1 %value1"
     //% weight=101
     //% blockGap=10
     //% color="#006400"
