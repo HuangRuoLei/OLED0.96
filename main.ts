@@ -145,9 +145,7 @@ namespace TuoYuCar {
     }
     function Car_run(speed1: number, speed2: number) {
 
-
-        //setPwmMotor(1, speed1, speed2);
-        pins.i2cWriteNumber(speed1, speed2,NumberFormat.UInt8LE,false);
+        setPwmMotor(1, speed1, speed2);
     }
 
     function Car_back(speed1: number, speed2: number) {
@@ -191,8 +189,8 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function IIC_Display(value: number): void {
-        //pins.i2cWriteNumber(6, Number,NumberFormat.UInt8LE,false);
-        Car_run(6,value);
+        pins.i2cWriteBuffer(6, Number);//,NumberFormat.UInt8LE,false);
+
     }    
 
     //% blockId=TuoYuCar_IIC_Ultrasonic block="IIC_Ultrasonic|%index"
@@ -202,8 +200,8 @@ namespace TuoYuCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function IIC_Ultrasonic(index: ultrasonicState): void {
         switch (index) {
-            case ultrasonicState.Off: Car_run(1, 0); break;// pins.i2cWriteNumber(1, 0,NumberFormat.UInt8LE,false); break;
-            case ultrasonicState.Open: Car_run(1, 1); break;// pins.i2cWriteNumber(1, 1,NumberFormat.UInt8LE,false); break;
+            case ultrasonicState.Off: pins.i2cWriteBuffer(1, 0); break;
+            case ultrasonicState.Open: pins.i2cWriteBuffer(1, 1); break;
         }
     }
     //% blockId=TuoYuCar_IICCtrl block="IICCtrl|%index"
