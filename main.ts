@@ -95,11 +95,9 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Chao_Sheng_Bo(index:ultrasonicState,value:number,value1:number) {
-        switch (index) {
-            case ultrasonicState.Off: IICWrite(value, value1);
-            case ultrasonicState.Open: IICWrite(value, value1);
-        }
+    export function Chao_Sheng_Bo(index: ultrasonicState, value: number, value1: number) {
+        
+        pins.i2cWriteNumber(1, 2, NumberFormat.UInt16BE);
     }
 
     //% blockId=TuoYuCar_IIII block="IIII|%index"
