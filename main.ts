@@ -184,12 +184,7 @@ namespace TuoYuCar {
 
         setPwmMotor(6, speed1, speed2);
     }
-    function IIC_Write(address: number, value: number, format: NumberFormat, repeated: boolean) {
-       // pins.i2cWriteNumber(1, 2, NumberFormat.UInt8LE, false);
-       // let buf = pins.createBuffer(5);
-       // pins.i2cWriteBuffer(1, buf);
-    }
-    
+
     /**
      * *****************************************************************
      * @param index
@@ -201,7 +196,7 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function IIII(){
-        pins.i2cWriteNumber(1, 2, UInt8LE, false);
+        pins.i2cWriteNumber(1, 2, 0, 0);
     }
 
 
