@@ -178,12 +178,6 @@ namespace TuoYuCar {
 
         setPwmMotor(6, speed1, speed2);
     }
-    function Car_ultrasonicStateOff() {
-        pins.i2cWriteBuffer(1, 0);
-    }
-    function Car_ultrasonicStateOpen() {
-        pins.i2cWriteBuffer(1, 1);
-    }
     /**
      * *****************************************************************
      * @param index
