@@ -145,6 +145,7 @@ namespace TuoYuCar {
     }
     function Car_run(speed1: number, speed2: number) {
 
+
         setPwmMotor(1, speed1, speed2);
     }
 
@@ -189,8 +190,8 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function IIC_Display(value: number): void {
-        pins.i2cWriteBuffer(6, value);//,NumberFormat.UInt8LE,false);
-
+        pins.i2cWriteBuffer(6, Number);
+ 
     }    
 
     //% blockId=TuoYuCar_IIC_Ultrasonic block="IIC_Ultrasonic|%index"
