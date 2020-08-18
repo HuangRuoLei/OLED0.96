@@ -186,7 +186,7 @@ namespace TuoYuCar {
 
 
     //% blockId=TuoYuCar_IICCtrl block="IICCtrl|%index"
-    //% weight=99
+    //% weight=88
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -200,8 +200,9 @@ namespace TuoYuCar {
             case IICState.IIC_Display: Car_spinleft(255, 255); break;
         }
     }
+
     //% blockId=TuoYuCar_IIC_Ultrasonic block="IIC_Ultrasonic|%index"
-    //% weight=97
+    //% weight=87
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
