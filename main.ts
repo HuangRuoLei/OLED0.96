@@ -79,7 +79,28 @@ namespace TuoYuCar {
 
         setPwmMotor(6, speed1, speed2);
     }
+    function IICWrite(value:number,value1:number) {
+        let addree = value1;
+        let buf = pins.createBuffer(5);
+        buf[0] = value1;
+        pins.i2cWriteBuffer(addree, buf);
+    }
+    /**
+     * *****************************************************************
+     * @param index
+     */
 
+    //% blockId=TuoYuCar_Chao_Sheng_Bo block="Chao_Sheng_Bo|%index"
+    //% weight=101
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Chao_Sheng_Bo(index:ultrasonicState) {
+        switch (index) {
+            case ultrasonicState.Off: IICWrite(1, 0);
+            case ultrasonicState.Open: IICWrite(1, 1);
+        }
+    }
 
     //% blockId=TuoYuCar_IIII block="IIII|%index"
     //% weight=89
@@ -90,7 +111,7 @@ namespace TuoYuCar {
         let b = pins.createBuffer(5);
         b[0] = 1;
         b[1] = b[2] = b[3] = b[4] = 0;
-        pins.i2cWriteBuffer(b[0], b[1]);
+        pins.i2cWriteBuffer(6, b);
     }
 
 
