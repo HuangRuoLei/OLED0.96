@@ -190,8 +190,7 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function IIC_Display(value: number): void {
-        
-     pins.i2cWriteNumber(6, Number, NumberFormat.Int8LE, false);
+        pins.i2cWriteBuffer(6, Number);
  
     }    
 
@@ -202,8 +201,8 @@ namespace TuoYuCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function IIC_Ultrasonic(index: ultrasonicState): void {
         switch (index) {
-            case ultrasonicState.Off: pins.i2cWriteNumber(1, 0, NumberFormat.Int8LE, false); break;
-            case ultrasonicState.Open: pins.i2cWriteNumber(1, 1, NumberFormat.Int8LE, false); break;
+            case ultrasonicState.Off: pins.i2cWriteBuffer(1, 0); break;
+            case ultrasonicState.Open: pins.i2cWriteBuffer(1, 1); break;
         }
     }
     //% blockId=TuoYuCar_IICCtrl block="IICCtrl|%index"
@@ -301,26 +300,6 @@ namespace TuoYuCar {
             case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
         }
     }
-    
-    
-    
-    //% blockId=TuoYuCar_CarCtrl block="CarCtrl|%index"
-    //% weight=93
-    //% blockGap=10
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function CarCtrl(index: CarState): void {
-        switch (index) {
-            case CarState.Car_Run: Car_run(255, 255); break;
-            case CarState.Car_Back: Car_back(255, 255); break;
-            case CarState.Car_Left: Car_left(255, 255); break;
-            case CarState.Car_Right: Car_right(255, 255); break;
-            case CarState.Car_Stop: Car_stop(); break;
-            case CarState.Car_SpinLeft: Car_spinleft(255, 255); break;
-            case CarState.Car_SpinRight: Car_spinright(255, 255); break;
-        }
-    }
-    
     //% blockId=TuoYuCar_CarCtrlSpeed block="CarCtrlSpeed|%index|speed %speed"
     //% weight=92
     //% blockGap=10
