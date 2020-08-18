@@ -200,8 +200,8 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function IIII(): void {
-        pins.i2cWriteNumber(1, 2, NumberFormat.UInt8LE, false);
+    export function IIII(){
+        pins.i2cWriteNumber(1, 2, UInt8LE, false);
     }
 
 
