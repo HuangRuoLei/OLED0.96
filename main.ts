@@ -186,6 +186,7 @@ namespace TuoYuCar {
     }
     function IIC_Write(address: number, value: number, format: NumberFormat, repeated: boolean) {
         //pins.i2cWriteNumber(address, value, format, repeated);
+        pins.i2cWriteBuffer(1, 1);
     }
     
     /**
