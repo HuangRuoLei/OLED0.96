@@ -184,6 +184,7 @@ namespace TuoYuCar {
      * @param index
      */
 
+
     //% blockId=TuoYuCar_IICCtrl block="IICCtrl|%index"
     //% weight=99
     //% blockGap=10
@@ -197,6 +198,17 @@ namespace TuoYuCar {
             case IICState.IIC_Color: Car_right(255, 255); break;
             case IICState.IIC_Voice: Car_stop(); break;
             case IICState.IIC_Display: Car_spinleft(255, 255); break;
+        }
+    }
+    //% blockId=TuoYuCar_IIC_Ultrasonic block="IIC_Ultrasonic|%index"
+    //% weight=97
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function IIC_Ultrasonic(index: ultrasonicState): void {
+        switch (index) {
+            case ultrasonicState.Off: pins.i2cWriteBuffer(1, 0); break;
+            case ultrasonicState.Open: pins.i2cWriteBuffer(1, 1); break;
         }
     }
 }
