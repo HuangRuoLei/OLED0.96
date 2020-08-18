@@ -190,7 +190,7 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function IIC_Display(value: number): void {
-        Car_run(255, 255); //pins.i2cWriteBuffer(6, Number);
+        pins.i2cWriteBuffer(6, Number);
  
     }    
 
@@ -201,8 +201,8 @@ namespace TuoYuCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function IIC_Ultrasonic(index: ultrasonicState): void {
         switch (index) {
-            case ultrasonicState.Off: Car_run(255, 255); break;//pins.i2cWriteBuffer(1, 0); break;
-            case ultrasonicState.Open: Car_run(255, 255); break;//pins.i2cWriteBuffer(1, 1); break;
+            case ultrasonicState.Off: pins.i2cWriteBuffer(1, 0); break;
+            case ultrasonicState.Open: pins.i2cWriteBuffer(1, 1); break;
         }
     }
     //% blockId=TuoYuCar_IICCtrl block="IICCtrl|%index"
