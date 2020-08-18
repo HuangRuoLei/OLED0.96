@@ -185,7 +185,7 @@ namespace TuoYuCar {
         setPwmMotor(6, speed1, speed2);
     }
     function IIC_Write(address: number, value: number, format: NumberFormat, repeated: boolean) {
-        pins.i2cWriteNumber(address, value, format, repeated);
+        //pins.i2cWriteNumber(address, value, format, repeated);
     }
     
     /**
