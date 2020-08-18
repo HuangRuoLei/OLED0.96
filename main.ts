@@ -197,7 +197,7 @@ namespace TuoYuCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function IICCtrl(index: IICState): void {
         switch (index) {
-            case IICState.IIC_ultrasonic: Car_ultrasonicStateOff; break;
+            case IICState.IIC_ultrasonic: Car_run(255,255); break;
             case IICState.IIC_Red: Car_back(255, 255); break;
             case IICState.IIC_Ming: Car_left(255, 255); break;
             case IICState.IIC_Color: Car_right(255, 255); break;
