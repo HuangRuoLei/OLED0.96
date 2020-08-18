@@ -178,7 +178,12 @@ namespace TuoYuCar {
 
         setPwmMotor(6, speed1, speed2);
     }
-
+    function Car_ultrasonicStateOff() {
+        pins.i2cWriteBuffer(1, 0);
+    }
+    function Car_ultrasonicStateOpen() {
+        pins.i2cWriteBuffer(1, 1);
+    }
     /**
      * *****************************************************************
      * @param index
@@ -192,24 +197,15 @@ namespace TuoYuCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function IICCtrl(index: IICState): void {
         switch (index) {
-            case IICState.IIC_ultrasonic: Car_run(255, 255); break;
+            case IICState.IIC_ultrasonic: Car_ultrasonicStateOff; break;
             case IICState.IIC_Red: Car_back(255, 255); break;
             case IICState.IIC_Ming: Car_left(255, 255); break;
             case IICState.IIC_Color: Car_right(255, 255); break;
             case IICState.IIC_Voice: Car_stop(); break;
             case IICState.IIC_Display: Car_spinleft(255, 255); break;
+
         }
     }
 
-    //% blockId=TuoYuCar_IIC_Ultrasonic block="IIC_Ultrasonic|%index"
-    //% weight=87
-    //% blockGap=10
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function IIC_Ultrasonic(index: ultrasonicState): void {
-        switch (index) {
-            case ultrasonicState.Off: pins.i2cWriteBuffer(1, 0); break;
-            case ultrasonicState.Open: pins.i2cWriteBuffer(1, 1); break;
-        }
-    }
+
 }
