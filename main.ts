@@ -179,20 +179,7 @@ namespace TuoYuCar {
         setPwmMotor(6, speed1, speed2);
     }
 
-    /**
-     * *****************************************************************
-     * @param index
-     */
-    //% blockId=TuoYuCar_IIC_Display block="IIC_Display|value %value"
-    //% weight=103
-    //% blockGap=10
-    //% value.min=0 value.max=255
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function IIC_Display(value: number): void {
-        pins.i2cWriteBuffer(6, 1);
- 
-    }    
+   
 
     //% blockId=TuoYuCar_IIC_Ultrasonic block="IIC_Ultrasonic|%index"
     //% weight=101

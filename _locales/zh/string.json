@@ -1,38 +1,3 @@
 {
 
-  "TuoYuCar.Ultrasonic_Car|block": "超声波返回（cm）",
-  "TuoYuCar.RGB_Car_Program|block": "车身七彩流水灯",
-  "TuoYuCar.RGB_Car_Big|block": "小车RGB探照灯|选择车灯颜色 %value",
-  "TuoYuCar.RGB_Car_Big2|block": "小车RGB探照灯|红色 %value1|绿色 %value2|蓝色 %value3",
-  "TuoYuCar.Music_Car|block": "小车音乐播放|%index",
-  "TuoYuCar.Voice_Sensor|block": "声音传感器返回",
-  "TuoYuCar.Line_Sensor|block": "巡线传感器|位置 %direct|检测到 %value",
-  "TuoYuCar.CarCtrl|block": "小车控制|%index",
-  "TuoYuCar.CarCtrlSpeed|block": "小车控制|%index|速度 %speed",
-  "TuoYuCar.CarCtrlSpeed2|block": "小车控制|%index|左电机速度 %speed1|右电机速度 %speed2",
-  "TuoYuCar.enColor.OFF|block": "灭",
-  "TuoYuCar.enColor.Red|block": "红色",
-  "TuoYuCar.enColor.Green|block": "绿色",
-  "TuoYuCar.enColor.Blue|block": "蓝色",
-  "TuoYuCar.enColor.White|block": "白色",
-  "TuoYuCar.enColor.Cyan|block": "青色",
-  "TuoYuCar.enColor.Pinkish|block": "品红",
-  "TuoYuCar.enColor.Yellow|block": "黄色",
-  
-  "TuoYuCar.enPos.LeftState|block": "左边",
-  "TuoYuCar.enPos.RightState|block": "右边",
-  "TuoYuCar.enLineState.White|block": "白线",
-  "TuoYuCar.enLineState.Black|block": "黑线",
-  "TuoYuCar.enTouchState.Get|block": "感受到",
-  "TuoYuCar.enTouchState.NoGet|block": "未感受到",
-  "TuoYuCar.enAvoidState.OBSTACLE|block": "有障碍物",
-  "TuoYuCar.enAvoidState.NOOBSTACLE|block": "无障碍物",
-  
-  "TuoYuCar.CarState.Car_Run|block": "前进",
-  "TuoYuCar.CarState.Car_Back|block": "后退",
-  "TuoYuCar.CarState.Car_Left|block": "左转",
-  "TuoYuCar.CarState.Car_Right|block": "右转",
-  "TuoYuCar.CarState.Car_Stop|block": "停止",
-  "TuoYuCar.CarState.Car_SpinLeft|block": "原地左旋",
-  "TuoYuCar.CarState.Car_SpinRight|block": "原地右旋"
 }
