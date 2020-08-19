@@ -28,12 +28,24 @@ namespace TuoYuCar {
         pins.i2cWriteNumber(value, value1, NumberFormat.UInt8LE);
     }
     /**
-     * *****************************************************************
+     * 111
      * @param index
      */
 
-    //% blockId=TuoYuCar_Chao_Sheng_Bo block="超声波|%index"
+    //% blockId=TuoYuCar_Yan_She_Chuan_Gan_Qi block="颜色传感器|%index"
     //% weight=101
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Yan_She_Chuan_Gan_Qi(index:ultrasonicState) {
+        switch (index) {
+            case ultrasonicState.Off: IICWrite(2, 1);
+            case ultrasonicState.Open: IICWrite(2, 2);
+        }
+    }
+
+    //% blockId=TuoYuCar_Chao_Sheng_Bo block="超声波|%index"
+    //% weight=99
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -45,17 +57,7 @@ namespace TuoYuCar {
         }
     }
 
-    //% blockId=TuoYuCar_Yan_She_Chuan_Gan_Qi block="颜色传感器|%index"
-    //% weight=99
-    //% blockGap=10
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Yan_She_Chuan_Gan_Qi(index:ultrasonicState) {
-        switch (index) {
-            case ultrasonicState.Off: IICWrite(2, 1);
-            case ultrasonicState.Open: IICWrite(2, 2);
-        }
-    }
+
 
     //% blockId=TuoYuCar_Sheng_Ying_Chuan_Gan_Qi block="声音传感器|%index"
     //% weight=97
