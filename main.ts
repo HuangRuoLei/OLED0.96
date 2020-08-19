@@ -1,4 +1,4 @@
-//% color="#006400" weight=20 icon="\uf5e4" block="拓宇小车"
+//% color="#006400" weight=20 icon="\uf1b9" block="拓宇小车"
 namespace TuoYuCar {
 
     export enum ultrasonicState{
@@ -40,27 +40,11 @@ namespace TuoYuCar {
         pins.spiWrite(value);
     }
     /**
-     * 选择以打开或关闭小车颜色传感器功能
-     * @param index
-    */
-
-    //% blockId=TuoYuCar_Yan_She_Chuan_Gan_Qi block="颜色传感器|%index"
-    //% weight=101
-    //% blockGap=10
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Yan_She_Chuan_Gan_Qi(index:ultrasonicState) {
-        switch (index) {
-            case ultrasonicState.Off: IICWrite(2, 1); break;
-            case ultrasonicState.Open: IICWrite(2, 2); break;
-        }
-    }
-    /**
      * 选择以打开或关闭小车超声波功能
      * @param index
     */
     //% blockId=TuoYuCar_Chao_Sheng_Bo block="超声波|%index"
-    //% weight=99
+    //% weight=101
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -71,6 +55,23 @@ namespace TuoYuCar {
             case ultrasonicState.Open: IICWrite(1, 2); break;
         }
     }
+    /**
+     * 选择以打开或关闭小车颜色传感器功能
+     * @param index
+    */
+
+    //% blockId=TuoYuCar_Yan_She_Chuan_Gan_Qi block="颜色传感器|%index"
+    //% weight=99
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Yan_She_Chuan_Gan_Qi(index:ultrasonicState) {
+        switch (index) {
+            case ultrasonicState.Off: IICWrite(2, 1); break;
+            case ultrasonicState.Open: IICWrite(2, 2); break;
+        }
+    }
+
 
     /**
      * 选择以打开或关闭小车声音传感器功能
@@ -89,11 +90,27 @@ namespace TuoYuCar {
         }
     }
     /**
+     * 选择以打开或关闭小车语音识别传感器功能
+     * @param index
+    */
+    //% blockId=TuoYuCar_Yu_Ying_Shi_Bie_Chuan_Gan_Qi block="语音识别传感器|%index"
+    //% weight=95
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Yu_Ying_Shi_Bie_Chuan_Gan_Qi(index: ultrasonicState) {
+        
+        switch (index) {
+            case ultrasonicState.Off: SPIWrite(0); break;
+            case ultrasonicState.Open: SPIWrite(1); break;
+        }
+    }
+    /**
      * 选择以打开或关闭小车显示屏显示中文功能
      * @param index
     */
     //% blockId=TuoYuCar_OLEDShowChine block="显示中文|%index|显示 %index1"
-    //% weight=97
+    //% weight=93
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
