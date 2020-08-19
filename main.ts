@@ -1,4 +1,4 @@
-//% color="#006400" weight=20 icon="\uf1b9" block="拓宇小车"
+//% color="#006400" weight=20 icon="\uf5e4" block="拓宇小车"
 namespace TuoYuCar {
 
     export enum ultrasonicState{
@@ -12,39 +12,32 @@ namespace TuoYuCar {
         wo = 0,
         //% blockId="ni" block="你"
         ni = 1,
-        
+        //% blockId="tuo" block="拓"
+        tuo,
+        //% blockId="yu" block="宇"
+        yu,
+        //% blockId="ke" block="科"
+        ke,
+        //% blockId="ji" block="技"
+        ji
+
     }
     export enum DisplayEnglish{
-        a = 0,
-        b,
-        c,
-        d,
-        e,
-        f,
-        g,
-        h,
-        i,
-        j,
-        k,
-        l,
-        m,
-        n,
-        o,
-        p,
-        q,
-        r,
-        s,
-        t,
-        u,
-        v,
-        w,
-        x,
-        y,
-        z
+        a = 0, b, c, d, e, f, g, h, i, j,
+        k, l, m, n, o, p, q, r, s, t,
+        u, v, w, x, y, z, A, B, C, D,
+        E, F, G, H, I, J, K, L, M, N,
+        O, P, Q, R, S, T, U, V, W, X, Y, Z
     }
     function IICWrite(value:number,value1:number) {
         
         pins.i2cWriteNumber(value, value1, NumberFormat.UInt8LE);
+    }
+    function SPIWrite(value: number) {
+        pins.spiPins(DigitalPin.P0, DigitalPin.P1, DigitalPin.P2);
+        pins.spiFormat(8, 3);
+        pins.spiFrequency(100000);
+        pins.spiWrite(value);
     }
     /**
      * 选择以打开或关闭小车颜色传感器功能
