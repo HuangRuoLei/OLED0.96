@@ -84,7 +84,7 @@ namespace TuoYuCar {
      * @param index
     */
 
-    //% blockId=TuoYuCar_Sheng_Ying_Chuan_Gan_Qi block="声音传感器|%index"
+    //% blockId=TuoYuCar_Sheng_Ying_Chuan_Gan_Qi block="声音传感器|inedx %index"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
@@ -99,7 +99,7 @@ namespace TuoYuCar {
      * 选择以打开或关闭小车显示屏显示中文功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLED block="显示屏显示中文|%index|"显示" %index1"
+    //% blockId=TuoYuCar_OLED block="显示中文|%index|显示 %index1"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
@@ -119,12 +119,12 @@ namespace TuoYuCar {
      * 选择以打开或关闭小车显示屏显示字母功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLED block="显示屏显示字母|%index|"显示" %index1"
-    //% weight=97
+    //% blockId=TuoYuCar_OLED block="显示字母|%index|显示 %index1"
+    //% weight=95
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function OLED(index:ultrasonicState,index1:DisplayEnglish) {
+    export function OLEDShowEnglish(index:ultrasonicState,index1:DisplayEnglish) {
         switch (index) {
             case ultrasonicState.Off: IICWrite(5, 0); break;
             case ultrasonicState.Open: {
