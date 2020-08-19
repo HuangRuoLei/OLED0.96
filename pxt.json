@@ -1,7 +1,7 @@
 {
     "name": "TuoYuMicroBit",
     "version": "1.0.3",
-    "description": "This is TuoYu Micro_Bit V9",
+    "description": "This is TuoYu Micro_Bit V10",
     "license": "MIT",
     "dependencies": {
         "core": "*",

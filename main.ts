@@ -1,28 +1,53 @@
 //% color="#006400" weight=20 icon="\uf1b9" block="拓宇小车"
 namespace TuoYuCar {
 
-
-    export enum IICState {
-        //% blockId="IIC_ultrasonic" block="ultrasonic"
-        IIC_ultrasonic = 1,
-        //% blockId="IIC_Red" block="Red"
-        IIC_Red = 2,
-        //% blockId="IIC_Ming" block="Ming"
-        IIC_Ming = 3,
-        //% blockId="IIC_Color" block="Color"
-        IIC_Color = 4,
-        //% blockId="IIC_Voice" block="Voice"
-        IIC_Voice = 5,
-        //% blockId="IIC_Display" block="Display"
-        IIC_Display = 6
-    }
     export enum ultrasonicState{
         //% blockId="OFF" block="关闭"
         Off = 0,
         //% blockId="Open" block="开启"
         Open = 1
     }
-
+    export enum DisplayChine{
+        //% blockId="wo" block="我"
+        wo = 0,
+        //% blockId="ni" block="你"
+        ni = 1,
+        
+    }
+    export enum DisplayEnglish{
+        a = 0,
+        b,
+        c,
+        d,
+        e,
+        f,
+        g,
+        h,
+        i,
+        j,
+        k,
+        l,
+        m,
+        n,
+        o,
+        p,
+        q,
+        r,
+        s,
+        t,
+        u,
+        v,
+        w,
+        x,
+        y,
+        z
+    }
+    export enum DisplayChance{
+        //% blockId="Chine" block="显示中文"
+        Chine = 0,
+        //% blockId="English"" block="显示字母""
+        English=1
+    }
     function IICWrite(value:number,value1:number) {
         
         pins.i2cWriteNumber(value, value1, NumberFormat.UInt8LE);
@@ -39,8 +64,8 @@ namespace TuoYuCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Yan_She_Chuan_Gan_Qi(index:ultrasonicState) {
         switch (index) {
-            case ultrasonicState.Off: IICWrite(2, 1);
-            case ultrasonicState.Open: IICWrite(2, 2);
+            case ultrasonicState.Off: IICWrite(2, 1); break;
+            case ultrasonicState.Open: IICWrite(2, 2); break;
         }
     }
     /**
@@ -55,8 +80,8 @@ namespace TuoYuCar {
     export function Chao_Sheng_Bo(index: ultrasonicState) {
         
         switch (index) {
-            case ultrasonicState.Off: IICWrite(1, 1);
-            case ultrasonicState.Open: IICWrite(1, 2);
+            case ultrasonicState.Off: IICWrite(1, 1); break;
+            case ultrasonicState.Open: IICWrite(1, 2); break;
         }
     }
 
@@ -72,23 +97,35 @@ namespace TuoYuCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Sheng_Ying_Chuan_Gan_Qi(index:ultrasonicState) {
         switch (index) {
-            case ultrasonicState.Off: IICWrite(3, 1);
-            case ultrasonicState.Open: IICWrite(3, 2);
+            case ultrasonicState.Off: IICWrite(3, 1); break;
+            case ultrasonicState.Open: IICWrite(3, 2); break;
         }
     }
     /**
      * 选择以打开或关闭小车显示屏功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLED block="显示屏|%index"
+    //% blockId=TuoYuCar_OLED block="显示屏|index %index|index1 %index1|index2 %index2"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function OLED(index:ultrasonicState) {
+    export function OLED(index:DisplayChance,index1:DisplayChine,index2:DisplayEnglish) {
         switch (index) {
-            case ultrasonicState.Off: IICWrite(4, 1);
-            case ultrasonicState.Open: IICWrite(4, 2);
+            case DisplayChance.Chine: {
+                switch (index1) {
+                    case DisplayChine.wo: IICWrite(4, 1); break;
+                    case DisplayChine.ni: IICWrite(4, 2); break;
+                }
+            } break;
+            case DisplayChance.English: {
+                switch (index2) {
+                    case DisplayEnglish.a: IICWrite(5, 1); break;
+                    case DisplayEnglish.b: break;
+                    case DisplayEnglish.c: break;
+                    case DisplayEnglish.d: break;
+                }
+            }; break;
         }
     }
 }
