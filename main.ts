@@ -96,10 +96,10 @@ namespace TuoYuCar {
         }
     }
     /**
-     * 选择以打开或关闭小车显示屏功能
+     * 选择以打开或关闭小车显示屏显示中文功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLED block="显示屏显示中文|index %index|index1 %index1"
+    //% blockId=TuoYuCar_OLED block="显示屏显示中文|%index|"显示" %index1"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
@@ -115,11 +115,11 @@ namespace TuoYuCar {
             }; break;
         }
     }
-        /**
-     * 选择以打开或关闭小车显示屏功能
+    /**
+     * 选择以打开或关闭小车显示屏显示字母功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLED block="显示屏显示字母|index %index|index1 %index1"
+    //% blockId=TuoYuCar_OLED block="显示屏显示字母|%index|"显示" %index1"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
