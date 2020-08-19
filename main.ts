@@ -32,7 +32,7 @@ namespace TuoYuCar {
      * @param index
      */
 
-    //% blockId=TuoYuCar_Chao_Sheng_Bo block="Chao_Sheng_Bo|%index"
+    //% blockId=TuoYuCar_Chao_Sheng_Bo block="超声波|%index"
     //% weight=101
     //% blockGap=10
     //% color="#006400"
