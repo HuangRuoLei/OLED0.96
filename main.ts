@@ -17,10 +17,10 @@ namespace TuoYuCar {
         IIC_Display = 6
     }
     export enum ultrasonicState{
-        //% blockId="OFF" block="OFF"
+        //% blockId="OFF" block="关闭"
         Off = 0,
-        //% blockId="Open" block="Open"
-        Open=1
+        //% blockId="Open" block="开启"
+        Open = 1
     }
 
     function IICWrite(value:number,value1:number) {
@@ -45,7 +45,7 @@ namespace TuoYuCar {
         }
     }
 
-    //% blockId=TuoYuCar_Yan_She_Chuan_Gan_Qi block="Yan_She_Chuan_Gan_Qi|%index"
+    //% blockId=TuoYuCar_Yan_She_Chuan_Gan_Qi block="颜色传感器|%index"
     //% weight=99
     //% blockGap=10
     //% color="#006400"
@@ -57,7 +57,7 @@ namespace TuoYuCar {
         }
     }
 
-    //% blockId=TuoYuCar_Sheng_Ying_Chuan_Gan_Qi block="Sheng_Ying_Chuan_Gan_Qi|%index"
+    //% blockId=TuoYuCar_Sheng_Ying_Chuan_Gan_Qi block="声音传感器|%index"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
@@ -69,7 +69,7 @@ namespace TuoYuCar {
         }
     }
 
-    //% blockId=TuoYuCar_OLED block="OLED|%index"
+    //% blockId=TuoYuCar_OLED block="显示屏|%index"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
