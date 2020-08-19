@@ -1,4 +1,4 @@
-//% color="#006400" weight=20 icon="\uf1b9"
+//% color="#006400" weight=20 icon="\uf1b9" block="拓宇小车"
 namespace TuoYuCar {
 
 
@@ -28,9 +28,9 @@ namespace TuoYuCar {
         pins.i2cWriteNumber(value, value1, NumberFormat.UInt8LE);
     }
     /**
-     * 111
+     * 选择以打开或关闭小车颜色传感器功能
      * @param index
-     */
+    */
 
     //% blockId=TuoYuCar_Yan_She_Chuan_Gan_Qi block="颜色传感器|%index"
     //% weight=101
@@ -43,7 +43,10 @@ namespace TuoYuCar {
             case ultrasonicState.Open: IICWrite(2, 2);
         }
     }
-
+    /**
+     * 选择以打开或关闭小车超声波功能
+     * @param index
+    */
     //% blockId=TuoYuCar_Chao_Sheng_Bo block="超声波|%index"
     //% weight=99
     //% blockGap=10
@@ -57,7 +60,10 @@ namespace TuoYuCar {
         }
     }
 
-
+    /**
+     * 选择以打开或关闭小车声音传感器功能
+     * @param index
+    */
 
     //% blockId=TuoYuCar_Sheng_Ying_Chuan_Gan_Qi block="声音传感器|%index"
     //% weight=97
@@ -70,7 +76,10 @@ namespace TuoYuCar {
             case ultrasonicState.Open: IICWrite(3, 2);
         }
     }
-
+    /**
+     * 选择以打开或关闭小车显示屏功能
+     * @param index
+    */
     //% blockId=TuoYuCar_OLED block="显示屏|%index"
     //% weight=97
     //% blockGap=10
