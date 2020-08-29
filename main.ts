@@ -48,7 +48,7 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Chao_Sheng_Bo(index: ultrasonicState) {
+    export function Chao_Sheng_Bo(index: ultrasonicState):void {
         
         switch (index) {
             case ultrasonicState.Off: IICWrite(1, 1); break;
@@ -65,8 +65,10 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Read_Chao_Sheng_Bo() {
-        pins.i2cReadNumber(1, NumberFormat.Int8LE);
+    export function Read_Chao_Sheng_Bo(): number {
+        let length;
+        length=pins.i2cReadNumber(1, NumberFormat.Int8LE);
+        return length;
     }
     /**
      * 选择以打开或关闭小车颜色传感器功能
@@ -78,7 +80,7 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Yan_She_Chuan_Gan_Qi(index:ultrasonicState) {
+    export function Yan_She_Chuan_Gan_Qi(index:ultrasonicState):void {
         switch (index) {
             case ultrasonicState.Off: IICWrite(2, 1); break;
             case ultrasonicState.Open: IICWrite(2, 2); break;
@@ -96,7 +98,7 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Sheng_Ying_Chuan_Gan_Qi(index:ultrasonicState) {
+    export function Sheng_Ying_Chuan_Gan_Qi(index:ultrasonicState):void {
         switch (index) {
             case ultrasonicState.Off: IICWrite(3, 1); break;
             case ultrasonicState.Open: IICWrite(3, 2); break;
@@ -111,7 +113,7 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Yu_Ying_Shi_Bie_Chuan_Gan_Qi(index: ultrasonicState) {
+    export function Yu_Ying_Shi_Bie_Chuan_Gan_Qi(index: ultrasonicState):void {
         
         switch (index) {
             case ultrasonicState.Off: SPIWrite(0); break;
@@ -127,7 +129,7 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function OLEDShowChine(index:ultrasonicState,index1:DisplayChine) {
+    export function OLEDShowChine(index:ultrasonicState,index1:DisplayChine):void {
         switch (index) {
             case ultrasonicState.Off: IICWrite(4,0); break;
             case ultrasonicState.Open: {
@@ -147,7 +149,7 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function OLEDShowEnglish(index:ultrasonicState,index1:DisplayEnglish) {
+    export function OLEDShowEnglish(index:ultrasonicState,index1:DisplayEnglish):void {
         switch (index) {
             case ultrasonicState.Off: IICWrite(5, 0); break;
             case ultrasonicState.Open: {
