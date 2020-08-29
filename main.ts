@@ -60,7 +60,7 @@ namespace TuoYuCar {
      * 调用此将返回超声波的所测到的距离
      * @param index
     */
-    //% blockId=TuoYuCar_Read_Chao_Sheng_Bo block="读取超声波测到的距离|%index"
+    //% blockId=TuoYuCar_Read_Chao_Sheng_Bo block="读取超声波测到的距离(cm)"
     //% weight=100
     //% blockGap=10
     //% color="#006400"
