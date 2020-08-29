@@ -55,6 +55,19 @@ namespace TuoYuCar {
             case ultrasonicState.Open: IICWrite(1, 2); break;
         }
     }
+
+    /**
+     * 调用此将返回超声波的所测到的距离
+     * @param index
+    */
+    //% blockId=TuoYuCar_Read_Chao_Sheng_Bo block="读取超声波测到的距离|%index"
+    //% weight=100
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Read_Chao_Sheng_Bo() {
+        pins.i2cReadNumber(1, NumberFormat.Int8LE);
+    }
     /**
      * 选择以打开或关闭小车颜色传感器功能
      * @param index
@@ -130,7 +143,7 @@ namespace TuoYuCar {
      * @param index
     */
     //% blockId=TuoYuCar_OLEDShowEnglish block="显示字母|%index|显示 %index1"
-    //% weight=95
+    //% weight=92
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
