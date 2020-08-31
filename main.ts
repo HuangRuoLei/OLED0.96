@@ -29,6 +29,50 @@ namespace TuoYuCar {
         E, F, G, H, I, J, K, L, M, N,
         O, P, Q, R, S, T, U, V, W, X, Y, Z
     }
+    export enum x{
+        //% blockId="Zero" block="0"
+        Zero = 0,
+        //% blockId="Two" block="2"
+        Two,
+        //% blockId="Four" block="4"
+        four,
+        //% blockId="Six" block="6"
+        Six
+    }
+    export enum y{
+        //% blockId="_0" block="0"
+        _0 = 0,
+        //% blockId="_8" block="8"
+        _8,
+        //% blockId="_16" block="16"
+        _16,
+        //% blockId="_24" block="24"
+        _24,
+        //% blockId="_32" block="32"
+        _32,
+        //% blockId="_40" block="40"
+        _40,
+        //% blockId="_48" block="48"
+        _48,
+        //% blockId="_56" block="56"
+        _56,
+        //% blockId="_64" block="64"
+        _64,
+        //% blockId="_72" block="72"
+        _72,
+        //% blockId="_80" block="80"
+        _80,
+        //% blockId="_88" block="88"
+        _88,
+        //% blockId="_96" block="96"
+        _96,
+        //% blockId="_104" block="104"
+        _104,
+        //% blockId="_112" block="112"
+        _112,
+        //% blockId="_120" block="120"
+        _120
+    }
     function IICWrite(value:number,value1:number) {
         
         pins.i2cWriteNumber(value, value1, NumberFormat.UInt8LE);
@@ -144,16 +188,40 @@ namespace TuoYuCar {
      * 选择以打开或关闭小车显示屏显示字母功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLEDShowEnglish block="显示字母|%index|显示 %index1"
+    //% blockId=TuoYuCar_OLEDShowEnglish block="显示字母|%index|,在横坐标X= %index1|,纵坐标y= %index2|处显示 %index3"
     //% weight=92
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function OLEDShowEnglish(index:ultrasonicState,index1:DisplayEnglish):void {
+    export function OLEDShowEnglish(index:ultrasonicState,index1:x,index2:y,index3:DisplayEnglish):void {
         switch (index) {
             case ultrasonicState.Off: IICWrite(5, 0); break;
             case ultrasonicState.Open: {
                 switch (index1) {
+                    case x.Zero: IICWrite(6, 1); break;
+                    case x.Two: IICWrite(6, 2); break;
+                    case x.four: IICWrite(6, 3); break;
+                    case x.Six: IICWrite(6, 4); break;
+                }
+                switch (index2) {
+                    case y._0: IICWrite(6, 5); break;
+                    case y._8: IICWrite(6, 6); break;
+                    case y._16: IICWrite(6, 7); break;
+                    case y._24: IICWrite(6, 8); break;
+                    case y._32: IICWrite(6, 9); break;
+                    case y._40: IICWrite(6, 10); break;
+                    case y._48: IICWrite(6, 11); break;
+                    case y._56: IICWrite(6, 12); break;
+                    case y._64: IICWrite(6, 13); break;
+                    case y._72: IICWrite(6, 14); break;
+                    case y._80: IICWrite(6, 15); break;
+                    case y._88: IICWrite(6, 16); break;
+                    case y._96: IICWrite(6, 17); break;
+                    case y._104: IICWrite(6, 18); break;
+                    case y._112: IICWrite(6, 19); break;
+                    case y._120: IICWrite(6, 20); break;s
+                }
+                switch (index3) {
                     case DisplayEnglish.a: IICWrite(5, 1); break;
                     case DisplayEnglish.b: IICWrite(5, 2); break;
                     case DisplayEnglish.c: IICWrite(5, 3); break;
