@@ -263,7 +263,7 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function OLEDShowCce(index:ultrasonicState,index2:x,index3:y,index1:DisplayChine):void {
+    export function OLEDShowCce(index:ultrasonicState,index2:x):void {
         switch (index) {
             case ultrasonicState.Off: IICWrite(4,0); break;
             case ultrasonicState.Open: {
@@ -272,28 +272,6 @@ namespace TuoYuCar {
                     case x.Two: IICWrite(6, 2); break;
                     case x.four: IICWrite(6, 3); break;
                     case x.Six: IICWrite(6, 4); break;
-                }
-                switch (index3) {
-                    case y._0: IICWrite(6, 5); break;
-                    case y._8: IICWrite(6, 6); break;
-                    case y._16: IICWrite(6, 7); break;
-                    case y._24: IICWrite(6, 8); break;
-                    case y._32: IICWrite(6, 9); break;
-                    case y._40: IICWrite(6, 10); break;
-                    case y._48: IICWrite(6, 11); break;
-                    case y._56: IICWrite(6, 12); break;
-                    case y._64: IICWrite(6, 13); break;
-                    case y._72: IICWrite(6, 14); break;
-                    case y._80: IICWrite(6, 15); break;
-                    case y._88: IICWrite(6, 16); break;
-                    case y._96: IICWrite(6, 17); break;
-                    case y._104: IICWrite(6, 18); break;
-                    case y._112: IICWrite(6, 19); break;
-                }
-
-                switch (index1) {
-                    case DisplayChine.wo: IICWrite(4, 1); break;
-                    case DisplayChine.ni: IICWrite(4, 2); break;
                 }
             }; break;
         }
