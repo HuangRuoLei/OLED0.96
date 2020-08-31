@@ -188,7 +188,7 @@ namespace TuoYuCar {
      * 选择以打开或关闭小车显示屏显示字母功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLEDShowEnglish block="显示字母|%index 在横坐标X= |%index1纵坐标y= |%index2 处显示 |%index3"
+    //% blockId=TuoYuCar_OLEDShowEnglish block="显示字母|%index|,在横坐标X= %index1|,纵坐标y= %index2|处显示 %index3"
     //% weight=92
     //% blockGap=10
     //% color="#006400"
@@ -219,7 +219,7 @@ namespace TuoYuCar {
                     case y._96: IICWrite(6, 17); break;
                     case y._104: IICWrite(6, 18); break;
                     case y._112: IICWrite(6, 19); break;
-                    case y._120: IICWrite(6, 20); break;s
+                    case y._120: IICWrite(6, 20); break;
                 }
                 switch (index3) {
                     case DisplayEnglish.a: IICWrite(5, 1); break;
