@@ -173,7 +173,7 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function OLEDShowChine(index:ultrasonicState,index1:DisplayChine,index2:x,index3:y):void {
+    export function OLEDShowChine(index:ultrasonicState,index2:x,index3:y,index1:DisplayChine):void {
         switch (index) {
             case ultrasonicState.Off: IICWrite(4,0); break;
             case ultrasonicState.Open: {
