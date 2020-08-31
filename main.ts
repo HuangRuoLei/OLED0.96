@@ -258,7 +258,7 @@ namespace TuoYuCar {
      * 选择以打开
      * @param index
     */
-    //% blockId=TuoYuCar_OLEDShowCce block="显示中|%index|在横坐标x= %index2"
+    //% blockId=TuoYuCar_OLEDShowCce block="显示中|%index|横坐标 %index2"
     //% weight=90
     //% blockGap=10
     //% color="#006400"
