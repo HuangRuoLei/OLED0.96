@@ -336,7 +336,7 @@ namespace TuoYuCar {
      * 选择以打开或关闭小车显示屏显示数字功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLEDShowChine block="显示数字|%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
+    //% blockId=TuoYuCar_OLEDShowNumber block="显示数字|%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
     //% weight=92
     //% blockGap=10
     //% index1.min=0 index1.max=255
