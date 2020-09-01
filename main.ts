@@ -188,27 +188,27 @@ namespace TuoYuCar {
             case ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index2) {
-                    case x.Zero: buf1[0]=1; break;
+                    case x.Zero: buf1[0]=0; break;
                     case x.Two: buf1[0]=2; break;
-                    case x.four: buf1[0]=3; break;
-                    case x.Six: buf1[0]=4; break;
+                    case x.four: buf1[0]=4; break;
+                    case x.Six: buf1[0]=8; break;
                 }
                 switch (index3) {
-                    case y._0:  buf1[1]=1; break;
-                    case y._8:  buf1[1]=2; break;
-                    case y._16: buf1[1]=3; break;
-                    case y._24: buf1[1]=4; break;
-                    case y._32: buf1[1]=5; break;
-                    case y._40: buf1[1]=6; break;
-                    case y._48: buf1[1]=7; break;
-                    case y._56: buf1[1]=8; break;
-                    case y._64: buf1[1]=9; break;
-                    case y._72: buf1[1]=10; break;
-                    case y._80: buf1[1]=11; break;
-                    case y._88: buf1[1]=12; break;
-                    case y._96: buf1[1]=13; break;
-                    case y._104: buf1[1]=14; break;
-                    case y._112: buf1[1]=15; break;
+                    case y._0:  buf1[1]=0; break;
+                    case y._8:  buf1[1]=8; break;
+                    case y._16: buf1[1]=16; break;
+                    case y._24: buf1[1]=24; break;
+                    case y._32: buf1[1]=32; break;
+                    case y._40: buf1[1]=40; break;
+                    case y._48: buf1[1]=48; break;
+                    case y._56: buf1[1]=56; break;
+                    case y._64: buf1[1]=64; break;
+                    case y._72: buf1[1]=72; break;
+                    case y._80: buf1[1]=80; break;
+                    case y._88: buf1[1]=88; break;
+                    case y._96: buf1[1]=96; break;
+                    case y._104: buf1[1]=104; break;
+                    case y._112: buf1[1]=112; break;
                 }
 
                 switch (index1) {
@@ -234,28 +234,28 @@ namespace TuoYuCar {
             case ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index1) {
-                    case x.Zero: buf1[0]=1; break;
+                    case x.Zero: buf1[0]=0; break;
                     case x.Two: buf1[0]=2; break;
-                    case x.four: buf1[0]=3; break;
-                    case x.Six: buf1[0]=4; break;
+                    case x.four: buf1[0]=4; break;
+                    case x.Six: buf1[0]=8; break;
                 }
                 switch (index2) {
-                    case y._0:  buf1[1]=1; break;
-                    case y._8:  buf1[1]=2; break;
-                    case y._16: buf1[1]=3; break;
-                    case y._24: buf1[1]=4; break;
-                    case y._32: buf1[1]=5; break;
-                    case y._40: buf1[1]=6; break;
-                    case y._48: buf1[1]=7; break;
-                    case y._56: buf1[1]=8; break;
-                    case y._64: buf1[1]=9; break;
-                    case y._72: buf1[1]=10; break;
-                    case y._80: buf1[1]=11; break;
-                    case y._88: buf1[1]=12; break;
-                    case y._96: buf1[1]=13; break;
-                    case y._104: buf1[1]=14; break;
-                    case y._112: buf1[1]=15; break;
-                    case y._120: buf1[1]=16; break;
+                    case y._0:  buf1[1]=0; break;
+                    case y._8:  buf1[1]=8; break;
+                    case y._16: buf1[1]=16; break;
+                    case y._24: buf1[1]=24; break;
+                    case y._32: buf1[1]=32; break;
+                    case y._40: buf1[1]=40; break;
+                    case y._48: buf1[1]=48; break;
+                    case y._56: buf1[1]=56; break;
+                    case y._64: buf1[1]=64; break;
+                    case y._72: buf1[1]=72; break;
+                    case y._80: buf1[1]=80; break;
+                    case y._88: buf1[1]=88; break;
+                    case y._96: buf1[1]=96; break;
+                    case y._104: buf1[1]=104; break;
+                    case y._112: buf1[1]=112; break;
+                    case y._120: buf1[1]=120; break;
                 }
                 switch (index3) {
                     case DisplayEnglish.a: buf1[2]=1; break;
