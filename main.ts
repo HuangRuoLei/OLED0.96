@@ -37,9 +37,9 @@ namespace TuoYuCar {
         _wen,
     
         _dian,
-        //% blockId="_kaifang" block="["
+        
         _kaifang,
-        //% blockId="_fanxie" block="\"
+        
         _fanxie,
 
 
