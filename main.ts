@@ -44,11 +44,11 @@ namespace TuoYuCar {
         _shuang,
         //% blockId="_jin" block="# 井号"
         _jin,
-        //% blockId="_mei" block="&"
+        //% blockId="_mei" block="$ 美元符号"
         _mei,
-        //% blockId="_bai" block="%"
+        //% blockId="_bai" block="% 百分号"
         _bai,
-        //% blockId="_he" block="&"
+        //% blockId="_he" block="& 和符号"
         _he,
         //% blockId="_kaidan" block="' 开单引号"
         _kaidan,
@@ -60,47 +60,47 @@ namespace TuoYuCar {
         _guan,
         //% blockId="_xing" block="* 星号"
         _xing,
-        //% blockId="_jia" block="+"
+        //% blockId="_jia" block="+ 加号"
         _jia,
-        //% blockId="_dou" block=","
+        //% blockId="_dou" block=", 逗号"
         _dou,
-        //% blockId="_jian" block="-"
+        //% blockId="_jian" block="- 减号"
         _jian,
-        //% blockId="_ju" block="."
+        //% blockId="_ju" block=". 句号"
         _ju,
-        //% blockId="_xie" block="/"
+        //% blockId="_xie" block="/ 斜杠"
         _xie,
-        //% blockId="_xie" block="/反斜杠"
+        //% blockId="_xie" block="/ 反斜杠"
         _fanxie,
-        //% blockId="_mao" block=":"
+        //% blockId="_mao" block=": 冒号"
         _mao,
-        //% blockId="_fen" block=";"
+        //% blockId="_fen" block="; 分号"
         _fen,
-        //% blockId="_xiao" block="<"
+        //% blockId="_xiao" block="< 小于号"
         _xiao,
-        //% blockId="_deng" block="="
+        //% blockId="_deng" block="= 等于号"
         _deng,
-        //% blockId="_da" block=">"
+        //% blockId="_da" block="> 大于号"
         _da,
-        //% blockId="_wen" block="?"
+        //% blockId="_wen" block="? 问好"
         _wen,
-        //% blockId="_dian" block="@"
+        //% blockId="_dian" block="@ 电子邮件符号"
         _dian,
-        //% blockId="_kaifang" block="["
+        //% blockId="_kaifang" block="[ 开方括号"
         _kaifang,
-        //% blockId="_bifang" block="]"
+        //% blockId="_bifang" block="] 闭方括号"
         _bifang,
-        //% blockId="_tuo" block="^"
+        //% blockId="_tuo" block="^ 乘方符号"
         _tuo,
-        //% blockId="_xia" block="_"
+        //% blockId="_xia" block="_ 下划线"
         _xia,
-        //% blockId="_kaihua" block="{"
+        //% blockId="_kaihua" block="{ 开花括号"
         _kaihua,
-        //% blockId="_cui" block="|"
+        //% blockId="_cui" block="| 垂直线"
         _cui,
-        //% blockId="_bihua" block="}"
+        //% blockId="_bihua" block="} 闭花括号"
         _bihua,
-        //% blockId="_bo" block="~"
+        //% blockId="_bo" block="~ 波浪号"
         _bo
     }
     export enum Y{
