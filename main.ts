@@ -1,4 +1,4 @@
-//% color="#006400" weight=2 0 icon="\uf1b9" block="拓宇小车"
+//% color="#006400" weight=2 0 icon="\uf1b9" block="拓宇小车传感器类"
 namespace TuoYuCar {
 
     export enum ultrasonicState{
@@ -82,7 +82,7 @@ namespace TuoYuCar {
         _deng,
         //% blockId="_da" block="> 大于号"
         _da,
-        //% blockId="_wen" block="? 问好"
+        //% blockId="_wen" block="? 问号"
         _wen,
         //% blockId="_dian" block="@ 电子邮件符号"
         _dian,
@@ -151,7 +151,7 @@ namespace TuoYuCar {
         
         pins.i2cWriteNumber(value, value1, NumberFormat.UInt8LE);
     }
-    function IICWriteBuf(value: number, value1: number, value2: number, value3: number, value4: number) {
+    export function IICWriteBuf(value: number, value1: number, value2: number, value3: number, value4: number) {
         let buf = pins.createBuffer(4);
         buf[0] = value1;
         buf[1] = value2;
@@ -247,6 +247,10 @@ namespace TuoYuCar {
             case ultrasonicState.Open: SPIWrite(1); break;
         }
     }
+    
+}
+//% color="#006400" weight=2 0 icon="\uf1b9" block="拓宇小车显示类"
+namespace TuoYuCar1{
     /**
      * 选择以打开或关闭小车显示屏显示中文功能
      * @param index
@@ -256,48 +260,48 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
-    export function OLEDShowChine(index:ultrasonicState,index2:Y,index3:X,index1:DisplayChine):void {
+    export function OLEDShowChine(index:TuoYuCar.ultrasonicState,index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:TuoYuCar.DisplayChine):void {
         switch (index) {
-            case ultrasonicState.Off: IICWriteBuf(69,1,0,0,0); break;
-            case ultrasonicState.Open: {
+            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(69,1,0,0,0); break;
+            case TuoYuCar.ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index2) {
-                    case Y._0: buf1[0]=0; break;
-                    case Y._2: buf1[0]=2; break;
-                    case Y._4: buf1[0]=4; break;
-                    case Y._6: buf1[0]=6; break;
+                    case TuoYuCar.Y._0: buf1[0]=0; break;
+                    case TuoYuCar.Y._2: buf1[0]=2; break;
+                    case TuoYuCar.Y._4: buf1[0]=4; break;
+                    case TuoYuCar.Y._6: buf1[0]=6; break;
                 }
                 switch (index3) {
-                    case X._0:  buf1[1]=0; break;
-                    case X._8:  buf1[1]=8; break;
-                    case X._16: buf1[1]=16; break;
-                    case X._24: buf1[1]=24; break;
-                    case X._32: buf1[1]=32; break;
-                    case X._40: buf1[1]=40; break;
-                    case X._48: buf1[1]=48; break;
-                    case X._56: buf1[1]=56; break;
-                    case X._64: buf1[1]=64; break;
-                    case X._72: buf1[1]=72; break;
-                    case X._80: buf1[1]=80; break;
-                    case X._88: buf1[1]=88; break;
-                    case X._96: buf1[1]=96; break;
-                    case X._104: buf1[1]=104; break;
-                    case X._112: buf1[1]=112; break;
+                    case TuoYuCar.X._0:  buf1[1]=0; break;
+                    case TuoYuCar.X._8:  buf1[1]=8; break;
+                    case TuoYuCar.X._16: buf1[1]=16; break;
+                    case TuoYuCar.X._24: buf1[1]=24; break;
+                    case TuoYuCar.X._32: buf1[1]=32; break;
+                    case TuoYuCar.X._40: buf1[1]=40; break;
+                    case TuoYuCar.X._48: buf1[1]=48; break;
+                    case TuoYuCar.X._56: buf1[1]=56; break;
+                    case TuoYuCar.X._64: buf1[1]=64; break;
+                    case TuoYuCar.X._72: buf1[1]=72; break;
+                    case TuoYuCar.X._80: buf1[1]=80; break;
+                    case TuoYuCar.X._88: buf1[1]=88; break;
+                    case TuoYuCar.X._96: buf1[1]=96; break;
+                    case TuoYuCar.X._104: buf1[1]=104; break;
+                    case TuoYuCar.X._112: buf1[1]=112; break;
                 }
 
                 switch (index1) {
-                    case DisplayChine.wo: buf1[2]=0; break;
-                    case DisplayChine.ni: buf1[2]=1; break;
-                    case DisplayChine.tuo: buf1[2]=2; break;
-                    case DisplayChine.yu: buf1[2]=3; break;
-                    case DisplayChine.ke: buf1[2]=4; break;
-                    case DisplayChine.ji: buf1[2]=5; break;
-                    case DisplayChine.zhi: buf1[2]=6; break;
-                    case DisplayChine.neng: buf1[2]=7; break;
-                    case DisplayChine.xiao: buf1[2]=8; break;
-                    case DisplayChine.che: buf1[2]=9; break;
+                    case TuoYuCar.DisplayChine.wo: buf1[2]=0; break;
+                    case TuoYuCar.DisplayChine.ni: buf1[2]=1; break;
+                    case TuoYuCar.DisplayChine.tuo: buf1[2]=2; break;
+                    case TuoYuCar.DisplayChine.yu: buf1[2]=3; break;
+                    case TuoYuCar.DisplayChine.ke: buf1[2]=4; break;
+                    case TuoYuCar.DisplayChine.ji: buf1[2]=5; break;
+                    case TuoYuCar.DisplayChine.zhi: buf1[2]=6; break;
+                    case TuoYuCar.DisplayChine.neng: buf1[2]=7; break;
+                    case TuoYuCar.DisplayChine.xiao: buf1[2]=8; break;
+                    case TuoYuCar.DisplayChine.che: buf1[2]=9; break;
                 }
-                IICWriteBuf(69, 2, buf1[0], buf1[1], buf1[2]);
+                TuoYuCar.IICWriteBuf(69, 2, buf1[0], buf1[1], buf1[2]);
             }; break;
         }
     }
@@ -310,91 +314,91 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function OLEDShowEnglish(index:ultrasonicState,index1:Y,index2:X,index3:DisplayEnglish):void {
+    export function OLEDShowEnglish(index:TuoYuCar.ultrasonicState,index1:TuoYuCar.Y,index2:TuoYuCar.X,index3:TuoYuCar.DisplayEnglish):void {
         switch (index) {
-            case ultrasonicState.Off: IICWriteBuf(70,1,0,0,0); break;
-            case ultrasonicState.Open: {
+            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(70,1,0,0,0); break;
+            case TuoYuCar.ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index1) {
-                    case Y._0: buf1[0]=0; break;
-                    case Y._2: buf1[0]=2; break;
-                    case Y._4: buf1[0]=4; break;
-                    case Y._6: buf1[0]=6; break;
+                    case TuoYuCar.Y._0: buf1[0]=0; break;
+                    case TuoYuCar.Y._2: buf1[0]=2; break;
+                    case TuoYuCar.Y._4: buf1[0]=4; break;
+                    case TuoYuCar.Y._6: buf1[0]=6; break;
                 }
                 switch (index2) {
-                    case X._0:  buf1[1]=0; break;
-                    case X._8:  buf1[1]=8; break;
-                    case X._16: buf1[1]=16; break;
-                    case X._24: buf1[1]=24; break;
-                    case X._32: buf1[1]=32; break;
-                    case X._40: buf1[1]=40; break;
-                    case X._48: buf1[1]=48; break;
-                    case X._56: buf1[1]=56; break;
-                    case X._64: buf1[1]=64; break;
-                    case X._72: buf1[1]=72; break;
-                    case X._80: buf1[1]=80; break;
-                    case X._88: buf1[1]=88; break;
-                    case X._96: buf1[1]=96; break;
-                    case X._104: buf1[1]=104; break;
-                    case X._112: buf1[1]=112; break;
-                    case X._120: buf1[1]=120; break;
+                    case TuoYuCar.X._0:  buf1[1]=0; break;
+                    case TuoYuCar.X._8:  buf1[1]=8; break;
+                    case TuoYuCar.X._16: buf1[1]=16; break;
+                    case TuoYuCar.X._24: buf1[1]=24; break;
+                    case TuoYuCar.X._32: buf1[1]=32; break;
+                    case TuoYuCar.X._40: buf1[1]=40; break;
+                    case TuoYuCar.X._48: buf1[1]=48; break;
+                    case TuoYuCar.X._56: buf1[1]=56; break;
+                    case TuoYuCar.X._64: buf1[1]=64; break;
+                    case TuoYuCar.X._72: buf1[1]=72; break;
+                    case TuoYuCar.X._80: buf1[1]=80; break;
+                    case TuoYuCar.X._88: buf1[1]=88; break;
+                    case TuoYuCar.X._96: buf1[1]=96; break;
+                    case TuoYuCar.X._104: buf1[1]=104; break;
+                    case TuoYuCar.X._112: buf1[1]=112; break;
+                    case TuoYuCar.X._120: buf1[1]=120; break;
                 }
                 switch (index3) {
-                    case DisplayEnglish.a: buf1[2]=97; break;
-                    case DisplayEnglish.b: buf1[2]=98; break;
-                    case DisplayEnglish.c: buf1[2]=99; break;
-                    case DisplayEnglish.d: buf1[2]=100; break;
-                    case DisplayEnglish.e: buf1[2]=101; break;
-                    case DisplayEnglish.f: buf1[2]=102; break;
-                    case DisplayEnglish.g: buf1[2]=103; break;
-                    case DisplayEnglish.h: buf1[2]=104; break;
-                    case DisplayEnglish.i: buf1[2]=105; break;
-                    case DisplayEnglish.j: buf1[2]=106; break;
-                    case DisplayEnglish.k: buf1[2]=107; break;
-                    case DisplayEnglish.l: buf1[2]=108; break;
-                    case DisplayEnglish.m: buf1[2]=109; break;
-                    case DisplayEnglish.n: buf1[2]=110; break;
-                    case DisplayEnglish.o: buf1[2]=111; break;
-                    case DisplayEnglish.p: buf1[2]=112; break;
-                    case DisplayEnglish.q: buf1[2]=113; break;
-                    case DisplayEnglish.r: buf1[2]=114; break;
-                    case DisplayEnglish.s: buf1[2]=115; break;
-                    case DisplayEnglish.t: buf1[2]=116; break;
-                    case DisplayEnglish.u: buf1[2]=117; break;
-                    case DisplayEnglish.v: buf1[2]=118; break;
-                    case DisplayEnglish.w: buf1[2]=119; break;
-                    case DisplayEnglish.x: buf1[2]=120; break;
-                    case DisplayEnglish.y: buf1[2]=121; break;
-                    case DisplayEnglish.z: buf1[2]=122; break;
+                    case TuoYuCar.DisplayEnglish.a: buf1[2]=97; break;
+                    case TuoYuCar.DisplayEnglish.b: buf1[2]=98; break;
+                    case TuoYuCar.DisplayEnglish.c: buf1[2]=99; break;
+                    case TuoYuCar.DisplayEnglish.d: buf1[2]=100; break;
+                    case TuoYuCar.DisplayEnglish.e: buf1[2]=101; break;
+                    case TuoYuCar.DisplayEnglish.f: buf1[2]=102; break;
+                    case TuoYuCar.DisplayEnglish.g: buf1[2]=103; break;
+                    case TuoYuCar.DisplayEnglish.h: buf1[2]=104; break;
+                    case TuoYuCar.DisplayEnglish.i: buf1[2]=105; break;
+                    case TuoYuCar.DisplayEnglish.j: buf1[2]=106; break;
+                    case TuoYuCar.DisplayEnglish.k: buf1[2]=107; break;
+                    case TuoYuCar.DisplayEnglish.l: buf1[2]=108; break;
+                    case TuoYuCar.DisplayEnglish.m: buf1[2]=109; break;
+                    case TuoYuCar.DisplayEnglish.n: buf1[2]=110; break;
+                    case TuoYuCar.DisplayEnglish.o: buf1[2]=111; break;
+                    case TuoYuCar.DisplayEnglish.p: buf1[2]=112; break;
+                    case TuoYuCar.DisplayEnglish.q: buf1[2]=113; break;
+                    case TuoYuCar.DisplayEnglish.r: buf1[2]=114; break;
+                    case TuoYuCar.DisplayEnglish.s: buf1[2]=115; break;
+                    case TuoYuCar.DisplayEnglish.t: buf1[2]=116; break;
+                    case TuoYuCar.DisplayEnglish.u: buf1[2]=117; break;
+                    case TuoYuCar.DisplayEnglish.v: buf1[2]=118; break;
+                    case TuoYuCar.DisplayEnglish.w: buf1[2]=119; break;
+                    case TuoYuCar.DisplayEnglish.x: buf1[2]=120; break;
+                    case TuoYuCar.DisplayEnglish.y: buf1[2]=121; break;
+                    case TuoYuCar.DisplayEnglish.z: buf1[2]=122; break;
 
-                    case DisplayEnglish.A: buf1[2]=65; break;
-                    case DisplayEnglish.B: buf1[2]=66; break;
-                    case DisplayEnglish.C: buf1[2]=67; break;
-                    case DisplayEnglish.D: buf1[2]=68; break;
-                    case DisplayEnglish.E: buf1[2]=69; break;
-                    case DisplayEnglish.F: buf1[2]=70; break;
-                    case DisplayEnglish.G: buf1[2]=71; break;
-                    case DisplayEnglish.H: buf1[2]=72; break;
-                    case DisplayEnglish.I: buf1[2]=73; break;
-                    case DisplayEnglish.J: buf1[2]=74; break;
-                    case DisplayEnglish.K: buf1[2]=75; break;
-                    case DisplayEnglish.L: buf1[2]=76; break;
-                    case DisplayEnglish.M: buf1[2]=77; break;
-                    case DisplayEnglish.N: buf1[2]=78; break;
-                    case DisplayEnglish.O: buf1[2]=79; break;
-                    case DisplayEnglish.P: buf1[2]=80; break;
-                    case DisplayEnglish.Q: buf1[2]=81; break;
-                    case DisplayEnglish.R: buf1[2]=82; break;
-                    case DisplayEnglish.S: buf1[2]=83; break;
-                    case DisplayEnglish.T: buf1[2]=84; break;
-                    case DisplayEnglish.U: buf1[2]=85; break;
-                    case DisplayEnglish.V: buf1[2]=86; break;
-                    case DisplayEnglish.W: buf1[2]=87; break;
-                    case DisplayEnglish.X: buf1[2]=88; break;
-                    case DisplayEnglish.Y: buf1[2]=89; break;
-                    case DisplayEnglish.Z: buf1[2]=90; break;
+                    case TuoYuCar.DisplayEnglish.A: buf1[2]=65; break;
+                    case TuoYuCar.DisplayEnglish.B: buf1[2]=66; break;
+                    case TuoYuCar.DisplayEnglish.C: buf1[2]=67; break;
+                    case TuoYuCar.DisplayEnglish.D: buf1[2]=68; break;
+                    case TuoYuCar.DisplayEnglish.E: buf1[2]=69; break;
+                    case TuoYuCar.DisplayEnglish.F: buf1[2]=70; break;
+                    case TuoYuCar.DisplayEnglish.G: buf1[2]=71; break;
+                    case TuoYuCar.DisplayEnglish.H: buf1[2]=72; break;
+                    case TuoYuCar.DisplayEnglish.I: buf1[2]=73; break;
+                    case TuoYuCar.DisplayEnglish.J: buf1[2]=74; break;
+                    case TuoYuCar.DisplayEnglish.K: buf1[2]=75; break;
+                    case TuoYuCar.DisplayEnglish.L: buf1[2]=76; break;
+                    case TuoYuCar.DisplayEnglish.M: buf1[2]=77; break;
+                    case TuoYuCar.DisplayEnglish.N: buf1[2]=78; break;
+                    case TuoYuCar.DisplayEnglish.O: buf1[2]=79; break;
+                    case TuoYuCar.DisplayEnglish.P: buf1[2]=80; break;
+                    case TuoYuCar.DisplayEnglish.Q: buf1[2]=81; break;
+                    case TuoYuCar.DisplayEnglish.R: buf1[2]=82; break;
+                    case TuoYuCar.DisplayEnglish.S: buf1[2]=83; break;
+                    case TuoYuCar.DisplayEnglish.T: buf1[2]=84; break;
+                    case TuoYuCar.DisplayEnglish.U: buf1[2]=85; break;
+                    case TuoYuCar.DisplayEnglish.V: buf1[2]=86; break;
+                    case TuoYuCar.DisplayEnglish.W: buf1[2]=87; break;
+                    case TuoYuCar.DisplayEnglish.X: buf1[2]=88; break;
+                    case TuoYuCar.DisplayEnglish.Y: buf1[2]=89; break;
+                    case TuoYuCar.DisplayEnglish.Z: buf1[2]=90; break;
                 }
-                IICWriteBuf(70, 2, buf1[0], buf1[1], buf1[2]);
+                TuoYuCar.IICWriteBuf(70, 2, buf1[0], buf1[1], buf1[2]);
             }; break;
         }
     }
@@ -408,36 +412,37 @@ namespace TuoYuCar {
     //% index1.min=0 index1.max=255
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
-    export function OLEDShowNumber(index:ultrasonicState,index2:Y,index3:X,index1:number):void {
+    export function OLEDShowNumber(index:TuoYuCar.ultrasonicState,index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:number):void {
         switch (index) {
-            case ultrasonicState.Off: IICWriteBuf(71,1,0,0,0); break;
-            case ultrasonicState.Open: {
+            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(71,1,0,0,0); break;
+            case TuoYuCar.ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index2) {
-                    case Y._0: buf1[0]=0; break;
-                    case Y._2: buf1[0]=2; break;
-                    case Y._4: buf1[0]=4; break;
-                    case Y._6: buf1[0]=6; break;
+                    case TuoYuCar.Y._0: buf1[0]=0; break;
+                    case TuoYuCar.Y._2: buf1[0]=2; break;
+                    case TuoYuCar.Y._4: buf1[0]=4; break;
+                    case TuoYuCar.Y._6: buf1[0]=6; break;
                 }
                 switch (index3) {
-                    case X._0:  buf1[1]=0; break;
-                    case X._8:  buf1[1]=8; break;
-                    case X._16: buf1[1]=16; break;
-                    case X._24: buf1[1]=24; break;
-                    case X._32: buf1[1]=32; break;
-                    case X._40: buf1[1]=40; break;
-                    case X._48: buf1[1]=48; break;
-                    case X._56: buf1[1]=56; break;
-                    case X._64: buf1[1]=64; break;
-                    case X._72: buf1[1]=72; break;
-                    case X._80: buf1[1]=80; break;
-                    case X._88: buf1[1]=88; break;
-                    case X._96: buf1[1]=96; break;
-                    case X._104: buf1[1]=104; break;
-                    case X._112: buf1[1]=112; break;
+                    case TuoYuCar.X._0:  buf1[1]=0; break;
+                    case TuoYuCar.X._8:  buf1[1]=8; break;
+                    case TuoYuCar.X._16: buf1[1]=16; break;
+                    case TuoYuCar.X._24: buf1[1]=24; break;
+                    case TuoYuCar.X._32: buf1[1]=32; break;
+                    case TuoYuCar.X._40: buf1[1]=40; break;
+                    case TuoYuCar.X._48: buf1[1]=48; break;
+                    case TuoYuCar.X._56: buf1[1]=56; break;
+                    case TuoYuCar.X._64: buf1[1]=64; break;
+                    case TuoYuCar.X._72: buf1[1]=72; break;
+                    case TuoYuCar.X._80: buf1[1]=80; break;
+                    case TuoYuCar.X._88: buf1[1]=88; break;
+                    case TuoYuCar.X._96: buf1[1]=96; break;
+                    case TuoYuCar.X._104: buf1[1]=104; break;
+                    case TuoYuCar.X._112: buf1[1]=112; break;
+                    case TuoYuCar.X._120: buf1[1]=120; break;
                 }
                 buf1[2]=index1;
-                IICWriteBuf(71, 2, buf1[0], buf1[1], buf1[2]);
+                TuoYuCar.IICWriteBuf(71, 2, buf1[0], buf1[1], buf1[2]);
             }; break;
         }
     }
@@ -451,70 +456,71 @@ namespace TuoYuCar {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
-    export function OLEDShowChar(index:ultrasonicState,index2:Y,index3:X,index1:DisplayChar):void {
+    export function OLEDShowChar(index:TuoYuCar.ultrasonicState,index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:TuoYuCar.DisplayChar):void {
         switch (index) {
-            case ultrasonicState.Off: IICWriteBuf(69,1,0,0,0); break;
-            case ultrasonicState.Open: {
+            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(69,1,0,0,0); break;
+            case TuoYuCar.ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index2) {
-                    case Y._0: buf1[0]=0; break;
-                    case Y._2: buf1[0]=2; break;
-                    case Y._4: buf1[0]=4; break;
-                    case Y._6: buf1[0]=6; break;
+                    case TuoYuCar.Y._0: buf1[0]=0; break;
+                    case TuoYuCar.Y._2: buf1[0]=2; break;
+                    case TuoYuCar.Y._4: buf1[0]=4; break;
+                    case TuoYuCar.Y._6: buf1[0]=6; break;
                 }
                 switch (index3) {
-                    case X._0:  buf1[1]=0; break;
-                    case X._8:  buf1[1]=8; break;
-                    case X._16: buf1[1]=16; break;
-                    case X._24: buf1[1]=24; break;
-                    case X._32: buf1[1]=32; break;
-                    case X._40: buf1[1]=40; break;
-                    case X._48: buf1[1]=48; break;
-                    case X._56: buf1[1]=56; break;
-                    case X._64: buf1[1]=64; break;
-                    case X._72: buf1[1]=72; break;
-                    case X._80: buf1[1]=80; break;
-                    case X._88: buf1[1]=88; break;
-                    case X._96: buf1[1]=96; break;
-                    case X._104: buf1[1]=104; break;
-                    case X._112: buf1[1]=112; break;
+                    case TuoYuCar.X._0:  buf1[1]=0; break;
+                    case TuoYuCar.X._8:  buf1[1]=8; break;
+                    case TuoYuCar.X._16: buf1[1]=16; break;
+                    case TuoYuCar.X._24: buf1[1]=24; break;
+                    case TuoYuCar.X._32: buf1[1]=32; break;
+                    case TuoYuCar.X._40: buf1[1]=40; break;
+                    case TuoYuCar.X._48: buf1[1]=48; break;
+                    case TuoYuCar.X._56: buf1[1]=56; break;
+                    case TuoYuCar.X._64: buf1[1]=64; break;
+                    case TuoYuCar.X._72: buf1[1]=72; break;
+                    case TuoYuCar.X._80: buf1[1]=80; break;
+                    case TuoYuCar.X._88: buf1[1]=88; break;
+                    case TuoYuCar.X._96: buf1[1]=96; break;
+                    case TuoYuCar.X._104: buf1[1]=104; break;
+                    case TuoYuCar.X._112: buf1[1]=112; break;
+                    case TuoYuCar.X._120: buf1[1]=120; break;
                 }
 
                 switch (index1) {
-                    case DisplayChar._gan:buf1[2]=33;break;
-                    case DisplayChar._shuang:buf1[2]=34;break;
-                    case DisplayChar._jin:buf1[2]=35;break;
-                    case DisplayChar._mei:buf1[2]=36;break;
-                    case DisplayChar._bai:buf1[2]=37;break;
-                    case DisplayChar._he:buf1[2]=38;break;
-                    case DisplayChar._kaidan:buf1[2]=96;break;
-                    case DisplayChar._bidan:buf1[2]=39;break;
-                    case DisplayChar._kai:buf1[2]=40;break;
-                    case DisplayChar._guan:buf1[2]=41;break;
-                    case DisplayChar._xing:buf1[2]=42;break;
-                    case DisplayChar._jia:buf1[2]=43;break;
-                    case DisplayChar._dou:buf1[2]=44;break;
-                    case DisplayChar._jian:buf1[2]=45;break;
-                    case DisplayChar._ju:buf1[2]=46;break;
-                    case DisplayChar._xie:buf1[2]=47;break;
-                    case DisplayChar._mao:buf1[2]=58;break;
-                    case DisplayChar._fen:buf1[2]=59;break;
-                    case DisplayChar._xiao:buf1[2]=60;break;
-                    case DisplayChar._deng:buf1[2]=61;break;
-                    case DisplayChar._da:buf1[2]=62;break;
-                    case DisplayChar._wen:buf1[2]=63;break;
-                    case DisplayChar._dian:buf1[2]=64;break;
-                    case DisplayChar._kaifang:buf1[2]=91;break;
-                    case DisplayChar._fanxie:buf1[2]=92;break;
-                    case DisplayChar._bifang:buf1[2]=93;break;
-                    case DisplayChar._tuo:buf1[2]=94;break;
-                    case DisplayChar._xia:buf1[2]=95;break;
-                    case DisplayChar._kaihua:buf1[2]=123;break;
-                    case DisplayChar._cui:buf1[2]=124;break;
-                    case DisplayChar._bihua:buf1[2]=125;break;
-                    case DisplayChar._bo:buf1[2]=126;break;
+                    case TuoYuCar.DisplayChar._gan:buf1[2]=33;break;
+                    case TuoYuCar.DisplayChar._shuang:buf1[2]=34;break;
+                    case TuoYuCar.DisplayChar._jin:buf1[2]=35;break;
+                    case TuoYuCar.DisplayChar._mei:buf1[2]=36;break;
+                    case TuoYuCar.DisplayChar._bai:buf1[2]=37;break;
+                    case TuoYuCar.DisplayChar._he:buf1[2]=38;break;
+                    case TuoYuCar.DisplayChar._kaidan:buf1[2]=96;break;
+                    case TuoYuCar.DisplayChar._bidan:buf1[2]=39;break;
+                    case TuoYuCar.DisplayChar._kai:buf1[2]=40;break;
+                    case TuoYuCar.DisplayChar._guan:buf1[2]=41;break;
+                    case TuoYuCar.DisplayChar._xing:buf1[2]=42;break;
+                    case TuoYuCar.DisplayChar._jia:buf1[2]=43;break;
+                    case TuoYuCar.DisplayChar._dou:buf1[2]=44;break;
+                    case TuoYuCar.DisplayChar._jian:buf1[2]=45;break;
+                    case TuoYuCar.DisplayChar._ju:buf1[2]=46;break;
+                    case TuoYuCar.DisplayChar._xie:buf1[2]=47;break;
+                    case TuoYuCar.DisplayChar._mao:buf1[2]=58;break;
+                    case TuoYuCar.DisplayChar._fen:buf1[2]=59;break;
+                    case TuoYuCar.DisplayChar._xiao:buf1[2]=60;break;
+                    case TuoYuCar.DisplayChar._deng:buf1[2]=61;break;
+                    case TuoYuCar.DisplayChar._da:buf1[2]=62;break;
+                    case TuoYuCar.DisplayChar._wen:buf1[2]=63;break;
+                    case TuoYuCar.DisplayChar._dian:buf1[2]=64;break;
+                    case TuoYuCar.DisplayChar._kaifang:buf1[2]=91;break;
+                    case TuoYuCar.DisplayChar._fanxie:buf1[2]=92;break;
+                    case TuoYuCar.DisplayChar._bifang:buf1[2]=93;break;
+                    case TuoYuCar.DisplayChar._tuo:buf1[2]=94;break;
+                    case TuoYuCar.DisplayChar._xia:buf1[2]=95;break;
+                    case TuoYuCar.DisplayChar._kaihua:buf1[2]=123;break;
+                    case TuoYuCar.DisplayChar._cui:buf1[2]=124;break;
+                    case TuoYuCar.DisplayChar._bihua:buf1[2]=125;break;
+                    case TuoYuCar.DisplayChar._bo:buf1[2]=126;break;
                 }
-                IICWriteBuf(69, 2, buf1[0], buf1[1], buf1[2]);
+                TuoYuCar.IICWriteBuf(69, 2, buf1[0], buf1[1], buf1[2]);
             }; break;
         }
     }
