@@ -332,4 +332,47 @@ namespace TuoYuCar {
             }; break;
         }
     }
+    /**
+     * 选择以打开或关闭小车显示屏显示数字功能
+     * @param index
+    */
+    //% blockId=TuoYuCar_OLEDShowChine block="显示数字|%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
+    //% weight=92
+    //% blockGap=10
+    //% index1.min=0 index1.max=255
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
+    export function OLEDShowNumber(index:ultrasonicState,index2:Y,index3:X,index1:number):void {
+        switch (index) {
+            case ultrasonicState.Off: IICWriteBuf(71,1,0,0,0); break;
+            case ultrasonicState.Open: {
+                let buf1 = pins.createBuffer(3);
+                switch (index2) {
+                    case Y._0: buf1[0]=0; break;
+                    case Y._2: buf1[0]=2; break;
+                    case Y._4: buf1[0]=4; break;
+                    case Y._6: buf1[0]=6; break;
+                }
+                switch (index3) {
+                    case X._0:  buf1[1]=0; break;
+                    case X._8:  buf1[1]=8; break;
+                    case X._16: buf1[1]=16; break;
+                    case X._24: buf1[1]=24; break;
+                    case X._32: buf1[1]=32; break;
+                    case X._40: buf1[1]=40; break;
+                    case X._48: buf1[1]=48; break;
+                    case X._56: buf1[1]=56; break;
+                    case X._64: buf1[1]=64; break;
+                    case X._72: buf1[1]=72; break;
+                    case X._80: buf1[1]=80; break;
+                    case X._88: buf1[1]=88; break;
+                    case X._96: buf1[1]=96; break;
+                    case X._104: buf1[1]=104; break;
+                    case X._112: buf1[1]=112; break;
+                }
+                buf1[2]=index1;
+                IICWriteBuf(71, 2, buf1[0], buf1[1], buf1[2]);
+            }; break;
+        }
+    }
 }
