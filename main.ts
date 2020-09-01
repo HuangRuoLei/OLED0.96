@@ -33,16 +33,23 @@ namespace TuoYuCar {
         _dian,
         _kaifang,
         _fanxie,
+        //% blockId="_bifang" block="]"
         _bifang,
+        //% blockId="_tuo" block="^"
         _tuo,
+        //% blockId="_xia" block="_"
         _xia,
+        //% blockId="_kaihua" block="{"
         _kaihua,
+        //% blockId="_cui" block="|"
         _cui,
+        //% blockId="_bihua" block="}"
         _bihua,
+        //% blockId="_bo" block="~"
         _bo
     }
     export enum Y{
-
+        //% blockId="_0" block="0"
         _0= 0,
         //% blockId="_2" block="2"
         _2,
