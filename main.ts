@@ -38,11 +38,11 @@ namespace TuoYuCar {
         O, P, Q, R, S, T, U, V, W, X, Y, Z
     }
     export enum DisplayChar{
-        //% blockId="_gan" block="!"
+        //% blockId="_gan" block="! 感叹号"
         _gan=0,
-        //% blockId="_shuang" block="“"
+        //% blockId="_shuang" block="“ 双引号"
         _shuang,
-        //% blockId="_jin" block="#"
+        //% blockId="_jin" block="# 井号"
         _jin,
         //% blockId="_mei" block="&"
         _mei,
@@ -50,15 +50,15 @@ namespace TuoYuCar {
         _bai,
         //% blockId="_he" block="&"
         _he,
-        //% blockId="_kaidan" block="'"
+        //% blockId="_kaidan" block="' 开单引号"
         _kaidan,
-        //% blockId="_bidan" block="'"
+        //% blockId="_bidan" block="' 关单引号"
         _bidan,
-        //% blockId="_kai" block="("
+        //% blockId="_kai" block="( 开括号"
         _kai,
-        //% blockId="_guan" block=")"
+        //% blockId="_guan" block=") 关括号"
         _guan,
-        //% blockId="_xing" block="*"
+        //% blockId="_xing" block="* 星号"
         _xing,
         //% blockId="_jia" block="+"
         _jia,
@@ -70,6 +70,8 @@ namespace TuoYuCar {
         _ju,
         //% blockId="_xie" block="/"
         _xie,
+        //% blockId="_xie" block="/反斜杠"
+        _fanxie,
         //% blockId="_mao" block=":"
         _mao,
         //% blockId="_fen" block=";"
@@ -86,8 +88,6 @@ namespace TuoYuCar {
         _dian,
         //% blockId="_kaifang" block="["
         _kaifang,
-       
-        _fanxie,
         //% blockId="_bifang" block="]"
         _bifang,
         //% blockId="_tuo" block="^"
