@@ -8,73 +8,41 @@ namespace TuoYuCar {
         Open = 1
     }
     export enum DisplayChar{
-        //% blockId="_gan" block="!"
         _gan=0,
-        //% blockId="_shuang" block="“"
         _shuang,
-        //% blockId="_jin" block="#"
         _jin,
-        //% blockId="_mei" block="&"
         _mei,
-        //% blockId="_bai" block="%"
         _bai,
-        //% blockId="_he" block="&"
         _he,
-        //% blockId="_kaidan" block="'"
         _kaidan,
-        //% blockId="_bidan" block="'"
         _bidan,
-        //% blockId="_kai" block="("
         _kai,
-        //% blockId="_guan" block=")"
         _guan,
-        //% blockId="_xing" block="*"
         _xing,
-        //% blockId="_jia" block="+"
         _jia,
-        //% blockId="_dou" block=","
         _dou,
-        //% blockId="_jian" block="-"
         _jian,
-        //% blockId="_ju" block="."
         _ju,
-        //% blockId="_xie" block="/"
         _xie,
-        //% blockId="_mao" block=":"
         _mao,
-        //% blockId="_fen" block=";"
         _fen,
-        //% blockId="_xiao" block="<"
         _xiao,
-        //% blockId="_deng" block="="
         _deng,
-        //% blockId="_da" block=">"
         _da,
-        //% blockId="_wen" block="?"
         _wen,
-        //% blockId="_dian" block="@"
         _dian,
-        //% blockId="_kaifang" block="["
         _kaifang,
-        //% blockId="_fanxie" block="\"
         _fanxie,
-        //% blockId="_bifang" block="]"
         _bifang,
-        //% blockId="_tuo" block="^"
         _tuo,
-        //% blockId="_xia" block="_"
         _xia,
-        //% blockId="_kaihua" block="{"
         _kaihua,
-        //% blockId="_cui" block="|"
         _cui,
-        //% blockId="_bihua" block="}"
         _bihua,
-        //% blockId="_bo" block="~"
         _bo
     }
     export enum Y{
-        //% blockId="_0" block="0"
+
         _0= 0,
         //% blockId="_2" block="2"
         _2,
