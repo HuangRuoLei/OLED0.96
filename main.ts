@@ -458,7 +458,7 @@ namespace TuoYuCar1{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDShowChar(index:TuoYuCar.ultrasonicState,index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:TuoYuCar.DisplayChar):void {
         switch (index) {
-            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(69,1,0,0,0); break;
+            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(90,1,0,0,0); break;
             case TuoYuCar.ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index2) {
@@ -520,7 +520,7 @@ namespace TuoYuCar1{
                     case TuoYuCar.DisplayChar._bihua:buf1[2]=125;break;
                     case TuoYuCar.DisplayChar._bo:buf1[2]=126;break;
                 }
-                TuoYuCar.IICWriteBuf(69, 2, buf1[0], buf1[1], buf1[2]);
+                TuoYuCar.IICWriteBuf(90, 2, buf1[0], buf1[1], buf1[2]);
             }; break;
         }
     }
