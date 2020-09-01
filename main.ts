@@ -29,17 +29,17 @@ namespace TuoYuCar {
         E, F, G, H, I, J, K, L, M, N,
         O, P, Q, R, S, T, U, V, W, X, Y, Z
     }
-    export enum x{
-        //% blockId="Zero" block="0"
-        Zero = 0,
-        //% blockId="Two" block="2"
-        Two,
-        //% blockId="Four" block="4"
-        four,
-        //% blockId="Six" block="6"
-        Six
+    export enum Y{
+        //% blockId="_0" block="0"
+        _0= 0,
+        //% blockId="_2" block="2"
+        _2,
+        //% blockId="_4" block="4"
+        _4,
+        //% blockId="_6" block="6"
+        _6
     }
-    export enum y{
+    export enum X{
         //% blockId="_0" block="0"
         _0 = 0,
         //% blockId="_8" block="8"
@@ -177,38 +177,38 @@ namespace TuoYuCar {
      * 选择以打开或关闭小车显示屏显示中文功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLEDShowChine block="显示中文|%index|在横坐标x= %index2|纵坐标y= %index3|处显示 %index1"
+    //% blockId=TuoYuCar_OLEDShowChine block="显示中文|%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
-    export function OLEDShowChine(index:ultrasonicState,index2:x,index3:y,index1:DisplayChine):void {
+    export function OLEDShowChine(index:ultrasonicState,index2:Y,index3:X,index1:DisplayChine):void {
         switch (index) {
             case ultrasonicState.Off: IICWriteBuf(69,1,0,0,0); break;
             case ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index2) {
-                    case x.Zero: buf1[0]=0; break;
-                    case x.Two: buf1[0]=2; break;
-                    case x.four: buf1[0]=4; break;
-                    case x.Six: buf1[0]=8; break;
+                    case Y._0: buf1[0]=0; break;
+                    case Y._2: buf1[0]=2; break;
+                    case Y._4: buf1[0]=4; break;
+                    case Y._6: buf1[0]=6; break;
                 }
                 switch (index3) {
-                    case y._0:  buf1[1]=0; break;
-                    case y._8:  buf1[1]=8; break;
-                    case y._16: buf1[1]=16; break;
-                    case y._24: buf1[1]=24; break;
-                    case y._32: buf1[1]=32; break;
-                    case y._40: buf1[1]=40; break;
-                    case y._48: buf1[1]=48; break;
-                    case y._56: buf1[1]=56; break;
-                    case y._64: buf1[1]=64; break;
-                    case y._72: buf1[1]=72; break;
-                    case y._80: buf1[1]=80; break;
-                    case y._88: buf1[1]=88; break;
-                    case y._96: buf1[1]=96; break;
-                    case y._104: buf1[1]=104; break;
-                    case y._112: buf1[1]=112; break;
+                    case X._0:  buf1[1]=0; break;
+                    case X._8:  buf1[1]=8; break;
+                    case X._16: buf1[1]=16; break;
+                    case X._24: buf1[1]=24; break;
+                    case X._32: buf1[1]=32; break;
+                    case X._40: buf1[1]=40; break;
+                    case X._48: buf1[1]=48; break;
+                    case X._56: buf1[1]=56; break;
+                    case X._64: buf1[1]=64; break;
+                    case X._72: buf1[1]=72; break;
+                    case X._80: buf1[1]=80; break;
+                    case X._88: buf1[1]=88; break;
+                    case X._96: buf1[1]=96; break;
+                    case X._104: buf1[1]=104; break;
+                    case X._112: buf1[1]=112; break;
                 }
 
                 switch (index1) {
@@ -223,39 +223,39 @@ namespace TuoYuCar {
      * 选择以打开或关闭小车显示屏显示字母功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLEDShowEnglish block="显示字母|%index|在横坐标X= %index1|纵坐标y= %index2|处显示 %index3"
+    //% blockId=TuoYuCar_OLEDShowEnglish block="显示字母|%index|在纵坐标X= %index1|横坐标y= %index2|处显示 %index3"
     //% weight=92
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function OLEDShowEnglish(index:ultrasonicState,index1:x,index2:y,index3:DisplayEnglish):void {
+    export function OLEDShowEnglish(index:ultrasonicState,index1:Y,index2:X,index3:DisplayEnglish):void {
         switch (index) {
             case ultrasonicState.Off: IICWriteBuf(70,1,0,0,0); break;
             case ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index1) {
-                    case x.Zero: buf1[0]=0; break;
-                    case x.Two: buf1[0]=2; break;
-                    case x.four: buf1[0]=4; break;
-                    case x.Six: buf1[0]=8; break;
+                    case Y._0: buf1[0]=0; break;
+                    case Y._2: buf1[0]=2; break;
+                    case Y._4: buf1[0]=4; break;
+                    case Y._6: buf1[0]=6; break;
                 }
                 switch (index2) {
-                    case y._0:  buf1[1]=0; break;
-                    case y._8:  buf1[1]=8; break;
-                    case y._16: buf1[1]=16; break;
-                    case y._24: buf1[1]=24; break;
-                    case y._32: buf1[1]=32; break;
-                    case y._40: buf1[1]=40; break;
-                    case y._48: buf1[1]=48; break;
-                    case y._56: buf1[1]=56; break;
-                    case y._64: buf1[1]=64; break;
-                    case y._72: buf1[1]=72; break;
-                    case y._80: buf1[1]=80; break;
-                    case y._88: buf1[1]=88; break;
-                    case y._96: buf1[1]=96; break;
-                    case y._104: buf1[1]=104; break;
-                    case y._112: buf1[1]=112; break;
-                    case y._120: buf1[1]=120; break;
+                    case X._0:  buf1[1]=0; break;
+                    case X._8:  buf1[1]=8; break;
+                    case X._16: buf1[1]=16; break;
+                    case X._24: buf1[1]=24; break;
+                    case X._32: buf1[1]=32; break;
+                    case X._40: buf1[1]=40; break;
+                    case X._48: buf1[1]=48; break;
+                    case X._56: buf1[1]=56; break;
+                    case X._64: buf1[1]=64; break;
+                    case X._72: buf1[1]=72; break;
+                    case X._80: buf1[1]=80; break;
+                    case X._88: buf1[1]=88; break;
+                    case X._96: buf1[1]=96; break;
+                    case X._104: buf1[1]=104; break;
+                    case X._112: buf1[1]=112; break;
+                    case X._120: buf1[1]=120; break;
                 }
                 switch (index3) {
                     case DisplayEnglish.a: buf1[2]=1; break;
