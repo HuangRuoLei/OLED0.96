@@ -25,24 +25,24 @@ namespace TuoYuCar {
         _ju,
         _xie,
         _mao,
-     
+        //% blockId="_fen" block=";"
         _fen,
-       
+        //% blockId="_xiao" block="<"
         _xiao,
-    
+        //% blockId="_deng" block="="
         _deng,
-       
+        //% blockId="_da" block=">"
         _da,
-
+        //% blockId="_wen" block="?"
         _wen,
-    
+        //% blockId="_dian" block="@"
         _dian,
-        
+        //% blockId="_kaifang" block="["
         _kaifang,
         
         _fanxie,
 
-
+        
         //% blockId="_bifang" block="]"
         _bifang,
         //% blockId="_tuo" block="^"
