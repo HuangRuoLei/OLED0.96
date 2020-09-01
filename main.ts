@@ -19,7 +19,15 @@ namespace TuoYuCar {
         //% blockId="ke" block="科"
         ke,
         //% blockId="ji" block="技"
-        ji
+        ji,
+        //% blockId="zhi" block="智"
+        zhi,
+        //% blockId="neng" block="能"
+        neng,
+        //% blockId="xiao" block="小"
+        xiao,
+        //% blockId="che" block="车"
+        che
 
     }
     export enum DisplayEnglish{
@@ -212,8 +220,16 @@ namespace TuoYuCar {
                 }
 
                 switch (index1) {
-                    case DisplayChine.wo: buf1[2]=1; break;
-                    case DisplayChine.ni: buf1[2]=2; break;
+                    case DisplayChine.wo: buf1[2]=0; break;
+                    case DisplayChine.ni: buf1[2]=1; break;
+                    case DisplayChine.tuo: buf1[2]=2; break;
+                    case DisplayChine.yu: buf1[2]=3; break;
+                    case DisplayChine.ke: buf1[2]=4; break;
+                    case DisplayChine.ji: buf1[2]=5; break;
+                    case DisplayChine.zhi: buf1[2]=6; break;
+                    case DisplayChine.neng: buf1[2]=7; break;
+                    case DisplayChine.xiao: buf1[2]=8; break;
+                    case DisplayChine.che: buf1[2]=9; break;
                 }
                 IICWriteBuf(69, 2, buf1[0], buf1[1], buf1[2]);
             }; break;
