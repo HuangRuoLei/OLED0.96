@@ -249,7 +249,7 @@ namespace TuoYuCar {
     }
     
 }
-//% color="#006400" weight=2 0 icon="\uf1b9" block="葫芦猫小车显示类"
+//% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车显示类"
 namespace TuoYuCar1{
     /**
      * 选择以打开或关闭小车显示屏显示中文功能

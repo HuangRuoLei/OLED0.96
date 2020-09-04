@@ -1,7 +1,7 @@
 {
-    "name": "TuoYuMicroBit",
-    "version": "1.0.3",
-    "description": "This is TuoYu Micro_Bit V1",
+    "name": "HuLuMao-MicroBitCar",
+    "version": "1.0.0",
+    "description": "This is HuLuMao Micro_BitCar V1.0.0",
     "license": "MIT",
     "dependencies": {
         "core": "*",
