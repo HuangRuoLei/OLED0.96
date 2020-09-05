@@ -209,8 +209,8 @@ namespace TuoYuCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Yan_She_Chuan_Gan_Qi(index:ultrasonicState):void {
         switch (index) {
-            case ultrasonicState.Off: IICWrite(67, 1); break;
-            case ultrasonicState.Open: IICWrite(67, 2); break;
+            case ultrasonicState.Off: IICWrite(67, 3); break;
+            case ultrasonicState.Open: IICWrite(67, 4); break;
         }
     }
 
@@ -227,8 +227,8 @@ namespace TuoYuCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Sheng_Ying_Chuan_Gan_Qi(index:ultrasonicState):void {
         switch (index) {
-            case ultrasonicState.Off: IICWrite(68, 1); break;
-            case ultrasonicState.Open: IICWrite(68, 2); break;
+            case ultrasonicState.Off: IICWrite(68, 5); break;
+            case ultrasonicState.Open: IICWrite(68, 6); break;
         }
     }
     /**
@@ -247,7 +247,22 @@ namespace TuoYuCar {
             case ultrasonicState.Open: SPIWrite(1); break;
         }
     }
-    
+     /**
+     * 选择以打开或关闭小车雨天检测系统功能
+     * @param index
+    */
+    //% blockId=TuoYuCar_Rain block="雨天检测系统|%index"
+    //% weight=94
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Rain(index: ultrasonicState):void {
+        
+        switch (index) {
+            case ultrasonicState.Off: IICWrite(73, 17); break;
+            case ultrasonicState.Open: IICWrite(73, 18); break;
+        }
+    }
 }
 //% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车显示类"
 namespace TuoYuCar1{
@@ -262,7 +277,7 @@ namespace TuoYuCar1{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDShowChine(index:TuoYuCar.ultrasonicState,index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:TuoYuCar.DisplayChine):void {
         switch (index) {
-            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(69,1,0,0,0); break;
+            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(69,7,0,0,0); break;
             case TuoYuCar.ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index2) {
@@ -301,7 +316,7 @@ namespace TuoYuCar1{
                     case TuoYuCar.DisplayChine.xiao: buf1[2]=8; break;
                     case TuoYuCar.DisplayChine.che: buf1[2]=9; break;
                 }
-                TuoYuCar.IICWriteBuf(69, 2, buf1[0], buf1[1], buf1[2]);
+                TuoYuCar.IICWriteBuf(69, 8, buf1[0], buf1[1], buf1[2]);
             }; break;
         }
     }
@@ -316,7 +331,7 @@ namespace TuoYuCar1{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function OLEDShowEnglish(index:TuoYuCar.ultrasonicState,index1:TuoYuCar.Y,index2:TuoYuCar.X,index3:TuoYuCar.DisplayEnglish):void {
         switch (index) {
-            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(70,1,0,0,0); break;
+            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(70,9,0,0,0); break;
             case TuoYuCar.ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index1) {
@@ -398,7 +413,7 @@ namespace TuoYuCar1{
                     case TuoYuCar.DisplayEnglish.Y: buf1[2]=89; break;
                     case TuoYuCar.DisplayEnglish.Z: buf1[2]=90; break;
                 }
-                TuoYuCar.IICWriteBuf(70, 2, buf1[0], buf1[1], buf1[2]);
+                TuoYuCar.IICWriteBuf(70, 10, buf1[0], buf1[1], buf1[2]);
             }; break;
         }
     }
@@ -414,7 +429,7 @@ namespace TuoYuCar1{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDShowNumber(index:TuoYuCar.ultrasonicState,index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:number):void {
         switch (index) {
-            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(71,1,0,0,0); break;
+            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(71,11,0,0,0); break;
             case TuoYuCar.ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index2) {
@@ -442,7 +457,7 @@ namespace TuoYuCar1{
                     case TuoYuCar.X._120: buf1[1]=120; break;
                 }
                 buf1[2]=index1;
-                TuoYuCar.IICWriteBuf(71, 2, buf1[0], buf1[1], buf1[2]);
+                TuoYuCar.IICWriteBuf(71, 12, buf1[0], buf1[1], buf1[2]);
             }; break;
         }
     }
@@ -458,7 +473,7 @@ namespace TuoYuCar1{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDShowChar(index:TuoYuCar.ultrasonicState,index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:TuoYuCar.DisplayChar):void {
         switch (index) {
-            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(72,1,0,0,0); break;
+            case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(72,13,0,0,0); break;
             case TuoYuCar.ultrasonicState.Open: {
                 let buf1 = pins.createBuffer(3);
                 switch (index2) {
@@ -520,7 +535,7 @@ namespace TuoYuCar1{
                     case TuoYuCar.DisplayChar._bihua:buf1[2]=125;break;
                     case TuoYuCar.DisplayChar._bo:buf1[2]=126;break;
                 }
-                TuoYuCar.IICWriteBuf(72, 2, buf1[0], buf1[1], buf1[2]);
+                TuoYuCar.IICWriteBuf(72, 14, buf1[0], buf1[1], buf1[2]);
             }; break;
         }
     }
