@@ -167,10 +167,10 @@ namespace TuoYuCar {
         pins.spiWrite(value);
     }
     /**
-     * 选择以打开或关闭小车超声波功能
+     * 选择以打开或关闭小车超声波测量距离的功能（有效距离2cm~200cm）
      * @param index
     */
-    //% blockId=TuoYuCar_Chao_Sheng_Bo block="超声波|%index"
+    //% blockId=TuoYuCar_Chao_Sheng_Bo block="超声波测距系统|%index"
     //% weight=101
     //% blockGap=10
     //% color="#006400"
@@ -184,7 +184,7 @@ namespace TuoYuCar {
     }
 
     /**
-     * 调用此将返回超声波的所测到的距离
+     * 调用此将返回超声波的所测到的距离（有效距离2cm~200cm）
      * @param index
     */
     //% blockId=TuoYuCar_Read_Chao_Sheng_Bo block="读取超声波测到的距离(cm)"
@@ -202,7 +202,7 @@ namespace TuoYuCar {
      * @param index
     */
 
-    //% blockId=TuoYuCar_Yan_She_Chuan_Gan_Qi block="颜色传感器|%index"
+    //% blockId=TuoYuCar_Yan_She_Chuan_Gan_Qi block="小车智能循迹系统|%index"
     //% weight=99
     //% blockGap=10
     //% color="#006400"
