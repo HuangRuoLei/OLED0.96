@@ -248,7 +248,7 @@ namespace TuoYuCar {
         }
     }
      /**
-     * 选择以打开或关闭小车雨天检测系统功能
+     * 选择以打开或关闭小车雨天检测系统
      * @param index
     */
     //% blockId=TuoYuCar_Rain block="雨天检测系统|%index"
@@ -263,7 +263,25 @@ namespace TuoYuCar {
             case ultrasonicState.Open: IICWrite(73, 18); break;
         }
     }
+     /**
+     * 选择以打开或关闭小车自动灭火系统
+     * @param index
+    */
+    //% blockId=TuoYuCar_Flame block="自动灭火系统|%index"
+    //% weight=93
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Flame(index: ultrasonicState):void {
+        
+        switch (index) {
+            case ultrasonicState.Off: IICWrite(74, 19); break;
+            case ultrasonicState.Open: IICWrite(74, 20); break;
+        }
+    }
 }
+
+
 //% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车显示类"
 namespace TuoYuCar1{
     /**
