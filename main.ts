@@ -147,9 +147,16 @@ namespace TuoYuCar {
         //% blockId="_120" block="120"
         _120
     }
-    function IICWrite(value:number,value1:number) {
+    export function IICWrite(value:number,value1:number) {
         
         pins.i2cWriteNumber(value, value1, NumberFormat.UInt8LE);
+    }
+    export function IICWriteBuf3(value: number, value1: number, value2: number) {
+        let buf = pins.createBuffer(2);
+        buf[0] = value1;
+        buf[1] = value2;
+        
+        pins.i2cWriteBuffer(value, buf);
     }
     export function IICWriteBuf(value: number, value1: number, value2: number, value3: number, value4: number) {
         let buf = pins.createBuffer(4);
@@ -288,7 +295,7 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示中文功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLEDShowChine block="显示中文|%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
+    //% blockId=TuoYuCar1_OLEDShowChine block="显示中文|%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
@@ -342,7 +349,7 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示字母功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLEDShowEnglish block="显示字母|%index|在纵坐标X= %index1|横坐标y= %index2|处显示 %index3"
+    //% blockId=TuoYuCar1_OLEDShowEnglish block="显示字母|%index|在纵坐标X= %index1|横坐标y= %index2|处显示 %index3"
     //% weight=92
     //% blockGap=10
     //% color="#006400"
@@ -439,7 +446,7 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示数字功能,输入的数字不能超过255
      * @param index
     */
-    //% blockId=TuoYuCar_OLEDShowNumber block="显示数字|%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
+    //% blockId=TuoYuCar1_OLEDShowNumber block="显示数字|%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
     //% weight=91
     //% blockGap=10
     //% index1.min=0 index1.max=255
@@ -484,7 +491,7 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示字符功能
      * @param index
     */
-    //% blockId=TuoYuCar_OLEDShowChar block="显示字符|%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
+    //% blockId=TuoYuCar1_OLEDShowChar block="显示字符|%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
     //% weight=90
     //% blockGap=10
     //% color="#006400"
@@ -555,6 +562,79 @@ namespace TuoYuCar1{
                 }
                 TuoYuCar.IICWriteBuf(72, 14, buf1[0], buf1[1], buf1[2]);
             }; break;
+        }
+    }
+}
+
+//% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车行驶类"
+namespace TuoYuCar2{
+    export enum Drive{
+        //% blockId="forward" block="前进"
+        forward,
+        //% blockId="back" block="后退"
+        back,
+        //% blockId="stop" block="停止"
+        stop,
+        //% blockId="turn_left" block="向前左转"
+        turn_left,
+        //% blockId="turn_right" block="向前右转"
+        turn_right,
+        //% blockId="turn_back_left" block="向后左转"
+        turn_back_left,
+        //% blockId="turn_back_right" block="向后右转"
+        turn_back_right,
+        //% blockId="left_hand" block="原地左旋"
+        left_hand,
+        //% blockId="right_hand" block="原地右旋"
+        right_hand
+    }
+
+    /**
+     * 选择以打开或关闭小车行驶功能,速度固定
+     * @param index
+    */
+
+    //% blockId=TuoYuCar2_Car_Drive block="控制小车|%index"
+    //% weight=99
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Car_Drive(index:Drive):void {
+        switch (index) {
+          case Drive.forward:TuoYuCar.IICWriteBuf3(75,21,255);break;
+          case Drive.back:TuoYuCar.IICWriteBuf3(75,22,255);break;
+          case Drive.stop:TuoYuCar.IICWriteBuf3(75,23,255);break;
+          case Drive.turn_left:TuoYuCar.IICWriteBuf3(75,24,255);break;
+          case Drive.turn_right:TuoYuCar.IICWriteBuf3(75,25,255);break;
+          case Drive.turn_back_left:TuoYuCar.IICWriteBuf3(75,26,255);break;
+          case Drive.turn_back_right:TuoYuCar.IICWriteBuf3(75,27,255);break;
+          case Drive.left_hand:TuoYuCar.IICWriteBuf3(75,28,255);break;
+          case Drive.right_hand:TuoYuCar.IICWriteBuf3(75,29,255);break;
+        }
+    }
+
+      /**
+     * 选择以打开或关闭小车行驶功能,速度可调
+     * @param index
+    */
+
+    //% blockId=TuoYuCar2_Car_DriveSpeed block="控制小车|%index|速度为 %speed"
+    //% weight=99
+    //% blockGap=10
+    //% speed.min=0 speed.max=255
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Car_DriveSpeed(index:Drive,speed:number):void {
+        switch (index) {
+          case Drive.forward:TuoYuCar.IICWriteBuf3(75,21,speed);break;
+          case Drive.back:TuoYuCar.IICWriteBuf3(75,22,speed);break;
+          case Drive.stop:TuoYuCar.IICWriteBuf3(75,23,speed);break;
+          case Drive.turn_left:TuoYuCar.IICWriteBuf3(75,24,speed);break;
+          case Drive.turn_right:TuoYuCar.IICWriteBuf3(75,25,speed);break;
+          case Drive.turn_back_left:TuoYuCar.IICWriteBuf3(75,26,speed);break;
+          case Drive.turn_back_right:TuoYuCar.IICWriteBuf3(75,27,speed);break;
+          case Drive.left_hand:TuoYuCar.IICWriteBuf3(75,28,speed);break;
+          case Drive.right_hand:TuoYuCar.IICWriteBuf3(75,29,speed);break;
         }
     }
 }
