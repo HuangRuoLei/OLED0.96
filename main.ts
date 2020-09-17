@@ -594,22 +594,22 @@ namespace TuoYuCar2{
      * @param index
     */
 
-    //% blockId=TuoYuCar2_Car_Drive block="控制小车|%index"
+    //% blockId=TuoYuCar2_Car_Drive block="我控制小车|%index"
     //% weight=99
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_Drive(index:Drive):void {
         switch (index) {
-          case Drive.forward:TuoYuCar.IICWriteBuf3(75,21,255);break;
-          case Drive.back:TuoYuCar.IICWriteBuf3(75,22,255);break;
-          case Drive.stop:TuoYuCar.IICWriteBuf3(75,23,255);break;
-          case Drive.turn_left:TuoYuCar.IICWriteBuf3(75,24,255);break;
-          case Drive.turn_right:TuoYuCar.IICWriteBuf3(75,25,255);break;
-          case Drive.turn_back_left:TuoYuCar.IICWriteBuf3(75,26,255);break;
-          case Drive.turn_back_right:TuoYuCar.IICWriteBuf3(75,27,255);break;
-          case Drive.left_hand:TuoYuCar.IICWriteBuf3(75,28,255);break;
-          case Drive.right_hand:TuoYuCar.IICWriteBuf3(75,29,255);break;
+          case Drive.forward:TuoYuCar.IICWrite(75,21);break;
+          case Drive.back:TuoYuCar.IICWrite(75,22);break;
+          case Drive.stop:TuoYuCar.IICWrite(75,23);break;
+          case Drive.turn_left:TuoYuCar.IICWrite(75,24);break;
+          case Drive.turn_right:TuoYuCar.IICWrite(75,25);break;
+          case Drive.turn_back_left:TuoYuCar.IICWrite(75,26);break;
+          case Drive.turn_back_right:TuoYuCar.IICWrite(75,27);break;
+          case Drive.left_hand:TuoYuCar.IICWrite(75,28);break;
+          case Drive.right_hand:TuoYuCar.IICWrite(75,29);break;
         }
     }
 
