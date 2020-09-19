@@ -363,7 +363,7 @@ namespace TuoYuCar1{
      * 选择以清除小车显示屏所有区域的内容
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDClean block="清空显示屏所有内容"
+    //% blockId=TuoYuCar1_OLEDCleanALL block="清空显示屏所有内容"
     //% weight=95
     //% blockGap=10
     //% color="#006400"
@@ -432,7 +432,7 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示中文功能
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDShowChine block="显示中文%index|在第%index2行|第%index3|处显示 %index1"
+    //% blockId=TuoYuCar1_OLEDShowChine block="显示中文%index|在第%index2行|第|%index3|处显示 %index1"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
