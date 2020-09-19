@@ -359,12 +359,25 @@ namespace TuoYuCar {
 //% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车显示类"
 namespace TuoYuCar1{
 
+     /**
+     * 选择以清除小车显示屏所有区域的内容
+     * @param index
+    */
+    //% blockId=TuoYuCar1_OLEDClean block="清空显示屏所有内容"
+    //% weight=95
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
+    export function OLEDCleanALL():void {
+        TuoYuCar.IICWrite(74, 1);
+    }
+
     /**
-     * 选择以清除小车显示屏指定显示区域的内容
+     * 选择以清除小车显示屏指定区域的内容
      * @param index
     */
     //% blockId=TuoYuCar1_OLEDClean block="清除第|%index行|从|%index2到|%index3|处内容"
-    //% weight=93
+    //% weight=94
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
@@ -412,13 +425,14 @@ namespace TuoYuCar1{
             case TuoYuCar.X2._120: buf1[2]=120; break;
             case TuoYuCar.X2._128:  buf1[2]=128; break;
         }
+        pins.i2cWriteBuffer(73, buf1);
     }
 
     /**
      * 选择以打开或关闭小车显示屏显示中文功能
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDShowChine block="显示中文%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
+    //% blockId=TuoYuCar1_OLEDShowChine block="显示中文%index|在第%index2行|第%index3|处显示 %index1"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
@@ -472,7 +486,7 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示字母功能
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDShowEnglish block="显示字母|%index|在纵坐标X= %index1|横坐标y= %index2|处显示 %index3"
+    //% blockId=TuoYuCar1_OLEDShowEnglish block="显示字母%index|在第%index1行|第%index2|处显示 %index3"
     //% weight=92
     //% blockGap=10
     //% color="#006400"
