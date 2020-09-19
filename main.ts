@@ -113,6 +113,7 @@ namespace TuoYuCar {
         //% blockId="_6" block="6"
         _6
     }
+    
     export enum X{
         //% blockId="_0" block="0"
         _0 = 0,
@@ -291,6 +292,20 @@ namespace TuoYuCar {
 
 //% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车显示类"
 namespace TuoYuCar1{
+
+    /**
+     * 选择以清除小车显示屏指定显示区域的内容
+     * @param index
+    */
+    //% blockId=TuoYuCar1_OLEDClean block="清除第|%index行|从|%index2到|%index3|处内容"
+    //% weight=93
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
+    export function OLEDClean(index:TuoYuCar.Y,index1:TuoYuCar.X,index2:TuoYuCar.X):void{
+
+    }
+
     /**
      * 选择以打开或关闭小车显示屏显示中文功能
      * @param index
