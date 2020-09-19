@@ -148,6 +148,72 @@ namespace TuoYuCar {
         //% blockId="_120" block="120"
         _120
     }
+    export enum X1{
+        //% blockId="_0" block="0"
+        _0 = 0,
+        //% blockId="_8" block="8"
+        _8,
+        //% blockId="_16" block="16"
+        _16,
+        //% blockId="_24" block="24"
+        _24,
+        //% blockId="_32" block="32"
+        _32,
+        //% blockId="_40" block="40"
+        _40,
+        //% blockId="_48" block="48"
+        _48,
+        //% blockId="_56" block="56"
+        _56,
+        //% blockId="_64" block="64"
+        _64,
+        //% blockId="_72" block="72"
+        _72,
+        //% blockId="_80" block="80"
+        _80,
+        //% blockId="_88" block="88"
+        _88,
+        //% blockId="_96" block="96"
+        _96,
+        //% blockId="_104" block="104"
+        _104,
+        //% blockId="_112" block="112"
+        _112,
+    }
+    export enum X2{
+        //% blockId="_8" block="8"
+        _8,
+        //% blockId="_16" block="16"
+        _16,
+        //% blockId="_24" block="24"
+        _24,
+        //% blockId="_32" block="32"
+        _32,
+        //% blockId="_40" block="40"
+        _40,
+        //% blockId="_48" block="48"
+        _48,
+        //% blockId="_56" block="56"
+        _56,
+        //% blockId="_64" block="64"
+        _64,
+        //% blockId="_72" block="72"
+        _72,
+        //% blockId="_80" block="80"
+        _80,
+        //% blockId="_88" block="88"
+        _88,
+        //% blockId="_96" block="96"
+        _96,
+        //% blockId="_104" block="104"
+        _104,
+        //% blockId="_112" block="112"
+        _112,
+        //% blockId="_120" block="120"
+        _120,
+        //% blockId="_128" block="128"
+        _128
+    }
     export function IICWrite(value:number,value1:number) {
         
         pins.i2cWriteNumber(value, value1, NumberFormat.UInt8LE);
@@ -267,8 +333,8 @@ namespace TuoYuCar {
     export function Rain(index: ultrasonicState):void {
         
         switch (index) {
-            case ultrasonicState.Off: IICWrite(73, 17); break;
-            case ultrasonicState.Open: IICWrite(73, 18); break;
+            case ultrasonicState.Off: IICWrite(75, 17); break;
+            case ultrasonicState.Open: IICWrite(75, 18); break;
         }
     }
      /**
@@ -283,8 +349,8 @@ namespace TuoYuCar {
     export function Flame(index: ultrasonicState):void {
         
         switch (index) {
-            case ultrasonicState.Off: IICWrite(74, 19); break;
-            case ultrasonicState.Open: IICWrite(74, 20); break;
+            case ultrasonicState.Off: IICWrite(76, 19); break;
+            case ultrasonicState.Open: IICWrite(76, 20); break;
         }
     }
 }
@@ -302,20 +368,62 @@ namespace TuoYuCar1{
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
-    export function OLEDClean(index:TuoYuCar.Y,index1:TuoYuCar.X,index2:TuoYuCar.X):void{
-
+    export function OLEDClean(index:TuoYuCar.Y,index1:TuoYuCar.X,index2:TuoYuCar.X2):void{
+        let buf1=pins.createBuffer(3);
+        switch(index){
+            case TuoYuCar.Y._0: buf1[0]=0; break;
+            case TuoYuCar.Y._2: buf1[0]=2; break;
+            case TuoYuCar.Y._4: buf1[0]=4; break;
+            case TuoYuCar.Y._6: buf1[0]=6; break;
+        }
+        switch(index1){
+            case TuoYuCar.X._0:  buf1[1]=0; break;
+            case TuoYuCar.X._8:  buf1[1]=8; break;
+            case TuoYuCar.X._16: buf1[1]=16; break;
+            case TuoYuCar.X._24: buf1[1]=24; break;
+            case TuoYuCar.X._32: buf1[1]=32; break;
+            case TuoYuCar.X._40: buf1[1]=40; break;
+            case TuoYuCar.X._48: buf1[1]=48; break;
+            case TuoYuCar.X._56: buf1[1]=56; break;
+            case TuoYuCar.X._64: buf1[1]=64; break;
+            case TuoYuCar.X._72: buf1[1]=72; break;
+            case TuoYuCar.X._80: buf1[1]=80; break;
+            case TuoYuCar.X._88: buf1[1]=88; break;
+            case TuoYuCar.X._96: buf1[1]=96; break;
+            case TuoYuCar.X._104: buf1[1]=104; break;
+            case TuoYuCar.X._112: buf1[1]=112; break;
+            case TuoYuCar.X._120: buf1[1]=120; break;
+        }
+        switch(index2){
+            case TuoYuCar.X2._8:  buf1[2]=8; break;
+            case TuoYuCar.X2._16: buf1[2]=16; break;
+            case TuoYuCar.X2._24: buf1[2]=24; break;
+            case TuoYuCar.X2._32: buf1[2]=32; break;
+            case TuoYuCar.X2._40: buf1[2]=40; break;
+            case TuoYuCar.X2._48: buf1[2]=48; break;
+            case TuoYuCar.X2._56: buf1[2]=56; break;
+            case TuoYuCar.X2._64: buf1[2]=64; break;
+            case TuoYuCar.X2._72: buf1[2]=72; break;
+            case TuoYuCar.X2._80: buf1[2]=80; break;
+            case TuoYuCar.X2._88: buf1[2]=88; break;
+            case TuoYuCar.X2._96: buf1[2]=96; break;
+            case TuoYuCar.X2._104: buf1[2]=104; break;
+            case TuoYuCar.X2._112: buf1[2]=112; break;
+            case TuoYuCar.X2._120: buf1[2]=120; break;
+            case TuoYuCar.X2._128:  buf1[2]=128; break;
+        }
     }
 
     /**
      * 选择以打开或关闭小车显示屏显示中文功能
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDShowChine block="显示中文|%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
+    //% blockId=TuoYuCar1_OLEDShowChine block="显示中文%index|在纵坐标x= %index2|横坐标y= %index3|处显示 %index1"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
-    export function OLEDShowChine(index:TuoYuCar.ultrasonicState,index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:TuoYuCar.DisplayChine):void {
+    export function OLEDShowChine(index:TuoYuCar.ultrasonicState,index2:TuoYuCar.Y,index3:TuoYuCar.X1,index1:TuoYuCar.DisplayChine):void {
         switch (index) {
             case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(69,7,0,0,0); break;
             case TuoYuCar.ultrasonicState.Open: {
@@ -327,21 +435,21 @@ namespace TuoYuCar1{
                     case TuoYuCar.Y._6: buf1[0]=6; break;
                 }
                 switch (index3) {
-                    case TuoYuCar.X._0:  buf1[1]=0; break;
-                    case TuoYuCar.X._8:  buf1[1]=8; break;
-                    case TuoYuCar.X._16: buf1[1]=16; break;
-                    case TuoYuCar.X._24: buf1[1]=24; break;
-                    case TuoYuCar.X._32: buf1[1]=32; break;
-                    case TuoYuCar.X._40: buf1[1]=40; break;
-                    case TuoYuCar.X._48: buf1[1]=48; break;
-                    case TuoYuCar.X._56: buf1[1]=56; break;
-                    case TuoYuCar.X._64: buf1[1]=64; break;
-                    case TuoYuCar.X._72: buf1[1]=72; break;
-                    case TuoYuCar.X._80: buf1[1]=80; break;
-                    case TuoYuCar.X._88: buf1[1]=88; break;
-                    case TuoYuCar.X._96: buf1[1]=96; break;
-                    case TuoYuCar.X._104: buf1[1]=104; break;
-                    case TuoYuCar.X._112: buf1[1]=112; break;
+                    case TuoYuCar.X1._0:  buf1[1]=0; break;
+                    case TuoYuCar.X1._8:  buf1[1]=8; break;
+                    case TuoYuCar.X1._16: buf1[1]=16; break;
+                    case TuoYuCar.X1._24: buf1[1]=24; break;
+                    case TuoYuCar.X1._32: buf1[1]=32; break;
+                    case TuoYuCar.X1._40: buf1[1]=40; break;
+                    case TuoYuCar.X1._48: buf1[1]=48; break;
+                    case TuoYuCar.X1._56: buf1[1]=56; break;
+                    case TuoYuCar.X1._64: buf1[1]=64; break;
+                    case TuoYuCar.X1._72: buf1[1]=72; break;
+                    case TuoYuCar.X1._80: buf1[1]=80; break;
+                    case TuoYuCar.X1._88: buf1[1]=88; break;
+                    case TuoYuCar.X1._96: buf1[1]=96; break;
+                    case TuoYuCar.X1._104: buf1[1]=104; break;
+                    case TuoYuCar.X1._112: buf1[1]=112; break;
                 }
 
                 switch (index1) {
@@ -616,15 +724,15 @@ namespace TuoYuCar2{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_Drive(index:Drive):void {
         switch (index) {
-          case Drive.forward:TuoYuCar.IICWriteBuf3(75,21,255);break;
-          case Drive.back:TuoYuCar.IICWriteBuf3(75,22,255);break;
-          case Drive.stop:TuoYuCar.IICWriteBuf3(75,23,255);break;
-          case Drive.turn_left:TuoYuCar.IICWriteBuf3(75,24,255);break;
-          case Drive.turn_right:TuoYuCar.IICWriteBuf3(75,25,255);break;
-          case Drive.turn_back_left:TuoYuCar.IICWriteBuf3(75,26,255);break;
-          case Drive.turn_back_right:TuoYuCar.IICWriteBuf3(75,27,255);break;
-          case Drive.left_hand:TuoYuCar.IICWriteBuf3(75,28,255);break;
-          case Drive.right_hand:TuoYuCar.IICWriteBuf3(75,29,255);break;
+          case Drive.forward:TuoYuCar.IICWriteBuf3(77,21,255);break;
+          case Drive.back:TuoYuCar.IICWriteBuf3(77,22,255);break;
+          case Drive.stop:TuoYuCar.IICWriteBuf3(77,23,255);break;
+          case Drive.turn_left:TuoYuCar.IICWriteBuf3(77,24,255);break;
+          case Drive.turn_right:TuoYuCar.IICWriteBuf3(77,25,255);break;
+          case Drive.turn_back_left:TuoYuCar.IICWriteBuf3(77,26,255);break;
+          case Drive.turn_back_right:TuoYuCar.IICWriteBuf3(77,27,255);break;
+          case Drive.left_hand:TuoYuCar.IICWriteBuf3(77,28,255);break;
+          case Drive.right_hand:TuoYuCar.IICWriteBuf3(77,29,255);break;
         }
     }
 
@@ -641,15 +749,15 @@ namespace TuoYuCar2{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_DriveSpeed(index:Drive,speed:number):void {
         switch (index) {
-          case Drive.forward:TuoYuCar.IICWriteBuf3(75,21,speed);break;
-          case Drive.back:TuoYuCar.IICWriteBuf3(75,22,speed);break;
-          case Drive.stop:TuoYuCar.IICWriteBuf3(75,23,speed);break;
-          case Drive.turn_left:TuoYuCar.IICWriteBuf3(75,24,speed);break;
-          case Drive.turn_right:TuoYuCar.IICWriteBuf3(75,25,speed);break;
-          case Drive.turn_back_left:TuoYuCar.IICWriteBuf3(75,26,speed);break;
-          case Drive.turn_back_right:TuoYuCar.IICWriteBuf3(75,27,speed);break;
-          case Drive.left_hand:TuoYuCar.IICWriteBuf3(75,28,speed);break;
-          case Drive.right_hand:TuoYuCar.IICWriteBuf3(75,29,speed);break;
+          case Drive.forward:TuoYuCar.IICWriteBuf3(77,21,speed);break;
+          case Drive.back:TuoYuCar.IICWriteBuf3(77,22,speed);break;
+          case Drive.stop:TuoYuCar.IICWriteBuf3(77,23,speed);break;
+          case Drive.turn_left:TuoYuCar.IICWriteBuf3(77,24,speed);break;
+          case Drive.turn_right:TuoYuCar.IICWriteBuf3(77,25,speed);break;
+          case Drive.turn_back_left:TuoYuCar.IICWriteBuf3(77,26,speed);break;
+          case Drive.turn_back_right:TuoYuCar.IICWriteBuf3(77,27,speed);break;
+          case Drive.left_hand:TuoYuCar.IICWriteBuf3(77,28,speed);break;
+          case Drive.right_hand:TuoYuCar.IICWriteBuf3(77,29,speed);break;
         }
     }
 }
