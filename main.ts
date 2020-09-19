@@ -373,7 +373,7 @@ namespace TuoYuCar1{
         buf1[0]=1;
         buf1[1]=0;
         buf1[2]=0;
-        pins.i2cWriteBuffer(74, buf1);
+        pins.i2cWriteBuffer(73, buf1);
     }
 
     /**
