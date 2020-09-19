@@ -487,7 +487,7 @@ namespace TuoYuCar1{
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function OLEDShowEnglish(index:TuoYuCar.ultrasonicState,index1:TuoYuCar.Y,index2:TuoYuCar.X,index3:TuoYuCar.DisplayEnglish):void {
+    export function OLEDShowEnglish(index1:TuoYuCar.Y,index2:TuoYuCar.X,index3:TuoYuCar.DisplayEnglish):void {
         let buf1 = pins.createBuffer(3);
         switch (index1) {
             case TuoYuCar.Y._0: buf1[0]=0; break;
@@ -575,7 +575,7 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示数字功能,输入的数字不能超过255
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDShowNumber block="显示数字|在第%index2行|第%index3|处显示%index1"
+    //% blockId=TuoYuCar1_OLEDShowNumber block="显示数字|在第%index2行|第%index3|处|显示%index1"
     //% weight=91
     //% blockGap=10
     //% index1.min=0 index1.max=255
@@ -617,7 +617,7 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示字符功能
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDShowChar block="显示字符|在第%index2行|第%index3|处显示 %index1"
+    //% blockId=TuoYuCar1_OLEDShowChar block="显示字符|在第%index2行|第%index3处|显示 %index1"
     //% weight=90
     //% blockGap=10
     //% color="#006400"
