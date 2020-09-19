@@ -369,7 +369,11 @@ namespace TuoYuCar1{
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDCleanALL():void {
-        pins.i2cWriteNumber(74, 1, NumberFormat.UInt8LE);
+        let buf1=pins.createBuffer(3);
+        buf1[0]=1;
+        buf1[1]=0;
+        buf1[2]=0;
+        pins.i2cWriteBuffer(74, buf1);
     }
 
     /**
