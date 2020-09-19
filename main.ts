@@ -481,7 +481,7 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示字母功能
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDShowEnglish block="显示字母|在第%index1行|第%index2处显示%index3"
+    //% blockId=TuoYuCar1_OLEDShowEnglish block="显示字母|在第%index1行|第%index2处|显示%index3"
     //% weight=92
     //% blockGap=10
     //% color="#006400"
