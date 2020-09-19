@@ -723,17 +723,21 @@ namespace TuoYuCar2{
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_Drive(index:Drive):void {
+        let buf1 = pins.createBuffer(3);
+        buf1[0]=3;
+        buf1[2]=255;
         switch (index) {
-          case Drive.forward:TuoYuCar.IICWriteBuf3(77,21,255);break;
-          case Drive.back:TuoYuCar.IICWriteBuf3(77,22,255);break;
-          case Drive.stop:TuoYuCar.IICWriteBuf3(77,23,255);break;
-          case Drive.turn_left:TuoYuCar.IICWriteBuf3(77,24,255);break;
-          case Drive.turn_right:TuoYuCar.IICWriteBuf3(77,25,255);break;
-          case Drive.turn_back_left:TuoYuCar.IICWriteBuf3(77,26,255);break;
-          case Drive.turn_back_right:TuoYuCar.IICWriteBuf3(77,27,255);break;
-          case Drive.left_hand:TuoYuCar.IICWriteBuf3(77,28,255);break;
-          case Drive.right_hand:TuoYuCar.IICWriteBuf3(77,29,255);break;
+          case Drive.forward:buf1[1]=21;;break;
+          case Drive.back:buf1[1]=22;break;
+          case Drive.stop:buf1[1]=23;break;
+          case Drive.turn_left:buf1[1]=24;break;
+          case Drive.turn_right:buf1[1]=25;break;
+          case Drive.turn_back_left:buf1[1]=26;break;
+          case Drive.turn_back_right:buf1[1]=27;break;
+          case Drive.left_hand:buf1[1]=28;break;
+          case Drive.right_hand:buf1[1]=29;break;
         }
+        pins.i2cWriteBuffer(73, buf1);
     }
 
       /**
@@ -748,16 +752,20 @@ namespace TuoYuCar2{
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_DriveSpeed(index:Drive,speed:number):void {
+        let buf1 = pins.createBuffer(3);
+        buf1[0]=3;
+        buf1[2]=speed;
         switch (index) {
-          case Drive.forward:TuoYuCar.IICWriteBuf3(77,21,speed);break;
-          case Drive.back:TuoYuCar.IICWriteBuf3(77,22,speed);break;
-          case Drive.stop:TuoYuCar.IICWriteBuf3(77,23,speed);break;
-          case Drive.turn_left:TuoYuCar.IICWriteBuf3(77,24,speed);break;
-          case Drive.turn_right:TuoYuCar.IICWriteBuf3(77,25,speed);break;
-          case Drive.turn_back_left:TuoYuCar.IICWriteBuf3(77,26,speed);break;
-          case Drive.turn_back_right:TuoYuCar.IICWriteBuf3(77,27,speed);break;
-          case Drive.left_hand:TuoYuCar.IICWriteBuf3(77,28,speed);break;
-          case Drive.right_hand:TuoYuCar.IICWriteBuf3(77,29,speed);break;
+          case Drive.forward:buf1[1]=21;;break;
+          case Drive.back:buf1[1]=22;break;
+          case Drive.stop:buf1[1]=23;break;
+          case Drive.turn_left:buf1[1]=24;break;
+          case Drive.turn_right:buf1[1]=25;break;
+          case Drive.turn_back_left:buf1[1]=26;break;
+          case Drive.turn_back_right:buf1[1]=27;break;
+          case Drive.left_hand:buf1[1]=28;break;
+          case Drive.right_hand:buf1[1]=29;break;
         }
+        pins.i2cWriteBuffer(73, buf1);
     }
 }
