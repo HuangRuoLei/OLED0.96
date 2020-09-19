@@ -432,12 +432,12 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示中文功能
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDShowChine block="显示中文%index|在第%index2行|第%index3处|显示%index1"
+    //% blockId=TuoYuCar1_OLEDShowChine block="显示中文%index|在第%index2行|第%index3处"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
-    export function OLEDShowChine(index:TuoYuCar.ultrasonicState,index2:TuoYuCar.Y,index3:TuoYuCar.X1,index1:TuoYuCar.DisplayChine):void {
+    export function OLEDShowChine(index:TuoYuCar.ultrasonicState,index2:TuoYuCar.Y,index3:TuoYuCar.X1):void {
         switch (index) {
             case TuoYuCar.ultrasonicState.Off: TuoYuCar.IICWriteBuf(69,7,0,0,0); break;
             case TuoYuCar.ultrasonicState.Open: {
@@ -466,18 +466,7 @@ namespace TuoYuCar1{
                     case TuoYuCar.X1._112: buf1[1]=112; break;
                 }
 
-                switch (index1) {
-                    case TuoYuCar.DisplayChine.wo: buf1[2]=0; break;
-                    case TuoYuCar.DisplayChine.ni: buf1[2]=1; break;
-                    case TuoYuCar.DisplayChine.tuo: buf1[2]=2; break;
-                    case TuoYuCar.DisplayChine.yu: buf1[2]=3; break;
-                    case TuoYuCar.DisplayChine.ke: buf1[2]=4; break;
-                    case TuoYuCar.DisplayChine.ji: buf1[2]=5; break;
-                    case TuoYuCar.DisplayChine.zhi: buf1[2]=6; break;
-                    case TuoYuCar.DisplayChine.neng: buf1[2]=7; break;
-                    case TuoYuCar.DisplayChine.xiao: buf1[2]=8; break;
-                    case TuoYuCar.DisplayChine.che: buf1[2]=9; break;
-                }
+        
                 TuoYuCar.IICWriteBuf(69, 8, buf1[0], buf1[1], buf1[2]);
             }; break;
         }
