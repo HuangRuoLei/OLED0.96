@@ -740,7 +740,7 @@ namespace TuoYuCar2{
         pins.i2cWriteBuffer(73, buf1);
     }
 
-      /**
+    /**
      * 选择以打开或关闭小车行驶功能,速度可调
      * @param index
     */
@@ -767,5 +767,33 @@ namespace TuoYuCar2{
           case Drive.right_hand:buf1[1]=29;break;
         }
         pins.i2cWriteBuffer(73, buf1);
+    }
+
+       /**
+     * 选择以打开或关闭小车行驶功能,速度可调
+     * @param index
+    */
+
+    //% blockId=TuoYuCar2_Car_DriveSpeed1 block="我控制小车|%index|速度为 %speed"
+    //% weight=99
+    //% blockGap=10
+    //% speed.min=0 speed.max=255
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Car_DriveSpeed1(index:Drive,speed:number):void {
+        let buf1 = pins.createBuffer(2);
+        buf1[1]=speed;
+        switch (index) {
+          case Drive.forward:buf1[2]=21;;break;
+          case Drive.back:buf1[2]=22;break;
+          case Drive.stop:buf1[2]=23;break;
+          case Drive.turn_left:buf1[2]=24;break;
+          case Drive.turn_right:buf1[2]=25;break;
+          case Drive.turn_back_left:buf1[2]=26;break;
+          case Drive.turn_back_right:buf1[2]=27;break;
+          case Drive.left_hand:buf1[2]=28;break;
+          case Drive.right_hand:buf1[2]=29;break;
+        }
+        pins.i2cWriteBuffer(77, buf1);
     }
 }
