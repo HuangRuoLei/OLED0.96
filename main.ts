@@ -784,15 +784,15 @@ namespace TuoYuCar2{
         let buf1 = pins.createBuffer(2);
         buf1[1]=speed;
         switch (index) {
-          case Drive.forward:buf1[2]=21;;break;
-          case Drive.back:buf1[2]=22;break;
-          case Drive.stop:buf1[2]=23;break;
-          case Drive.turn_left:buf1[2]=24;break;
-          case Drive.turn_right:buf1[2]=25;break;
-          case Drive.turn_back_left:buf1[2]=26;break;
-          case Drive.turn_back_right:buf1[2]=27;break;
-          case Drive.left_hand:buf1[2]=28;break;
-          case Drive.right_hand:buf1[2]=29;break;
+          case Drive.forward:buf1[0]=21;;break;
+          case Drive.back:buf1[0]=22;break;
+          case Drive.stop:buf1[0]=23;break;
+          case Drive.turn_left:buf1[0]=24;break;
+          case Drive.turn_right:buf1[0]=25;break;
+          case Drive.turn_back_left:buf1[0]=26;break;
+          case Drive.turn_back_right:buf1[0]=27;break;
+          case Drive.left_hand:buf1[0]=28;break;
+          case Drive.right_hand:buf1[0]=29;break;
         }
         pins.i2cWriteBuffer(77, buf1);
     }
