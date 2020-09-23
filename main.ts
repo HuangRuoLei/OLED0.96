@@ -738,7 +738,6 @@ namespace TuoYuCar2{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_DriveSpeed(index:Drive,index1:SpeedRank):void {
         let buf1 = pins.createBuffer(2);
-        buf1[1]=index1;
         switch (index) {
           case Drive.forward:buf1[0]=21;;break;
           case Drive.back:buf1[0]=22;break;
