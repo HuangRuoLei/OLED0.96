@@ -713,17 +713,17 @@ namespace TuoYuCar2{
     }
     export enum SpeedRank{
         //% blockId="_1" block="1"
-        _1,
+        _1=1,
         //% blockId="_2" block="2"
-        _2,
+        _2=2,
         //% blockId="_3" block="3"
-        _3,
+        _3=3,
         //% blockId="_4" block="4"
-        _4,
+        _4=4,
         //% blockId="_5" block="5"
-        _5,
+        _5=5,
         //% blockId="_6" block="6"
-        _6,
+        _6=6,
 
     }
     /**
@@ -731,14 +731,14 @@ namespace TuoYuCar2{
      * @param index
     */
 
-    //% blockId=TuoYuCar2_Car_DriveSpeed block="控制小车|%index|速度等级为 %speed "
+    //% blockId=TuoYuCar2_Car_DriveSpeed block="控制小车|%index|速度等级为 %speed 级"
     //% weight=99
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_DriveSpeed(index:Drive,index1:SpeedRank):void {
         let buf1 = pins.createBuffer(2);
-        buf1=index1++;
+        buf1[1]=index1;
         switch (index) {
           case Drive.forward:buf1[0]=21;;break;
           case Drive.back:buf1[0]=22;break;
