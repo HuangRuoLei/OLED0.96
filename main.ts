@@ -711,78 +711,34 @@ namespace TuoYuCar2{
         //% blockId="right_hand" block="原地右旋"
         right_hand
     }
+    export enum SpeedRank{
+        //% blockId="_1" block="1"
+        _1,
+        //% blockId="_2" block="2"
+        _2,
+        //% blockId="_3" block="3"
+        _3,
+        //% blockId="_4" block="4"
+        _4,
+        //% blockId="_5" block="5"
+        _5,
+        //% blockId="_6" block="6"
+        _6,
 
-    /**
-     * 选择以打开或关闭小车行驶功能,速度固定
-     * @param index
-    */
-
-    //% blockId=TuoYuCar2_Car_Drive block="控制小车|%index"
-    //% weight=99
-    //% blockGap=10
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Car_Drive(index:Drive):void {
-        let buf1 = pins.createBuffer(3);
-        buf1[0]=3;
-        buf1[2]=255;
-        switch (index) {
-          case Drive.forward:buf1[1]=21;;break;
-          case Drive.back:buf1[1]=22;break;
-          case Drive.stop:buf1[1]=23;break;
-          case Drive.turn_left:buf1[1]=24;break;
-          case Drive.turn_right:buf1[1]=25;break;
-          case Drive.turn_back_left:buf1[1]=26;break;
-          case Drive.turn_back_right:buf1[1]=27;break;
-          case Drive.left_hand:buf1[1]=28;break;
-          case Drive.right_hand:buf1[1]=29;break;
-        }
-        pins.i2cWriteBuffer(73, buf1);
     }
-
     /**
      * 选择以打开或关闭小车行驶功能,速度可调
      * @param index
     */
 
-    //% blockId=TuoYuCar2_Car_DriveSpeed block="控制小车|%index|速度为 %speed"
+    //% blockId=TuoYuCar2_Car_DriveSpeed block="控制小车|%index|速度等级为 %speed 级"
     //% weight=99
     //% blockGap=10
-    //% speed.min=0 speed.max=255
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Car_DriveSpeed(index:Drive,speed:number):void {
-        let buf1 = pins.createBuffer(3);
-        buf1[0]=3;
-        buf1[2]=speed;
-        switch (index) {
-          case Drive.forward:buf1[1]=21;;break;
-          case Drive.back:buf1[1]=22;break;
-          case Drive.stop:buf1[1]=23;break;
-          case Drive.turn_left:buf1[1]=24;break;
-          case Drive.turn_right:buf1[1]=25;break;
-          case Drive.turn_back_left:buf1[1]=26;break;
-          case Drive.turn_back_right:buf1[1]=27;break;
-          case Drive.left_hand:buf1[1]=28;break;
-          case Drive.right_hand:buf1[1]=29;break;
-        }
-        pins.i2cWriteBuffer(73, buf1);
-    }
-
-       /**
-     * 选择以打开或关闭小车行驶功能,速度可调
-     * @param index
-    */
-
-    //% blockId=TuoYuCar2_Car_DriveSpeed1 block="我控制小车|%index|速度为 %speed"
-    //% weight=99
-    //% blockGap=10
-    //% speed.min=0 speed.max=255
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Car_DriveSpeed1(index:Drive,speed:number):void {
+    export function Car_DriveSpeed(index:Drive,index1:SpeedRank):void {
         let buf1 = pins.createBuffer(2);
-        buf1[1]=speed;
+        buf1[1]=index1;
         switch (index) {
           case Drive.forward:buf1[0]=21;;break;
           case Drive.back:buf1[0]=22;break;
