@@ -731,13 +731,14 @@ namespace TuoYuCar2{
      * @param index
     */
 
-    //% blockId=TuoYuCar2_Car_DriveSpeed block="控制小车|%index|速度等级为 %speed 级"
+    //% blockId=TuoYuCar2_Car_DriveSpeed block="控制小车|%index|速度等级为 %speed "
     //% weight=99
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_DriveSpeed(index:Drive,index1:SpeedRank):void {
         let buf1 = pins.createBuffer(2);
+        buf1=index1++;
         switch (index) {
           case Drive.forward:buf1[0]=21;;break;
           case Drive.back:buf1[0]=22;break;
@@ -748,14 +749,6 @@ namespace TuoYuCar2{
           case Drive.turn_back_right:buf1[0]=27;break;
           case Drive.left_hand:buf1[0]=28;break;
           case Drive.right_hand:buf1[0]=29;break;
-        }
-        switch(index1){
-            case SpeedRank._1:buf1[1]=1;
-            case SpeedRank._2:buf1[1]=2;
-            case SpeedRank._3:buf1[1]=3;
-            case SpeedRank._4:buf1[1]=4;
-            case SpeedRank._5:buf1[1]=5;
-            case SpeedRank._6:buf1[1]=6;
         }
         pins.i2cWriteBuffer(77, buf1);
     }
