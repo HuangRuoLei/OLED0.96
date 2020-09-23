@@ -750,6 +750,14 @@ namespace TuoYuCar2{
           case Drive.left_hand:buf1[0]=28;break;
           case Drive.right_hand:buf1[0]=29;break;
         }
+        switch(index1){
+            case SpeedRank._1:buf1[1]=1;
+            case SpeedRank._2:buf1[1]=2;
+            case SpeedRank._3:buf1[1]=3;
+            case SpeedRank._4:buf1[1]=4;
+            case SpeedRank._5:buf1[1]=5;
+            case SpeedRank._6:buf1[1]=6;
+        }
         pins.i2cWriteBuffer(77, buf1);
     }
 }
