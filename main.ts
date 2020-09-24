@@ -15,11 +15,11 @@ namespace TuoYuCar_connection {
             length=pins.i2cReadNumber(66, NumberFormat.Int8LE);
             if(length==55){
                 basic.showIcon(IconNames.Yes);
+                break;
             }
             else{
                 basic.showIcon(IconNames.No);
             }
-            basic.pause(100);
         }
     }
 }
