@@ -9,13 +9,20 @@ namespace TuoYuCar_connection {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function con(): number {
+    export function con(): void {
         let length;
-        length=pins.i2cReadNumber(66, NumberFormat.Int8LE);
-        return length;
+        for(let i=0;i<20;i++){
+            length=pins.i2cReadNumber(66, NumberFormat.Int8LE);
+            if(length==55){
+                basic.showIcon(IconNames.Yes);
+            }
+            else{
+                basic.showIcon(IconNames.No);
+            }
+            basic.pause(100);
+        }
     }
 }
-
 
 //% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车传感器类"
 namespace TuoYuCar {
