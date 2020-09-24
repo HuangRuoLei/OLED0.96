@@ -1,3 +1,22 @@
+//% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车通信确认"
+namespace TuoYuCar_connection {
+    /**
+     * 调用此来建立与小车的通信,通信建立成功则返回55
+     * @param index
+    */
+    //% blockId=TuoYuCar_connection_con block="建立与小车的通信"
+    //% weight=100
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function con(): number {
+        let length;
+        length=pins.i2cReadNumber(66, NumberFormat.Int8LE);
+        return length;
+    }
+}
+
+
 //% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车传感器类"
 namespace TuoYuCar {
 
