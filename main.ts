@@ -333,7 +333,7 @@ namespace TuoYuCar {
             case FollowColour.black:buf1[1]=1;
             case FollowColour.white:buf1[1]=2;
         }
-        temp=pins.i2cReadNumber(buf1[1], NumberFormat.Int8LE);
+     
         return temp;
     }
 
