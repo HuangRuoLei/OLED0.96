@@ -315,7 +315,6 @@ namespace TuoYuCar {
      * 选择以打开小车循迹传感器功能
      * @param index
     */
-
     //% blockId=TuoYuCar_Follow block="巡线传感器|%index 位置检测到 |%index1"
     //% weight=99
     //% blockGap=10
@@ -323,7 +322,7 @@ namespace TuoYuCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Follow(index:FollowSet,index1:FollowColour):boolean {
         let buf1=pins.createBuffer(2);
-        let lenght;
+        let temp: boolean = false;
         switch (index) {
             case FollowSet.left:buf1[0]=1;break;
             case FollowSet.mid:buf1[0]=2;break;
@@ -334,8 +333,8 @@ namespace TuoYuCar {
             case FollowColour.black:buf1[1]=1;
             case FollowColour.white:buf1[1]=2;
         }
-        lenght=pins.i2cReadNumber(buf1[1], NumberFormat.Int8LE);
-        return lenght;
+        temp=pins.i2cReadNumber(buf1[1], NumberFormat.Int8LE);
+        return temp;
     }
 
 
