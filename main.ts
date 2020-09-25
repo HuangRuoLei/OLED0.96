@@ -240,6 +240,20 @@ namespace TuoYuCar {
         //% blockId="_128" block="128"
         _128
     }
+    export enum FollowSet{
+        //% blockId="left" block="左边"
+        left,
+        //% blockId="mid" block="中间"
+        mid,
+        //% blockId="right" block="右边"
+        right
+    }
+    export enum FollowColour{
+        //% blockId="black" block="黑线"
+        black,
+        //% blockId="white" block="白线"
+        white
+    }
     export function IICWrite(value:number,value1:number) {
         
         pins.i2cWriteNumber(value, value1, NumberFormat.UInt8LE);
@@ -298,20 +312,30 @@ namespace TuoYuCar {
         return length;
     }
     /**
-     * 选择以打开或关闭小车颜色传感器功能
+     * 选择以打开小车循迹传感器功能
      * @param index
     */
 
-    //% blockId=TuoYuCar_Yan_She_Chuan_Gan_Qi block="小车智能循迹系统|%index"
+    //% blockId=TuoYuCar_Follow block="巡线传感器|%index 位置检测到 |%index1"
     //% weight=99
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Yan_She_Chuan_Gan_Qi(index:ultrasonicState):void {
+    export function Follow(index:FollowSet,index1:FollowColour):boolean {
+        let buf1=pins.createBuffer(2);
+        let lenght;
         switch (index) {
-            case ultrasonicState.Off: IICWrite(67, 3); break;
-            case ultrasonicState.Open: IICWrite(67, 4); break;
+            case FollowSet.left:buf1[0]=1;break;
+            case FollowSet.mid:buf1[0]=2;break;
+            case FollowSet.right:buf1[0]=3;break;
         }
+        IICWrite(67,buf1[0]);
+        switch(index1){
+            case FollowColour.black:buf1[1]=1;
+            case FollowColour.white:buf1[1]=2;
+        }
+        lenght=pins.i2cReadNumber(buf1[1], NumberFormat.Int8LE);
+        return lenght;
     }
 
 
