@@ -778,4 +778,19 @@ namespace TuoYuCar2{
         }
         pins.i2cWriteBuffer(77, buf1);
     }
+
+      /**
+     * 选择以打开或关闭小车舵机功能,角度可调
+     * @param index
+    */
+
+    //% blockId=TuoYuCar2_Car_Gear block="舵机转动 %speed °"
+    //% weight=99
+    //% blockGap=10
+     //% speed.min=0 speed.max=180
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Car_Gear(speed:number):void {
+       TuoYuCar.IICWrite(78,speed);
+    }
 }
