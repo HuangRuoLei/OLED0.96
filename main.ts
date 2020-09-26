@@ -290,7 +290,7 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Chao_Sheng_Bo(index: ultrasonicState):void {
-        basic.pause(6);
+        basic.pause(10);
         switch (index) {
             case ultrasonicState.Off: IICWrite(65, 1); break;
             case ultrasonicState.Open: IICWrite(65, 2); break;
@@ -308,7 +308,7 @@ namespace TuoYuCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Read_Chao_Sheng_Bo(): number {
         let length;
-        basic.pause(6);
+        basic.pause(10);
         length=pins.i2cReadNumber(65, NumberFormat.Int8LE);
         return length;
     }
@@ -324,7 +324,7 @@ namespace TuoYuCar {
     export function Follow(index:FollowSet,index1:FollowColour):boolean {
         let temp: boolean = false;
         let temp1;
-        basic.pause(6);
+        basic.pause(10);
         switch (index) {
             case FollowSet.left:switch(index1){
                 case FollowColour.black:temp1=pins.i2cReadNumber(64, NumberFormat.Int8LE);break;
@@ -358,7 +358,7 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Sheng_Ying_Chuan_Gan_Qi(index:ultrasonicState):void {
-        basic.pause(6);
+        basic.pause(10);
         switch (index) {
             case ultrasonicState.Off: IICWrite(68, 5); break;
             case ultrasonicState.Open: IICWrite(68, 6); break;
@@ -374,7 +374,7 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Yu_Ying_Shi_Bie_Chuan_Gan_Qi(index: ultrasonicState):void {
-        basic.pause(6);
+        basic.pause(10);
         switch (index) {
             case ultrasonicState.Off: SPIWrite(0); break;
             case ultrasonicState.Open: SPIWrite(1); break;
@@ -390,7 +390,7 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Rain(index: ultrasonicState):void {
-        basic.pause(6);
+        basic.pause(10);
         switch (index) {
             case ultrasonicState.Off: IICWrite(75, 17); break;
             case ultrasonicState.Open: IICWrite(75, 18); break;
@@ -406,7 +406,7 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Flame(index: ultrasonicState):void {
-        basic.pause(6);
+        basic.pause(10);
         switch (index) {
             case ultrasonicState.Off: IICWrite(76, 19); break;
             case ultrasonicState.Open: IICWrite(76, 20); break;
@@ -428,7 +428,7 @@ namespace TuoYuCar1{
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDCleanALL():void {
-        basic.pause(6);
+        basic.pause(10);
         let buf1=pins.createBuffer(3);
         buf1[0]=1;
         buf1[1]=0;
@@ -447,7 +447,7 @@ namespace TuoYuCar1{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDClean(index:TuoYuCar.Y,index1:TuoYuCar.X,index2:TuoYuCar.X2):void{
         let buf1=pins.createBuffer(3);
-        basic.pause(6);
+        basic.pause(10);
         switch(index){
             case TuoYuCar.Y._0: buf1[0]=0; break;
             case TuoYuCar.Y._2: buf1[0]=2; break;
@@ -504,7 +504,7 @@ namespace TuoYuCar1{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDShowChine(index2:TuoYuCar.Y,index3:TuoYuCar.X1,index1:TuoYuCar.DisplayChine):void {
         let buf1 = pins.createBuffer(3);
-        basic.pause(6);
+        basic.pause(10);
         switch (index2) {
             case TuoYuCar.Y._0: buf1[0]=0; break;
             case TuoYuCar.Y._2: buf1[0]=2; break;
@@ -554,7 +554,7 @@ namespace TuoYuCar1{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function OLEDShowEnglish(index1:TuoYuCar.Y,index2:TuoYuCar.X,index3:TuoYuCar.DisplayEnglish):void {
         let buf1 = pins.createBuffer(3);
-        basic.pause(6);
+        basic.pause(10);
         switch (index1) {
             case TuoYuCar.Y._0: buf1[0]=0; break;
             case TuoYuCar.Y._2: buf1[0]=2; break;
@@ -649,7 +649,7 @@ namespace TuoYuCar1{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDShowNumber(index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:number):void {
         let buf1 = pins.createBuffer(3);
-        basic.pause(6);
+        basic.pause(10);
         switch (index2) {
             case TuoYuCar.Y._0: buf1[0]=0; break;
             case TuoYuCar.Y._2: buf1[0]=2; break;
@@ -689,7 +689,7 @@ namespace TuoYuCar1{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDShowChar(index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:TuoYuCar.DisplayChar):void {
         let buf1 = pins.createBuffer(3);
-        basic.pause(6);
+        basic.pause(10);
         switch (index2) {
             case TuoYuCar.Y._0: buf1[0]=0; break;
             case TuoYuCar.Y._2: buf1[0]=2; break;
@@ -803,7 +803,7 @@ namespace TuoYuCar2{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_DriveSpeed(index:Drive,index1:SpeedRank):void {
         let buf1 = pins.createBuffer(2);
-        basic.pause(6);
+        basic.pause(10);
         buf1[1]=index1;
         switch (index) {
           case Drive.forward:buf1[0]=21;;break;
@@ -831,7 +831,7 @@ namespace TuoYuCar2{
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_Gear(speed:number):void {
-       basic.pause(6);
+       basic.pause(10);
        TuoYuCar.IICWrite(78,speed);
     }
 }
