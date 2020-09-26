@@ -323,6 +323,7 @@ namespace TuoYuCar {
     export function Follow(index:FollowSet,index1:FollowColour):boolean {
         let temp: boolean = false;
         let temp1;
+        basic.pause(10);
         switch (index) {
             case FollowSet.left:switch(index1){
                 case FollowColour.black:temp1=pins.i2cReadNumber(64, NumberFormat.Int8LE);break;
