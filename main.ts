@@ -321,21 +321,22 @@ namespace TuoYuCar {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Follow(index:FollowSet,index1:FollowColour):boolean {
-        let buf1=pins.createBuffer(2);
         let temp: boolean = false;
         let temp1;
         switch (index) {
-            case FollowSet.left:buf1[0]=1;break;
-            case FollowSet.mid:buf1[0]=2;break;
-            case FollowSet.right:buf1[0]=3;break;
+            case FollowSet.left:switch(index1){
+                case FollowColour.black:temp1=pins.i2cReadNumber(64, NumberFormat.Int8LE);break;
+                case FollowColour.white:temp1=pins.i2cReadNumber(67, NumberFormat.Int8LE);break;
+            };break;
+            case FollowSet.mid:switch(index1){
+                case FollowColour.black:temp1=pins.i2cReadNumber(68, NumberFormat.Int8LE);break;
+                case FollowColour.white:temp1=pins.i2cReadNumber(69, NumberFormat.Int8LE);break;
+            };break;
+            case FollowSet.right:switch(index1){
+                case FollowColour.black:temp1=pins.i2cReadNumber(70, NumberFormat.Int8LE);break;
+                case FollowColour.white:temp1=pins.i2cReadNumber(71, NumberFormat.Int8LE);break;
+            };break;
         }
-        IICWrite(67,buf1[0]);
-        switch(index1){
-            case FollowColour.black:buf1[1]=67;
-            case FollowColour.white:buf1[1]=64;
-        }
-        basic.pause(100);
-        temp1=pins.i2cReadNumber(buf1[1], NumberFormat.Int8LE);
         if(temp1==1)
             temp=true;
         else
