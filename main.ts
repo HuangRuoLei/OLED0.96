@@ -331,8 +331,8 @@ namespace TuoYuCar {
         }
         IICWrite(67,buf1[0]);
         switch(index1){
-            case FollowColour.black:buf1[1]=1;
-            case FollowColour.white:buf1[1]=2;
+            case FollowColour.black:buf1[1]=67;
+            case FollowColour.white:buf1[1]=64;
         }
         temp1=pins.i2cReadNumber(buf1[1], NumberFormat.Int8LE);
         if(temp1==1)
