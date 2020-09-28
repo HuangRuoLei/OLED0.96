@@ -645,7 +645,7 @@ namespace TuoYuCar1{
     //% blockId=TuoYuCar1_OLEDShowNumber block="显示数字|在第%index2行|第%index3|处|显示%index1"
     //% weight=91
     //% blockGap=10
-    //% index1.min=0 index1.max=65535
+    //% index1.min=0 index1.max=255
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDShowNumber(index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:number):void {
@@ -777,6 +777,20 @@ namespace TuoYuCar2{
         //% blockId="right_hand" block="原地右旋"
         right_hand
     }
+    export enum Drive1{
+        //% blockId="turn_left" block="向前左转"
+        turn_left,
+        //% blockId="turn_right" block="向前右转"
+        turn_right,
+        //% blockId="turn_back_left" block="向后左转"
+        turn_back_left,
+        //% blockId="turn_back_right" block="向后右转"
+        turn_back_right,
+        //% blockId="left_hand" block="原地左旋"
+        left_hand,
+        //% blockId="right_hand" block="原地右旋"
+        right_hand
+    }
     export enum SpeedRank{
         //% blockId="_1" block="1"
         _1=1,
@@ -820,6 +834,33 @@ namespace TuoYuCar2{
         pins.i2cWriteBuffer(77, buf1);
     }
 
+    /**
+     * 选择以打开小车旋转角度
+     * @param index
+    */
+
+    //% blockId=TuoYuCar2_Car_Rotation_angle block="控制小车|%index|旋转角度为 %speed °"
+    //% weight=99
+    //% blockGap=10
+    //% speed.min=0 speed.max=360
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Car_Rotation_angle(index:Drive1,speed:number):void {
+        let buf1 = pins.createBuffer(3);
+        basic.pause(10);
+        if(speed>255)
+        buf1[1]=360-255;
+        buf1[2]=255;
+        switch (index) {
+          case Drive1.turn_left:buf1[0]=1;break;
+          case Drive1.turn_right:buf1[0]=2;break;
+          case Drive1.turn_back_left:buf1[0]=3;break;
+          case Drive1.turn_back_right:buf1[0]=4;break;
+          case Drive1.left_hand:buf1[0]=5;break;
+          case Drive1.right_hand:buf1[0]=6;break;
+        }
+        pins.i2cWriteBuffer(79, buf1);
+    }
       /**
      * 选择以打开或关闭小车舵机功能,角度可调
      * @param index
