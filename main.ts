@@ -469,8 +469,8 @@ namespace TuoYuCar1{
             case TuoYuCar.X._88: buf1[1]=88; break;
             case TuoYuCar.X._96: buf1[1]=96; break;
             case TuoYuCar.X._104: buf1[1]=104; break;
-            case TuoYuCar.X._112: buf1[1]=11; break;
-            case TuoYuCar.X._120: buf1[1]=12; break;
+            case TuoYuCar.X._112: buf1[1]=112; break;
+            case TuoYuCar.X._120: buf1[1]=120; break;
         }
         switch(index2){
             case TuoYuCar.X2._8:  buf1[2]=8; break;
@@ -486,11 +486,12 @@ namespace TuoYuCar1{
             case TuoYuCar.X2._88: buf1[2]=88; break;
             case TuoYuCar.X2._96: buf1[2]=96; break;
             case TuoYuCar.X2._104: buf1[2]=104; break;
-            case TuoYuCar.X2._112: buf1[2]=11; break;
-            case TuoYuCar.X2._120: buf1[2]=12; break;
-            case TuoYuCar.X2._128:  buf1[2]=13; break;
+            case TuoYuCar.X2._112: buf1[2]=112; break;
+            case TuoYuCar.X2._120: buf1[2]=120; break;
+            case TuoYuCar.X2._128:  buf1[2]=128; break;
         }
         pins.i2cWriteBuffer(73, buf1);
+        basic.pause(10);
     }
 
     /**
