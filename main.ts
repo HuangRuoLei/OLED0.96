@@ -645,7 +645,7 @@ namespace TuoYuCar1{
     //% blockId=TuoYuCar1_OLEDShowNumber block="显示数字|在第%index2行|第%index3|处|显示%index1"
     //% weight=91
     //% blockGap=10
-    //% index1.min=0 index1.max=255
+    //% index1.min=0 index1.max=65535
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDShowNumber(index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:number):void {
