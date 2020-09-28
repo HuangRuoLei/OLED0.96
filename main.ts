@@ -839,7 +839,7 @@ namespace TuoYuCar2{
      * @param index
     */
 
-    //% blockId=TuoYuCar2_Car_Rotation_angle block="控制小车|%index|旋转角度为 %speed °"
+    //% blockId=TuoYuCar2_Car_Rotation_angle block="控制小车|%index|旋转角度为 %speed "
     //% weight=99
     //% blockGap=10
     //% speed.min=0 speed.max=360
@@ -849,8 +849,11 @@ namespace TuoYuCar2{
         let buf1 = pins.createBuffer(3);
         basic.pause(10);
         if(speed>255)
-        buf1[1]=speed>>8;
-        buf1[2]=speed;
+        buf1[1]=360-255;
+        if(speed>255)
+            buf1[2]=255;
+        else 
+            buf1[2]=speed;
         switch (index) {
           case Drive1.turn_left:buf1[0]=1;break;
           case Drive1.turn_right:buf1[0]=2;break;
