@@ -345,7 +345,26 @@ namespace TuoYuCar {
             temp=false;
         return temp;
     }
-
+   /**
+     * 选择以打开小车人体红外传感器功能
+     * @param index
+    */
+    //% blockId=TuoYuCar_Bodycheck block="当人体传感器检测到人体或者活物时"
+    //% weight=98
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Bodycheck():boolean {
+        let temp: boolean = false;
+        let temp1;
+        basic.pause(10);
+        temp1=pins.i2cReadNumber(72, NumberFormat.Int8LE);
+        if(temp1==1)
+            temp=true;
+        else
+            temp=false;
+        return temp;
+    }
 
     /**
      * 选择以打开或关闭小车声音传感器功能
