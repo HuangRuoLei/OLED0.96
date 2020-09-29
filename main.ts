@@ -345,7 +345,7 @@ namespace TuoYuCar {
             temp=false;
         return temp;
     }
-   /**
+    /**
      * 选择以打开小车人体红外传感器功能
      * @param index
     */
@@ -365,14 +365,33 @@ namespace TuoYuCar {
             temp=false;
         return temp;
     }
-
+    /**
+     * 选择以打开小车人体红外传感器功能
+     * @param index
+    */
+    //% blockId=TuoYuCar_Rain block="当水滴传感器检测到水滴时"
+    //% weight=97
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Rain():boolean {
+        let temp: boolean = false;
+        let temp1;
+        basic.pause(10);
+        temp1=pins.i2cReadNumber(73, NumberFormat.Int8LE);
+        if(temp1==1)
+            temp=true;
+        else
+            temp=false;
+        return temp;
+    }
     /**
      * 选择以打开或关闭小车声音传感器功能
      * @param index
     */
 
     //% blockId=TuoYuCar_Sheng_Ying_Chuan_Gan_Qi block="声音传感器|%index"
-    //% weight=97
+    //% weight=90
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -388,7 +407,7 @@ namespace TuoYuCar {
      * @param index
     */
     //% blockId=TuoYuCar_Yu_Ying_Shi_Bie_Chuan_Gan_Qi block="语音识别传感器|%index"
-    //% weight=95
+    //% weight=89
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -400,27 +419,11 @@ namespace TuoYuCar {
         }
     }
      /**
-     * 选择以打开或关闭小车雨天检测系统
-     * @param index
-    */
-    //% blockId=TuoYuCar_Rain block="雨天检测系统|%index"
-    //% weight=94
-    //% blockGap=10
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Rain(index: ultrasonicState):void {
-        basic.pause(10);
-        switch (index) {
-            case ultrasonicState.Off: IICWrite(75, 17); break;
-            case ultrasonicState.Open: IICWrite(75, 18); break;
-        }
-    }
-     /**
      * 选择以打开或关闭小车自动灭火系统
      * @param index
     */
     //% blockId=TuoYuCar_Flame block="自动灭火系统|%index"
-    //% weight=93
+    //% weight=88
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
