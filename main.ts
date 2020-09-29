@@ -366,7 +366,7 @@ namespace TuoYuCar {
         return temp;
     }
     /**
-     * 选择以打开小车人体红外传感器功能
+     * 选择以打开小车水滴传感器功能
      * @param index
     */
     //% blockId=TuoYuCar_Rain block="当水滴传感器检测到水滴时"
@@ -379,6 +379,26 @@ namespace TuoYuCar {
         let temp1;
         basic.pause(10);
         temp1=pins.i2cReadNumber(73, NumberFormat.Int8LE);
+        if(temp1==1)
+            temp=true;
+        else
+            temp=false;
+        return temp;
+    }
+    /**
+     * 选择以打开小车气体传感器功能，可检测一氧化碳,烟雾，可燃气体等
+     * @param index
+    */
+    //% blockId=TuoYuCar_Gas block="当气体传感器检测到目标气体时"
+    //% weight=96
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Gas():boolean {
+        let temp: boolean = false;
+        let temp1;
+        basic.pause(10);
+        temp1=pins.i2cReadNumber(74, NumberFormat.Int8LE);
         if(temp1==1)
             temp=true;
         else
