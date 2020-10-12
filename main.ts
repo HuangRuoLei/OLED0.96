@@ -285,7 +285,7 @@ namespace TuoYuCar {
      * @param index
     */
     //% blockId=TuoYuCar_Chao_Sheng_Bo block="超声波测距系统|%index"
-    //% weight=101
+    //% weight=110
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -302,7 +302,7 @@ namespace TuoYuCar {
      * @param index
     */
     //% blockId=TuoYuCar_Read_Chao_Sheng_Bo block="读取超声波测到的距离(cm)"
-    //% weight=100
+    //% weight=109
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -310,6 +310,21 @@ namespace TuoYuCar {
         let length;
         basic.pause(10);
         length=pins.i2cReadNumber(65, NumberFormat.Int8LE);
+        return length;
+    }
+    /**
+     * 调用此将返回火焰传感器测到的火焰数据（最大值330）
+     * @param index
+    */
+    //% blockId=TuoYuCar_Flame block="读取火焰传感器返回的数据(最大值330)"
+    //% weight=108
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Flame():number {
+        let length;
+        basic.pause(10);
+        length=pins.i2cReadNumber(75, NumberFormat.UInt16LE);
         return length;
     }
     /**
@@ -405,11 +420,12 @@ namespace TuoYuCar {
             temp=false;
         return temp;
     }
+
+    
     /**
      * 选择以打开或关闭小车声音传感器功能
      * @param index
     */
-
     //% blockId=TuoYuCar_Sheng_Ying_Chuan_Gan_Qi block="声音传感器|%index"
     //% weight=90
     //% blockGap=10
@@ -438,22 +454,7 @@ namespace TuoYuCar {
             case ultrasonicState.Open: SPIWrite(1); break;
         }
     }
-     /**
-     * 选择以打开或关闭小车自动灭火系统
-     * @param index
-    */
-    //% blockId=TuoYuCar_Flame block="自动灭火系统|%index"
-    //% weight=88
-    //% blockGap=10
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Flame(index: ultrasonicState):void {
-        basic.pause(10);
-        switch (index) {
-            case ultrasonicState.Off: IICWrite(76, 19); break;
-            case ultrasonicState.Open: IICWrite(76, 20); break;
-        }
-    }
+
 }
 
 
