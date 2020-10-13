@@ -692,7 +692,8 @@ namespace TuoYuCar1{
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDShowNumber(index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:number):void {
-        let buf1 = pins.createBuffer(3);
+        let buf1 = pins.createBuffer(2);
+        let buf;
         basic.pause(10);
         switch (index2) {
             case TuoYuCar.Y._0: buf1[0]=0; break;
@@ -720,8 +721,9 @@ namespace TuoYuCar1{
         }
         buf1[2]=index1;
         //pins.i2cWriteBuffer(71, buf1);
-        TuoYuCar.IICWriteBuf3(71,buf1[0],buf1[1]);
-        pins.i2cWriteNumber(71, buf1[2], NumberFormat.UInt16LE);
+        pins.i2cWriteBuffer(71,buf1)
+        //TuoYuCar.IICWriteBuf3(71,buf1[0],buf1[1]);
+        //pins.i2cWriteNumber(71, buf1[2], NumberFormat.UInt16LE);
     }
 
     /**
