@@ -849,6 +849,14 @@ namespace TuoYuCar2{
         _6=6,
 
     }
+    export enum FengShan{
+        //% blockId="fan_0" block="停止转动"
+        fan_0=0,
+        //% blockId="fan_1" block="正转"
+        fan_1,
+        //% blockId="fan_2" block="反转"
+        fan_2
+    }
     /**
      * 选择以打开或关闭小车行驶功能,速度可调
      * @param index
@@ -910,11 +918,10 @@ namespace TuoYuCar2{
         }
         pins.i2cWriteBuffer(79, buf1);
     }
-      /**
+    /**
      * 选择以打开或关闭小车舵机功能,角度可调
      * @param index
     */
-
     //% blockId=TuoYuCar2_Car_Gear block="舵机转动 %speed °"
     //% weight=99
     //% blockGap=10
@@ -925,4 +932,25 @@ namespace TuoYuCar2{
        basic.pause(10);
        TuoYuCar.IICWrite(78,speed);
     }
+
+    /**
+     * 选择以打开或关闭风扇转动功能
+     * @param index
+    */
+    //% blockId=TuoYuCar2_fan block="控制风扇 %speed"
+    //% weight=98
+    //% blockGap=10
+     //% speed.min=0 speed.max=180
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function fan(index:FengShan):void {
+        let buf;
+        basic.pause(10);
+        switch(index){
+            case FengShan.fan_0:buf=0;break;
+            case FengShan.fan_1:buf=1;break;
+            case FengShan.fan_2:buf=2;break;
+        }
+        TuoYuCar.IICWrite(74,buf);
+     }
 }
