@@ -719,7 +719,7 @@ namespace TuoYuCar1{
             case TuoYuCar.X._112: buf1[1]=112; break;
             case TuoYuCar.X._120: buf1[1]=120; break;
         }
-        buf[2]=index1;
+        buf=index1;
         //pins.i2cWriteBuffer(71, buf1);
         pins.i2cWriteBuffer(71,buf1);
         //TuoYuCar.IICWriteBuf3(71,buf1[0],buf1[1]);
