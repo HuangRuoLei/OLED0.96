@@ -721,7 +721,6 @@ namespace TuoYuCar1{
         buf1[2]=index1;
         //pins.i2cWriteBuffer(71, buf1);
         TuoYuCar.IICWriteBuf3(71,buf1[0],buf1[1]);
-        basic.pause(50);
         pins.i2cWriteNumber(71, buf1[2], NumberFormat.UInt16LE);
     }
 
