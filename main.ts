@@ -720,10 +720,8 @@ namespace TuoYuCar1{
             case TuoYuCar.X._120: buf1[1]=120; break;
         }
         buf=index1;
-        //pins.i2cWriteBuffer(71, buf1);
         pins.i2cWriteBuffer(71,buf1);
-        //TuoYuCar.IICWriteBuf3(71,buf1[0],buf1[1]);
-        //pins.i2cWriteNumber(71, buf1[2], NumberFormat.UInt16LE);
+        pins.i2cWriteNumber(71, buf1, NumberFormat.UInt16LE);
     }
 
     /**
