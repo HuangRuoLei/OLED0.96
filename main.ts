@@ -313,10 +313,10 @@ namespace TuoYuCar {
         return length;
     }
     /**
-     * 调用此将返回火焰传感器测到的火焰数据（最大值330）
+     * 调用此将返回火焰传感器测到的火焰数据
      * @param index
     */
-    //% blockId=TuoYuCar_Flame block="读取火焰传感器返回的数据(最大值330)"
+    //% blockId=TuoYuCar_Flame block="读取火焰传感器返回的数据"
     //% weight=108
     //% blockGap=10
     //% color="#006400"
@@ -324,7 +324,7 @@ namespace TuoYuCar {
     export function Flame():number {
         let length;
         basic.pause(10);
-        length=pins.i2cReadNumber(75, NumberFormat.UInt16LE);
+        length=pins.analogReadPin(AnalogPin.P2)
         return length;
     }
     /**
