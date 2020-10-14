@@ -1,4 +1,4 @@
-//% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车通信确认"
+//% color="#006400" weight=50 icon="\uf1b9" block="呼噜猫小车通信确认"
 namespace HuLuMaoCar_connection {
     /**
      * 调用此来建立与小车的通信,通信建立成功则返回55
@@ -24,7 +24,7 @@ namespace HuLuMaoCar_connection {
     }
 }
 
-//% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车传感器类"
+//% color="#006400" weight=49 icon="\uf1b9" block="呼噜猫小车传感器类"
 namespace HuLuMaoCar {
 
     export enum ultrasonicState{
@@ -458,7 +458,7 @@ namespace HuLuMaoCar {
 }
 
 
-//% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车显示类"
+//% color="#006400" weight=48 icon="\uf1b9" block="呼噜猫小车显示类"
 namespace HuLuMaoCar1{
 
      /**
@@ -801,7 +801,7 @@ namespace HuLuMaoCar1{
     
 }
 
-//% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车行驶类"
+//% color="#006400" weight=47 icon="\uf1b9" block="呼噜猫小车行驶类"
 namespace HuLuMaoCar2{
     export enum Drive{
         //% blockId="forward" block="前进"
