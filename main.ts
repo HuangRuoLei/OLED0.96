@@ -1,10 +1,10 @@
 //% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车通信确认"
-namespace TuoYuCar_connection {
+namespace HuLuMaoCar_connection {
     /**
      * 调用此来建立与小车的通信,通信建立成功则返回55
      * @param index
     */
-    //% blockId=TuoYuCar_connection_con block="建立与小车的通信"
+    //% blockId=HuLuMaoCar_connection_con block="建立与小车的通信"
     //% weight=100
     //% blockGap=10
     //% color="#006400"
@@ -25,7 +25,7 @@ namespace TuoYuCar_connection {
 }
 
 //% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车传感器类"
-namespace TuoYuCar {
+namespace HuLuMaoCar {
 
     export enum ultrasonicState{
         //% blockId="OFF" block="关闭"
@@ -284,7 +284,7 @@ namespace TuoYuCar {
      * 选择以打开或关闭小车超声波测量距离的功能（有效距离2cm~200cm）
      * @param index
     */
-    //% blockId=TuoYuCar_Chao_Sheng_Bo block="超声波测距系统|%index"
+    //% blockId=HuLuMaoCar_Chao_Sheng_Bo block="超声波测距系统|%index"
     //% weight=110
     //% blockGap=10
     //% color="#006400"
@@ -301,7 +301,7 @@ namespace TuoYuCar {
      * 调用此将返回超声波的所测到的距离（有效距离2cm~200cm）
      * @param index
     */
-    //% blockId=TuoYuCar_Read_Chao_Sheng_Bo block="读取超声波测到的距离(cm)"
+    //% blockId=HuLuMaoCar_Read_Chao_Sheng_Bo block="读取超声波测到的距离(cm)"
     //% weight=109
     //% blockGap=10
     //% color="#006400"
@@ -316,7 +316,7 @@ namespace TuoYuCar {
      * 调用此将返回火焰传感器测到的火焰数据
      * @param index
     */
-    //% blockId=TuoYuCar_Flame block="读取火焰传感器返回的数据"
+    //% blockId=HuLuMaoCar_Flame block="读取火焰传感器返回的数据"
     //% weight=108
     //% blockGap=10
     //% color="#006400"
@@ -324,14 +324,14 @@ namespace TuoYuCar {
     export function Flame():number {
         let length;
         basic.pause(10);
-        length=pins.analogReadPin(AnalogPin.P2)
+        length = pins.analogReadPin(AnalogPin.P2);
         return length;
     }
     /**
      * 选择以打开小车循迹传感器功能
      * @param index
     */
-    //% blockId=TuoYuCar_Follow block="巡线传感器|%index 位置检测到 |%index1"
+    //% blockId=HuLuMaoCar_Follow block="巡线传感器|%index 位置检测到 |%index1"
     //% weight=99
     //% blockGap=10
     //% color="#006400"
@@ -364,7 +364,7 @@ namespace TuoYuCar {
      * 选择以打开小车人体红外传感器功能
      * @param index
     */
-    //% blockId=TuoYuCar_Bodycheck block="当人体传感器检测到人体或者活物时"
+    //% blockId=HuLuMaoCar_Bodycheck block="当人体传感器检测到人体或者活物时"
     //% weight=98
     //% blockGap=10
     //% color="#006400"
@@ -384,7 +384,7 @@ namespace TuoYuCar {
      * 选择以打开小车水滴传感器功能
      * @param index
     */
-    //% blockId=TuoYuCar_Rain block="当水滴传感器检测到水滴时"
+    //% blockId=HuLuMaoCar_Rain block="当水滴传感器检测到水滴时"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
@@ -404,7 +404,7 @@ namespace TuoYuCar {
      * 选择以打开小车气体传感器功能，可检测一氧化碳,烟雾，可燃气体等
      * @param index
     */
-    //% blockId=TuoYuCar_Gas block="当气体传感器检测到目标气体时"
+    //% blockId=HuLuMaoCar_Gas block="当气体传感器检测到目标气体时"
     //% weight=96
     //% blockGap=10
     //% color="#006400"
@@ -426,7 +426,7 @@ namespace TuoYuCar {
      * 选择以打开或关闭小车声音传感器功能
      * @param index
     */
-    //% blockId=TuoYuCar_Sheng_Ying_Chuan_Gan_Qi block="声音传感器|%index"
+    //% blockId=HuLuMaoCar_Sheng_Ying_Chuan_Gan_Qi block="声音传感器|%index"
     //% weight=90
     //% blockGap=10
     //% color="#006400"
@@ -442,7 +442,7 @@ namespace TuoYuCar {
      * 选择以打开或关闭小车语音识别传感器功能
      * @param index
     */
-    //% blockId=TuoYuCar_Yu_Ying_Shi_Bie_Chuan_Gan_Qi block="语音识别传感器|%index"
+    //% blockId=HuLuMaoCar_Yu_Ying_Shi_Bie_Chuan_Gan_Qi block="语音识别传感器|%index"
     //% weight=89
     //% blockGap=10
     //% color="#006400"
@@ -459,13 +459,13 @@ namespace TuoYuCar {
 
 
 //% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车显示类"
-namespace TuoYuCar1{
+namespace HuLuMaoCar1{
 
      /**
      * 选择以清除小车显示屏所有区域的内容
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDCleanALL block="清空显示屏所有内容"
+    //% blockId=HuLuMaoCar1_OLEDCleanALL block="清空显示屏所有内容"
     //% weight=95
     //% blockGap=10
     //% color="#006400"
@@ -483,55 +483,55 @@ namespace TuoYuCar1{
      * 选择以清除小车显示屏指定区域的内容
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDClean block="清除第|%index行|从|%index2到|%index3|处内容"
+    //% blockId=HuLuMaoCar1_OLEDClean block="清除第|%index行|从|%index2到|%index3|处内容"
     //% weight=94
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
-    export function OLEDClean(index:TuoYuCar.Y,index1:TuoYuCar.X,index2:TuoYuCar.X2):void{
+    export function OLEDClean(index:HuLuMaoCar.Y,index1:HuLuMaoCar.X,index2:HuLuMaoCar.X2):void{
         let buf1=pins.createBuffer(3);
         basic.pause(10);
         switch(index){
-            case TuoYuCar.Y._0: buf1[0]=0; break;
-            case TuoYuCar.Y._2: buf1[0]=2; break;
-            case TuoYuCar.Y._4: buf1[0]=4; break;
-            case TuoYuCar.Y._6: buf1[0]=6; break;
+            case HuLuMaoCar.Y._0: buf1[0]=0; break;
+            case HuLuMaoCar.Y._2: buf1[0]=2; break;
+            case HuLuMaoCar.Y._4: buf1[0]=4; break;
+            case HuLuMaoCar.Y._6: buf1[0]=6; break;
         }
         switch(index1){
-            case TuoYuCar.X._0:  buf1[1]=0; break;
-            case TuoYuCar.X._8:  buf1[1]=8; break;
-            case TuoYuCar.X._16: buf1[1]=16; break;
-            case TuoYuCar.X._24: buf1[1]=24; break;
-            case TuoYuCar.X._32: buf1[1]=32; break;
-            case TuoYuCar.X._40: buf1[1]=40; break;
-            case TuoYuCar.X._48: buf1[1]=48; break;
-            case TuoYuCar.X._56: buf1[1]=56; break;
-            case TuoYuCar.X._64: buf1[1]=64; break;
-            case TuoYuCar.X._72: buf1[1]=72; break;
-            case TuoYuCar.X._80: buf1[1]=80; break;
-            case TuoYuCar.X._88: buf1[1]=88; break;
-            case TuoYuCar.X._96: buf1[1]=96; break;
-            case TuoYuCar.X._104: buf1[1]=104; break;
-            case TuoYuCar.X._112: buf1[1]=112; break;
-            case TuoYuCar.X._120: buf1[1]=120; break;
+            case HuLuMaoCar.X._0:  buf1[1]=0; break;
+            case HuLuMaoCar.X._8:  buf1[1]=8; break;
+            case HuLuMaoCar.X._16: buf1[1]=16; break;
+            case HuLuMaoCar.X._24: buf1[1]=24; break;
+            case HuLuMaoCar.X._32: buf1[1]=32; break;
+            case HuLuMaoCar.X._40: buf1[1]=40; break;
+            case HuLuMaoCar.X._48: buf1[1]=48; break;
+            case HuLuMaoCar.X._56: buf1[1]=56; break;
+            case HuLuMaoCar.X._64: buf1[1]=64; break;
+            case HuLuMaoCar.X._72: buf1[1]=72; break;
+            case HuLuMaoCar.X._80: buf1[1]=80; break;
+            case HuLuMaoCar.X._88: buf1[1]=88; break;
+            case HuLuMaoCar.X._96: buf1[1]=96; break;
+            case HuLuMaoCar.X._104: buf1[1]=104; break;
+            case HuLuMaoCar.X._112: buf1[1]=112; break;
+            case HuLuMaoCar.X._120: buf1[1]=120; break;
         }
         switch(index2){
-            case TuoYuCar.X2._8:  buf1[2]=8; break;
-            case TuoYuCar.X2._16: buf1[2]=16; break;
-            case TuoYuCar.X2._24: buf1[2]=24; break;
-            case TuoYuCar.X2._32: buf1[2]=32; break;
-            case TuoYuCar.X2._40: buf1[2]=40; break;
-            case TuoYuCar.X2._48: buf1[2]=48; break;
-            case TuoYuCar.X2._56: buf1[2]=56; break;
-            case TuoYuCar.X2._64: buf1[2]=64; break;
-            case TuoYuCar.X2._72: buf1[2]=72; break;
-            case TuoYuCar.X2._80: buf1[2]=80; break;
-            case TuoYuCar.X2._88: buf1[2]=88; break;
-            case TuoYuCar.X2._96: buf1[2]=96; break;
-            case TuoYuCar.X2._104: buf1[2]=104; break;
-            case TuoYuCar.X2._112: buf1[2]=112; break;
-            case TuoYuCar.X2._120: buf1[2]=120; break;
-            case TuoYuCar.X2._128:  buf1[2]=128; break;
+            case HuLuMaoCar.X2._8:  buf1[2]=8; break;
+            case HuLuMaoCar.X2._16: buf1[2]=16; break;
+            case HuLuMaoCar.X2._24: buf1[2]=24; break;
+            case HuLuMaoCar.X2._32: buf1[2]=32; break;
+            case HuLuMaoCar.X2._40: buf1[2]=40; break;
+            case HuLuMaoCar.X2._48: buf1[2]=48; break;
+            case HuLuMaoCar.X2._56: buf1[2]=56; break;
+            case HuLuMaoCar.X2._64: buf1[2]=64; break;
+            case HuLuMaoCar.X2._72: buf1[2]=72; break;
+            case HuLuMaoCar.X2._80: buf1[2]=80; break;
+            case HuLuMaoCar.X2._88: buf1[2]=88; break;
+            case HuLuMaoCar.X2._96: buf1[2]=96; break;
+            case HuLuMaoCar.X2._104: buf1[2]=104; break;
+            case HuLuMaoCar.X2._112: buf1[2]=112; break;
+            case HuLuMaoCar.X2._120: buf1[2]=120; break;
+            case HuLuMaoCar.X2._128:  buf1[2]=128; break;
         }
         pins.i2cWriteBuffer(73, buf1);
         basic.pause(10);
@@ -541,49 +541,49 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示中文功能
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDShowChine block="显示中文|在第%index2行|第%index3处|显示%index1"
+    //% blockId=HuLuMaoCar1_OLEDShowChine block="显示中文|在第%index2行|第%index3处|显示%index1"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
-    export function OLEDShowChine(index2:TuoYuCar.Y,index3:TuoYuCar.X1,index1:TuoYuCar.DisplayChine):void {
+    export function OLEDShowChine(index2:HuLuMaoCar.Y,index3:HuLuMaoCar.X1,index1:HuLuMaoCar.DisplayChine):void {
         let buf1 = pins.createBuffer(3);
         basic.pause(10);
         switch (index2) {
-            case TuoYuCar.Y._0: buf1[0]=0; break;
-            case TuoYuCar.Y._2: buf1[0]=2; break;
-            case TuoYuCar.Y._4: buf1[0]=4; break;
-            case TuoYuCar.Y._6: buf1[0]=6; break;
+            case HuLuMaoCar.Y._0: buf1[0]=0; break;
+            case HuLuMaoCar.Y._2: buf1[0]=2; break;
+            case HuLuMaoCar.Y._4: buf1[0]=4; break;
+            case HuLuMaoCar.Y._6: buf1[0]=6; break;
         }
         switch (index3) {
-            case TuoYuCar.X1._0:  buf1[1]=0; break;
-            case TuoYuCar.X1._8:  buf1[1]=8; break;
-            case TuoYuCar.X1._16: buf1[1]=16; break;
-            case TuoYuCar.X1._24: buf1[1]=24; break;
-            case TuoYuCar.X1._32: buf1[1]=32; break;
-            case TuoYuCar.X1._40: buf1[1]=40; break;
-            case TuoYuCar.X1._48: buf1[1]=48; break;
-            case TuoYuCar.X1._56: buf1[1]=56; break;
-            case TuoYuCar.X1._64: buf1[1]=64; break;
-            case TuoYuCar.X1._72: buf1[1]=72; break;
-            case TuoYuCar.X1._80: buf1[1]=80; break;
-            case TuoYuCar.X1._88: buf1[1]=88; break;
-            case TuoYuCar.X1._96: buf1[1]=96; break;
-            case TuoYuCar.X1._104: buf1[1]=104; break;
-            case TuoYuCar.X1._112: buf1[1]=112; break;
+            case HuLuMaoCar.X1._0:  buf1[1]=0; break;
+            case HuLuMaoCar.X1._8:  buf1[1]=8; break;
+            case HuLuMaoCar.X1._16: buf1[1]=16; break;
+            case HuLuMaoCar.X1._24: buf1[1]=24; break;
+            case HuLuMaoCar.X1._32: buf1[1]=32; break;
+            case HuLuMaoCar.X1._40: buf1[1]=40; break;
+            case HuLuMaoCar.X1._48: buf1[1]=48; break;
+            case HuLuMaoCar.X1._56: buf1[1]=56; break;
+            case HuLuMaoCar.X1._64: buf1[1]=64; break;
+            case HuLuMaoCar.X1._72: buf1[1]=72; break;
+            case HuLuMaoCar.X1._80: buf1[1]=80; break;
+            case HuLuMaoCar.X1._88: buf1[1]=88; break;
+            case HuLuMaoCar.X1._96: buf1[1]=96; break;
+            case HuLuMaoCar.X1._104: buf1[1]=104; break;
+            case HuLuMaoCar.X1._112: buf1[1]=112; break;
         }
 
         switch (index1) {
-            case TuoYuCar.DisplayChine.wo: buf1[2]=0; break;
-            case TuoYuCar.DisplayChine.ni: buf1[2]=1; break;
-            case TuoYuCar.DisplayChine.tuo: buf1[2]=2; break;
-            case TuoYuCar.DisplayChine.yu: buf1[2]=3; break;
-            case TuoYuCar.DisplayChine.ke: buf1[2]=4; break;
-            case TuoYuCar.DisplayChine.ji: buf1[2]=5; break;
-            case TuoYuCar.DisplayChine.zhi: buf1[2]=6; break;
-            case TuoYuCar.DisplayChine.neng: buf1[2]=7; break;
-            case TuoYuCar.DisplayChine.xiao: buf1[2]=8; break;
-            case TuoYuCar.DisplayChine.che: buf1[2]=9; break;
+            case HuLuMaoCar.DisplayChine.wo: buf1[2]=0; break;
+            case HuLuMaoCar.DisplayChine.ni: buf1[2]=1; break;
+            case HuLuMaoCar.DisplayChine.tuo: buf1[2]=2; break;
+            case HuLuMaoCar.DisplayChine.yu: buf1[2]=3; break;
+            case HuLuMaoCar.DisplayChine.ke: buf1[2]=4; break;
+            case HuLuMaoCar.DisplayChine.ji: buf1[2]=5; break;
+            case HuLuMaoCar.DisplayChine.zhi: buf1[2]=6; break;
+            case HuLuMaoCar.DisplayChine.neng: buf1[2]=7; break;
+            case HuLuMaoCar.DisplayChine.xiao: buf1[2]=8; break;
+            case HuLuMaoCar.DisplayChine.che: buf1[2]=9; break;
         }
         pins.i2cWriteBuffer(69, buf1);
     }
@@ -591,92 +591,92 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示字母功能
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDShowEnglish block="显示字母|在第%index1行|第%index2处|显示%index3"
+    //% blockId=HuLuMaoCar1_OLEDShowEnglish block="显示字母|在第%index1行|第%index2处|显示%index3"
     //% weight=92
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function OLEDShowEnglish(index1:TuoYuCar.Y,index2:TuoYuCar.X,index3:TuoYuCar.DisplayEnglish):void {
+    export function OLEDShowEnglish(index1:HuLuMaoCar.Y,index2:HuLuMaoCar.X,index3:HuLuMaoCar.DisplayEnglish):void {
         let buf1 = pins.createBuffer(3);
         basic.pause(10);
         switch (index1) {
-            case TuoYuCar.Y._0: buf1[0]=0; break;
-            case TuoYuCar.Y._2: buf1[0]=2; break;
-            case TuoYuCar.Y._4: buf1[0]=4; break;
-            case TuoYuCar.Y._6: buf1[0]=6; break;
+            case HuLuMaoCar.Y._0: buf1[0]=0; break;
+            case HuLuMaoCar.Y._2: buf1[0]=2; break;
+            case HuLuMaoCar.Y._4: buf1[0]=4; break;
+            case HuLuMaoCar.Y._6: buf1[0]=6; break;
         }
         switch (index2) {
-            case TuoYuCar.X._0:  buf1[1]=0; break;
-            case TuoYuCar.X._8:  buf1[1]=8; break;
-            case TuoYuCar.X._16: buf1[1]=16; break;
-            case TuoYuCar.X._24: buf1[1]=24; break;
-            case TuoYuCar.X._32: buf1[1]=32; break;
-            case TuoYuCar.X._40: buf1[1]=40; break;
-            case TuoYuCar.X._48: buf1[1]=48; break;
-            case TuoYuCar.X._56: buf1[1]=56; break;
-            case TuoYuCar.X._64: buf1[1]=64; break;
-            case TuoYuCar.X._72: buf1[1]=72; break;
-            case TuoYuCar.X._80: buf1[1]=80; break;
-            case TuoYuCar.X._88: buf1[1]=88; break;
-            case TuoYuCar.X._96: buf1[1]=96; break;
-            case TuoYuCar.X._104: buf1[1]=104; break;
-            case TuoYuCar.X._112: buf1[1]=112; break;
-            case TuoYuCar.X._120: buf1[1]=120; break;
+            case HuLuMaoCar.X._0:  buf1[1]=0; break;
+            case HuLuMaoCar.X._8:  buf1[1]=8; break;
+            case HuLuMaoCar.X._16: buf1[1]=16; break;
+            case HuLuMaoCar.X._24: buf1[1]=24; break;
+            case HuLuMaoCar.X._32: buf1[1]=32; break;
+            case HuLuMaoCar.X._40: buf1[1]=40; break;
+            case HuLuMaoCar.X._48: buf1[1]=48; break;
+            case HuLuMaoCar.X._56: buf1[1]=56; break;
+            case HuLuMaoCar.X._64: buf1[1]=64; break;
+            case HuLuMaoCar.X._72: buf1[1]=72; break;
+            case HuLuMaoCar.X._80: buf1[1]=80; break;
+            case HuLuMaoCar.X._88: buf1[1]=88; break;
+            case HuLuMaoCar.X._96: buf1[1]=96; break;
+            case HuLuMaoCar.X._104: buf1[1]=104; break;
+            case HuLuMaoCar.X._112: buf1[1]=112; break;
+            case HuLuMaoCar.X._120: buf1[1]=120; break;
         }
         switch (index3) {
-            case TuoYuCar.DisplayEnglish.a: buf1[2]=97; break;
-            case TuoYuCar.DisplayEnglish.b: buf1[2]=98; break;
-            case TuoYuCar.DisplayEnglish.c: buf1[2]=99; break;
-            case TuoYuCar.DisplayEnglish.d: buf1[2]=100; break;
-            case TuoYuCar.DisplayEnglish.e: buf1[2]=101; break;
-            case TuoYuCar.DisplayEnglish.f: buf1[2]=102; break;
-            case TuoYuCar.DisplayEnglish.g: buf1[2]=103; break;
-            case TuoYuCar.DisplayEnglish.h: buf1[2]=104; break;
-            case TuoYuCar.DisplayEnglish.i: buf1[2]=105; break;
-            case TuoYuCar.DisplayEnglish.j: buf1[2]=106; break;
-            case TuoYuCar.DisplayEnglish.k: buf1[2]=107; break;
-            case TuoYuCar.DisplayEnglish.l: buf1[2]=108; break;
-            case TuoYuCar.DisplayEnglish.m: buf1[2]=109; break;
-            case TuoYuCar.DisplayEnglish.n: buf1[2]=110; break;
-            case TuoYuCar.DisplayEnglish.o: buf1[2]=111; break;
-            case TuoYuCar.DisplayEnglish.p: buf1[2]=112; break;
-            case TuoYuCar.DisplayEnglish.q: buf1[2]=113; break;
-            case TuoYuCar.DisplayEnglish.r: buf1[2]=114; break;
-            case TuoYuCar.DisplayEnglish.s: buf1[2]=115; break;
-            case TuoYuCar.DisplayEnglish.t: buf1[2]=116; break;
-            case TuoYuCar.DisplayEnglish.u: buf1[2]=117; break;
-            case TuoYuCar.DisplayEnglish.v: buf1[2]=118; break;
-            case TuoYuCar.DisplayEnglish.w: buf1[2]=119; break;
-            case TuoYuCar.DisplayEnglish.x: buf1[2]=120; break;
-            case TuoYuCar.DisplayEnglish.y: buf1[2]=121; break;
-            case TuoYuCar.DisplayEnglish.z: buf1[2]=122; break;
+            case HuLuMaoCar.DisplayEnglish.a: buf1[2]=97; break;
+            case HuLuMaoCar.DisplayEnglish.b: buf1[2]=98; break;
+            case HuLuMaoCar.DisplayEnglish.c: buf1[2]=99; break;
+            case HuLuMaoCar.DisplayEnglish.d: buf1[2]=100; break;
+            case HuLuMaoCar.DisplayEnglish.e: buf1[2]=101; break;
+            case HuLuMaoCar.DisplayEnglish.f: buf1[2]=102; break;
+            case HuLuMaoCar.DisplayEnglish.g: buf1[2]=103; break;
+            case HuLuMaoCar.DisplayEnglish.h: buf1[2]=104; break;
+            case HuLuMaoCar.DisplayEnglish.i: buf1[2]=105; break;
+            case HuLuMaoCar.DisplayEnglish.j: buf1[2]=106; break;
+            case HuLuMaoCar.DisplayEnglish.k: buf1[2]=107; break;
+            case HuLuMaoCar.DisplayEnglish.l: buf1[2]=108; break;
+            case HuLuMaoCar.DisplayEnglish.m: buf1[2]=109; break;
+            case HuLuMaoCar.DisplayEnglish.n: buf1[2]=110; break;
+            case HuLuMaoCar.DisplayEnglish.o: buf1[2]=111; break;
+            case HuLuMaoCar.DisplayEnglish.p: buf1[2]=112; break;
+            case HuLuMaoCar.DisplayEnglish.q: buf1[2]=113; break;
+            case HuLuMaoCar.DisplayEnglish.r: buf1[2]=114; break;
+            case HuLuMaoCar.DisplayEnglish.s: buf1[2]=115; break;
+            case HuLuMaoCar.DisplayEnglish.t: buf1[2]=116; break;
+            case HuLuMaoCar.DisplayEnglish.u: buf1[2]=117; break;
+            case HuLuMaoCar.DisplayEnglish.v: buf1[2]=118; break;
+            case HuLuMaoCar.DisplayEnglish.w: buf1[2]=119; break;
+            case HuLuMaoCar.DisplayEnglish.x: buf1[2]=120; break;
+            case HuLuMaoCar.DisplayEnglish.y: buf1[2]=121; break;
+            case HuLuMaoCar.DisplayEnglish.z: buf1[2]=122; break;
 
-            case TuoYuCar.DisplayEnglish.A: buf1[2]=65; break;
-            case TuoYuCar.DisplayEnglish.B: buf1[2]=66; break;
-            case TuoYuCar.DisplayEnglish.C: buf1[2]=67; break;
-            case TuoYuCar.DisplayEnglish.D: buf1[2]=68; break;
-            case TuoYuCar.DisplayEnglish.E: buf1[2]=69; break;
-            case TuoYuCar.DisplayEnglish.F: buf1[2]=70; break;
-            case TuoYuCar.DisplayEnglish.G: buf1[2]=71; break;
-            case TuoYuCar.DisplayEnglish.H: buf1[2]=72; break;
-            case TuoYuCar.DisplayEnglish.I: buf1[2]=73; break;
-            case TuoYuCar.DisplayEnglish.J: buf1[2]=74; break;
-            case TuoYuCar.DisplayEnglish.K: buf1[2]=75; break;
-            case TuoYuCar.DisplayEnglish.L: buf1[2]=76; break;
-            case TuoYuCar.DisplayEnglish.M: buf1[2]=77; break;
-            case TuoYuCar.DisplayEnglish.N: buf1[2]=78; break;
-            case TuoYuCar.DisplayEnglish.O: buf1[2]=79; break;
-            case TuoYuCar.DisplayEnglish.P: buf1[2]=80; break;
-            case TuoYuCar.DisplayEnglish.Q: buf1[2]=81; break;
-            case TuoYuCar.DisplayEnglish.R: buf1[2]=82; break;
-            case TuoYuCar.DisplayEnglish.S: buf1[2]=83; break;
-            case TuoYuCar.DisplayEnglish.T: buf1[2]=84; break;
-            case TuoYuCar.DisplayEnglish.U: buf1[2]=85; break;
-            case TuoYuCar.DisplayEnglish.V: buf1[2]=86; break;
-            case TuoYuCar.DisplayEnglish.W: buf1[2]=87; break;
-            case TuoYuCar.DisplayEnglish.X: buf1[2]=88; break;
-            case TuoYuCar.DisplayEnglish.Y: buf1[2]=89; break;
-            case TuoYuCar.DisplayEnglish.Z: buf1[2]=90; break;
+            case HuLuMaoCar.DisplayEnglish.A: buf1[2]=65; break;
+            case HuLuMaoCar.DisplayEnglish.B: buf1[2]=66; break;
+            case HuLuMaoCar.DisplayEnglish.C: buf1[2]=67; break;
+            case HuLuMaoCar.DisplayEnglish.D: buf1[2]=68; break;
+            case HuLuMaoCar.DisplayEnglish.E: buf1[2]=69; break;
+            case HuLuMaoCar.DisplayEnglish.F: buf1[2]=70; break;
+            case HuLuMaoCar.DisplayEnglish.G: buf1[2]=71; break;
+            case HuLuMaoCar.DisplayEnglish.H: buf1[2]=72; break;
+            case HuLuMaoCar.DisplayEnglish.I: buf1[2]=73; break;
+            case HuLuMaoCar.DisplayEnglish.J: buf1[2]=74; break;
+            case HuLuMaoCar.DisplayEnglish.K: buf1[2]=75; break;
+            case HuLuMaoCar.DisplayEnglish.L: buf1[2]=76; break;
+            case HuLuMaoCar.DisplayEnglish.M: buf1[2]=77; break;
+            case HuLuMaoCar.DisplayEnglish.N: buf1[2]=78; break;
+            case HuLuMaoCar.DisplayEnglish.O: buf1[2]=79; break;
+            case HuLuMaoCar.DisplayEnglish.P: buf1[2]=80; break;
+            case HuLuMaoCar.DisplayEnglish.Q: buf1[2]=81; break;
+            case HuLuMaoCar.DisplayEnglish.R: buf1[2]=82; break;
+            case HuLuMaoCar.DisplayEnglish.S: buf1[2]=83; break;
+            case HuLuMaoCar.DisplayEnglish.T: buf1[2]=84; break;
+            case HuLuMaoCar.DisplayEnglish.U: buf1[2]=85; break;
+            case HuLuMaoCar.DisplayEnglish.V: buf1[2]=86; break;
+            case HuLuMaoCar.DisplayEnglish.W: buf1[2]=87; break;
+            case HuLuMaoCar.DisplayEnglish.X: buf1[2]=88; break;
+            case HuLuMaoCar.DisplayEnglish.Y: buf1[2]=89; break;
+            case HuLuMaoCar.DisplayEnglish.Z: buf1[2]=90; break;
         }
         pins.i2cWriteBuffer(70, buf1);
         
@@ -685,39 +685,39 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示数字功能,输入的数字不能超过255
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDShowNumber block="显示数字|在第%index2行|第%index3|处|显示%index1"
+    //% blockId=HuLuMaoCar1_OLEDShowNumber block="显示数字|在第%index2行|第%index3|处|显示%index1"
     //% weight=91
     //% blockGap=10
     //% index1.min=0 index1.max=65535
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
-    export function OLEDShowNumber(index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:number):void {
+    export function OLEDShowNumber(index2:HuLuMaoCar.Y,index3:HuLuMaoCar.X,index1:number):void {
         let buf1 = pins.createBuffer(2);
         //let buf;
         basic.pause(10);
         switch (index2) {
-            case TuoYuCar.Y._0: buf1[0]=0; break;
-            case TuoYuCar.Y._2: buf1[0]=2; break;
-            case TuoYuCar.Y._4: buf1[0]=4; break;
-            case TuoYuCar.Y._6: buf1[0]=6; break;
+            case HuLuMaoCar.Y._0: buf1[0]=0; break;
+            case HuLuMaoCar.Y._2: buf1[0]=2; break;
+            case HuLuMaoCar.Y._4: buf1[0]=4; break;
+            case HuLuMaoCar.Y._6: buf1[0]=6; break;
         }
         switch (index3) {
-            case TuoYuCar.X._0:  buf1[1]=0; break;
-            case TuoYuCar.X._8:  buf1[1]=8; break;
-            case TuoYuCar.X._16: buf1[1]=16; break;
-            case TuoYuCar.X._24: buf1[1]=24; break;
-            case TuoYuCar.X._32: buf1[1]=32; break;
-            case TuoYuCar.X._40: buf1[1]=40; break;
-            case TuoYuCar.X._48: buf1[1]=48; break;
-            case TuoYuCar.X._56: buf1[1]=56; break;
-            case TuoYuCar.X._64: buf1[1]=64; break;
-            case TuoYuCar.X._72: buf1[1]=72; break;
-            case TuoYuCar.X._80: buf1[1]=80; break;
-            case TuoYuCar.X._88: buf1[1]=88; break;
-            case TuoYuCar.X._96: buf1[1]=96; break;
-            case TuoYuCar.X._104: buf1[1]=104; break;
-            case TuoYuCar.X._112: buf1[1]=112; break;
-            case TuoYuCar.X._120: buf1[1]=120; break;
+            case HuLuMaoCar.X._0:  buf1[1]=0; break;
+            case HuLuMaoCar.X._8:  buf1[1]=8; break;
+            case HuLuMaoCar.X._16: buf1[1]=16; break;
+            case HuLuMaoCar.X._24: buf1[1]=24; break;
+            case HuLuMaoCar.X._32: buf1[1]=32; break;
+            case HuLuMaoCar.X._40: buf1[1]=40; break;
+            case HuLuMaoCar.X._48: buf1[1]=48; break;
+            case HuLuMaoCar.X._56: buf1[1]=56; break;
+            case HuLuMaoCar.X._64: buf1[1]=64; break;
+            case HuLuMaoCar.X._72: buf1[1]=72; break;
+            case HuLuMaoCar.X._80: buf1[1]=80; break;
+            case HuLuMaoCar.X._88: buf1[1]=88; break;
+            case HuLuMaoCar.X._96: buf1[1]=96; break;
+            case HuLuMaoCar.X._104: buf1[1]=104; break;
+            case HuLuMaoCar.X._112: buf1[1]=112; break;
+            case HuLuMaoCar.X._120: buf1[1]=120; break;
         }
        // buf=index1;
         pins.i2cWriteBuffer(71,buf1);
@@ -729,72 +729,72 @@ namespace TuoYuCar1{
      * 选择以打开或关闭小车显示屏显示字符功能
      * @param index
     */
-    //% blockId=TuoYuCar1_OLEDShowChar block="显示字符|在第%index2行|第%index3处|显示 %index1"
+    //% blockId=HuLuMaoCar1_OLEDShowChar block="显示字符|在第%index2行|第%index3处|显示 %index1"
     //% weight=90
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
-    export function OLEDShowChar(index2:TuoYuCar.Y,index3:TuoYuCar.X,index1:TuoYuCar.DisplayChar):void {
+    export function OLEDShowChar(index2:HuLuMaoCar.Y,index3:HuLuMaoCar.X,index1:HuLuMaoCar.DisplayChar):void {
         let buf1 = pins.createBuffer(3);
         basic.pause(10);
         switch (index2) {
-            case TuoYuCar.Y._0: buf1[0]=0; break;
-            case TuoYuCar.Y._2: buf1[0]=2; break;
-            case TuoYuCar.Y._4: buf1[0]=4; break;
-            case TuoYuCar.Y._6: buf1[0]=6; break;
+            case HuLuMaoCar.Y._0: buf1[0]=0; break;
+            case HuLuMaoCar.Y._2: buf1[0]=2; break;
+            case HuLuMaoCar.Y._4: buf1[0]=4; break;
+            case HuLuMaoCar.Y._6: buf1[0]=6; break;
         }
         switch (index3) {
-            case TuoYuCar.X._0:  buf1[1]=0; break;
-            case TuoYuCar.X._8:  buf1[1]=8; break;
-            case TuoYuCar.X._16: buf1[1]=16; break;
-            case TuoYuCar.X._24: buf1[1]=24; break;
-            case TuoYuCar.X._32: buf1[1]=32; break;
-            case TuoYuCar.X._40: buf1[1]=40; break;
-            case TuoYuCar.X._48: buf1[1]=48; break;
-            case TuoYuCar.X._56: buf1[1]=56; break;
-            case TuoYuCar.X._64: buf1[1]=64; break;
-            case TuoYuCar.X._72: buf1[1]=72; break;
-            case TuoYuCar.X._80: buf1[1]=80; break;
-            case TuoYuCar.X._88: buf1[1]=88; break;
-            case TuoYuCar.X._96: buf1[1]=96; break;
-            case TuoYuCar.X._104: buf1[1]=104; break;
-            case TuoYuCar.X._112: buf1[1]=112; break;
-            case TuoYuCar.X._120: buf1[1]=120; break;
+            case HuLuMaoCar.X._0:  buf1[1]=0; break;
+            case HuLuMaoCar.X._8:  buf1[1]=8; break;
+            case HuLuMaoCar.X._16: buf1[1]=16; break;
+            case HuLuMaoCar.X._24: buf1[1]=24; break;
+            case HuLuMaoCar.X._32: buf1[1]=32; break;
+            case HuLuMaoCar.X._40: buf1[1]=40; break;
+            case HuLuMaoCar.X._48: buf1[1]=48; break;
+            case HuLuMaoCar.X._56: buf1[1]=56; break;
+            case HuLuMaoCar.X._64: buf1[1]=64; break;
+            case HuLuMaoCar.X._72: buf1[1]=72; break;
+            case HuLuMaoCar.X._80: buf1[1]=80; break;
+            case HuLuMaoCar.X._88: buf1[1]=88; break;
+            case HuLuMaoCar.X._96: buf1[1]=96; break;
+            case HuLuMaoCar.X._104: buf1[1]=104; break;
+            case HuLuMaoCar.X._112: buf1[1]=112; break;
+            case HuLuMaoCar.X._120: buf1[1]=120; break;
         }
 
         switch (index1) {
-            case TuoYuCar.DisplayChar._gan:buf1[2]=33;break;
-            case TuoYuCar.DisplayChar._shuang:buf1[2]=34;break;
-            case TuoYuCar.DisplayChar._jin:buf1[2]=35;break;
-            case TuoYuCar.DisplayChar._mei:buf1[2]=36;break;
-            case TuoYuCar.DisplayChar._bai:buf1[2]=37;break;
-            case TuoYuCar.DisplayChar._he:buf1[2]=38;break;
-            case TuoYuCar.DisplayChar._kaidan:buf1[2]=96;break;
-            case TuoYuCar.DisplayChar._bidan:buf1[2]=39;break;
-            case TuoYuCar.DisplayChar._kai:buf1[2]=40;break;
-            case TuoYuCar.DisplayChar._guan:buf1[2]=41;break;
-            case TuoYuCar.DisplayChar._xing:buf1[2]=42;break;
-            case TuoYuCar.DisplayChar._jia:buf1[2]=43;break;
-            case TuoYuCar.DisplayChar._dou:buf1[2]=44;break;
-            case TuoYuCar.DisplayChar._jian:buf1[2]=45;break;
-            case TuoYuCar.DisplayChar._ju:buf1[2]=46;break;
-            case TuoYuCar.DisplayChar._xie:buf1[2]=47;break;
-            case TuoYuCar.DisplayChar._mao:buf1[2]=58;break;
-            case TuoYuCar.DisplayChar._fen:buf1[2]=59;break;
-            case TuoYuCar.DisplayChar._xiao:buf1[2]=60;break;
-            case TuoYuCar.DisplayChar._deng:buf1[2]=61;break;
-            case TuoYuCar.DisplayChar._da:buf1[2]=62;break;
-            case TuoYuCar.DisplayChar._wen:buf1[2]=63;break;
-            case TuoYuCar.DisplayChar._dian:buf1[2]=64;break;
-            case TuoYuCar.DisplayChar._kaifang:buf1[2]=91;break;
-            case TuoYuCar.DisplayChar._fanxie:buf1[2]=92;break;
-            case TuoYuCar.DisplayChar._bifang:buf1[2]=93;break;
-            case TuoYuCar.DisplayChar._tuo:buf1[2]=94;break;
-            case TuoYuCar.DisplayChar._xia:buf1[2]=95;break;
-            case TuoYuCar.DisplayChar._kaihua:buf1[2]=123;break;
-            case TuoYuCar.DisplayChar._cui:buf1[2]=124;break;
-            case TuoYuCar.DisplayChar._bihua:buf1[2]=125;break;
-            case TuoYuCar.DisplayChar._bo:buf1[2]=126;break;
+            case HuLuMaoCar.DisplayChar._gan:buf1[2]=33;break;
+            case HuLuMaoCar.DisplayChar._shuang:buf1[2]=34;break;
+            case HuLuMaoCar.DisplayChar._jin:buf1[2]=35;break;
+            case HuLuMaoCar.DisplayChar._mei:buf1[2]=36;break;
+            case HuLuMaoCar.DisplayChar._bai:buf1[2]=37;break;
+            case HuLuMaoCar.DisplayChar._he:buf1[2]=38;break;
+            case HuLuMaoCar.DisplayChar._kaidan:buf1[2]=96;break;
+            case HuLuMaoCar.DisplayChar._bidan:buf1[2]=39;break;
+            case HuLuMaoCar.DisplayChar._kai:buf1[2]=40;break;
+            case HuLuMaoCar.DisplayChar._guan:buf1[2]=41;break;
+            case HuLuMaoCar.DisplayChar._xing:buf1[2]=42;break;
+            case HuLuMaoCar.DisplayChar._jia:buf1[2]=43;break;
+            case HuLuMaoCar.DisplayChar._dou:buf1[2]=44;break;
+            case HuLuMaoCar.DisplayChar._jian:buf1[2]=45;break;
+            case HuLuMaoCar.DisplayChar._ju:buf1[2]=46;break;
+            case HuLuMaoCar.DisplayChar._xie:buf1[2]=47;break;
+            case HuLuMaoCar.DisplayChar._mao:buf1[2]=58;break;
+            case HuLuMaoCar.DisplayChar._fen:buf1[2]=59;break;
+            case HuLuMaoCar.DisplayChar._xiao:buf1[2]=60;break;
+            case HuLuMaoCar.DisplayChar._deng:buf1[2]=61;break;
+            case HuLuMaoCar.DisplayChar._da:buf1[2]=62;break;
+            case HuLuMaoCar.DisplayChar._wen:buf1[2]=63;break;
+            case HuLuMaoCar.DisplayChar._dian:buf1[2]=64;break;
+            case HuLuMaoCar.DisplayChar._kaifang:buf1[2]=91;break;
+            case HuLuMaoCar.DisplayChar._fanxie:buf1[2]=92;break;
+            case HuLuMaoCar.DisplayChar._bifang:buf1[2]=93;break;
+            case HuLuMaoCar.DisplayChar._tuo:buf1[2]=94;break;
+            case HuLuMaoCar.DisplayChar._xia:buf1[2]=95;break;
+            case HuLuMaoCar.DisplayChar._kaihua:buf1[2]=123;break;
+            case HuLuMaoCar.DisplayChar._cui:buf1[2]=124;break;
+            case HuLuMaoCar.DisplayChar._bihua:buf1[2]=125;break;
+            case HuLuMaoCar.DisplayChar._bo:buf1[2]=126;break;
         }
         pins.i2cWriteBuffer(72, buf1);
     }
@@ -802,7 +802,7 @@ namespace TuoYuCar1{
 }
 
 //% color="#006400" weight=2 0 icon="\uf1b9" block="呼噜猫小车行驶类"
-namespace TuoYuCar2{
+namespace HuLuMaoCar2{
     export enum Drive{
         //% blockId="forward" block="前进"
         forward,
@@ -865,7 +865,7 @@ namespace TuoYuCar2{
      * @param index
     */
 
-    //% blockId=TuoYuCar2_Car_DriveSpeed block="控制小车|%index|速度等级为 %speed 级"
+    //% blockId=HuLuMaoCar2_Car_DriveSpeed block="控制小车|%index|速度等级为 %speed 级"
     //% weight=99
     //% blockGap=10
     //% color="#006400"
@@ -893,7 +893,7 @@ namespace TuoYuCar2{
      * @param index
     */
 
-    //% blockId=TuoYuCar2_Car_Rotation_angle block="控制小车|%index|旋转角度为 %speed °"
+    //% blockId=HuLuMaoCar2_Car_Rotation_angle block="控制小车|%index|旋转角度为 %speed °"
     //% weight=99
     //% blockGap=10
     //% speed.min=0 speed.max=360
@@ -925,7 +925,7 @@ namespace TuoYuCar2{
      * 选择以打开或关闭小车舵机功能,角度可调
      * @param index
     */
-    //% blockId=TuoYuCar2_Car_Gear block="舵机转动 %speed °"
+    //% blockId=HuLuMaoCar2_Car_Gear block="舵机转动 %speed °"
     //% weight=99
     //% blockGap=10
      //% speed.min=0 speed.max=180
@@ -933,14 +933,14 @@ namespace TuoYuCar2{
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_Gear(speed:number):void {
        basic.pause(10);
-       TuoYuCar.IICWrite(78,speed);
+       HuLuMaoCar.IICWrite(78,speed);
     }
 
     /**
      * 选择以打开或关闭风扇转动功能
      * @param index
     */
-    //% blockId=TuoYuCar2_fan block="控制风扇 %speed"
+    //% blockId=HuLuMaoCar2_fan block="控制风扇 %speed"
     //% weight=98
     //% blockGap=10
      //% speed.min=0 speed.max=180
@@ -954,6 +954,6 @@ namespace TuoYuCar2{
             case FengShan.fan_1:buf=1;break;
             case FengShan.fan_2:buf=2;break;
         }
-        TuoYuCar.IICWrite(74,buf);
+        HuLuMaoCar.IICWrite(74,buf);
      }
 }
