@@ -342,16 +342,16 @@ namespace HuLuMaoCar {
         basic.pause(10);
         switch (index) {
             case FollowSet.left:switch(index1){
-                case FollowColour.black:temp1=pins.i2cReadNumber(64, NumberFormat.Int8LE);break;
-                case FollowColour.white:temp1=pins.i2cReadNumber(67, NumberFormat.Int8LE);break;
+                case FollowColour.black:if(pins.digitalReadPin(DigitalPin.P15)==0)temp1=1;else temp1=0;break;    /*检测到黑线返回0*/    
+                case FollowColour.white:if(pins.digitalReadPin(DigitalPin.P15)==1)temp1=1;else temp1=0;break;    /*检测到白线返回1*/   
             };break;
             case FollowSet.mid:switch(index1){
-                case FollowColour.black:temp1=pins.i2cReadNumber(68, NumberFormat.Int8LE);break;
-                case FollowColour.white:temp1=pins.i2cReadNumber(69, NumberFormat.Int8LE);break;
+                case FollowColour.black:if(pins.digitalReadPin(DigitalPin.P14)==0)temp1=1;else temp1=0;break;
+                case FollowColour.white:if(pins.digitalReadPin(DigitalPin.P14)==1)temp1=1;else temp1=0;break;
             };break;
             case FollowSet.right:switch(index1){
-                case FollowColour.black:temp1=pins.i2cReadNumber(70, NumberFormat.Int8LE);break;
-                case FollowColour.white:temp1=pins.i2cReadNumber(71, NumberFormat.Int8LE);break;
+                case FollowColour.black:if(pins.digitalReadPin(DigitalPin.P13)==0)temp1=1;else temp1=0;break;
+                case FollowColour.white:if(pins.digitalReadPin(DigitalPin.P13)==1)temp1=1;else temp1=0;break;
             };break;
         }
         if(temp1==1)
