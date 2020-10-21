@@ -423,20 +423,23 @@ namespace HuLuMaoCar {
 
     
     /**
-     * 选择以打开或关闭小车声音传感器功能
+     * 选择以打开声音传感器功能
      * @param index
     */
-    //% blockId=HuLuMaoCar_Sheng_Ying_Chuan_Gan_Qi block="声音传感器|%index"
-    //% weight=90
+    //% blockId=HuLuMaoCar_Voice block="当声音传感器检测到有声音产生时"
+    //% weight=95
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Sheng_Ying_Chuan_Gan_Qi(index:ultrasonicState):void {
-        basic.pause(10);
-        switch (index) {
-            case ultrasonicState.Off: IICWrite(68, 5); break;
-            case ultrasonicState.Open: IICWrite(68, 6); break;
+    export function Voice():boolean {
+        let temp: boolean = false;
+        if (pins.digitalReadPin(DigitalPin.P3) == 0) {
+            temp = true;
         }
+        else {
+            temp = false;
+        }
+        return temp;
     }
     /**
      * 选择以打开或关闭小车语音识别传感器功能
