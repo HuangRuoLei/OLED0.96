@@ -39,7 +39,7 @@ namespace HuLuMaoCar_connection {
     //% weight=99
     //% blockGap=10
     //% index.min=0 index.max=255
-    //% color="#35D482"
+    //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function con1(index:number): void {
         let data=0;
@@ -481,23 +481,6 @@ namespace HuLuMaoCar {
         }
         return temp;
     }
-    /**
-     * 选择以打开或关闭小车语音识别传感器功能
-     * @param index
-    */
-    //% blockId=HuLuMaoCar_Yu_Ying_Shi_Bie_Chuan_Gan_Qi block="语音识别传感器|%index"
-    //% weight=89
-    //% blockGap=10
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Yu_Ying_Shi_Bie_Chuan_Gan_Qi(index: ultrasonicState):void {
-        basic.pause(10);
-        switch (index) {
-            case ultrasonicState.Off: SPIWrite(0); break;
-            case ultrasonicState.Open: SPIWrite(1); break;
-        }
-    }
-
 }
 
 
