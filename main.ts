@@ -4,7 +4,7 @@ namespace HuLuMaoCar_connection {
      * 调用此来建立与小车的通信,通信建立成功则返回55
      * @param index
     */
-    //% blockId=HuLuMaoCar_connection_con block="建立与小车的通信"
+    //% blockId=HuLuMaoCar_connection_con block="建立 MicroBit 与小车的通信"
     //% weight=100
     //% blockGap=10
     //% color="#006400"
@@ -38,7 +38,7 @@ namespace HuLuMaoCar_connection {
     //% blockId=HuLuMaoCar_connection_con1 block="建立小车与遥控器的通信,通信密码为|%index"
     //% weight=99
     //% blockGap=10
-    //% index.min=0 index.max=255
+    //% index.min=1 index.max=255
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function con1(index:number): void {
@@ -982,4 +982,34 @@ namespace HuLuMaoCar2{
         }
         HuLuMaoCar.IICWrite(74,buf);
      }
+}
+//% color="#006400" weight=46 icon="\uf1b9" block="呼噜猫小车与遥控器通信类"
+namespace HuLuMaoCar_Remote {
+    
+    /**
+     *
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_Remote_Remote_Car block="接收遥控器发送过来的指令"
+    //% weight=100
+    //% blockGap=10
+    //% color="#35D482"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Remote_Car():void {
+        basic.pause(10);
+        pins.i2cWriteNumber(76, 1, NumberFormat.UInt8LE); 
+    }
+    /**
+     *
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_Remote_Car_Remote block="向遥控器发送指令"
+    //% weight=99
+    //% blockGap=10
+    //% color="#35D482"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Car_Remote():void {
+        basic.pause(10);
+        pins.i2cWriteNumber(76, 2, NumberFormat.UInt8LE); 
+    }
 }
