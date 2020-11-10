@@ -993,7 +993,7 @@ namespace HuLuMaoCar_Remote {
     //% blockId=HuLuMaoCar_Remote_Remote_Car block="接收遥控器发送过来的指令"
     //% weight=100
     //% blockGap=10
-    //% color="# "
+    //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Remote_Car():void {
         basic.pause(10);
@@ -1010,6 +1010,6 @@ namespace HuLuMaoCar_Remote {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_Remote():void {
         basic.pause(10);
-        pins.i2cWriteNumber(76, 2, NumberFormat.UInt8LE);
+        pins.i2cWriteNumber(76, 2, NumberFormat.UInt8LE); 
     }
 }
