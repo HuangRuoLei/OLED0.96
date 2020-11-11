@@ -987,7 +987,7 @@ namespace HuLuMaoCar2{
 namespace HuLuMaoCar_Remote {
     
     /**
-     *
+     *接收遥控器发送过来的指令 和  向遥控器发送指令 不可在同一程序中使用
      * @param index
     */
     //% blockId=HuLuMaoCar_Remote_Remote_Car block="接收遥控器发送过来的指令"
@@ -1000,7 +1000,7 @@ namespace HuLuMaoCar_Remote {
         pins.i2cWriteNumber(76, 1, NumberFormat.UInt8LE); 
     }
     /**
-     *
+     * 向遥控器发送指令 和 接收遥控器发送过来的指令 不可在同一程序中使用
      * @param index
     */
     //% blockId=HuLuMaoCar_Remote_Car_Remote block="向遥控器发送指令"
@@ -1011,5 +1011,18 @@ namespace HuLuMaoCar_Remote {
     export function Car_Remote():void {
         basic.pause(10);
         pins.i2cWriteNumber(76, 2, NumberFormat.UInt8LE); 
+    }
+    /**
+     *
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_Remote_Car_Remote_CM block="向遥控器发送超声波测到的距离"
+    //% weight=98
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Car_Remote_CM():void {
+        basic.pause(10);
+        pins.i2cWriteNumber(80, 2, NumberFormat.UInt8LE); 
     }
 }
