@@ -1,7 +1,7 @@
 //% color="#006400" weight=50 icon="\uf1b9" block="呼噜猫小车通信确认"
 namespace HuLuMaoCar_connection {
     /**
-     * 调用此来建立与小车的通信,通信建立成功则返回55
+     * 调用此来建立与小车的通信
      * @param index
     */
     //% blockId=HuLuMaoCar_connection_con block="建立 MicroBit 与小车的通信"
@@ -612,7 +612,7 @@ namespace HuLuMaoCar1{
     }
 
     /**
-     * 选择以打开或关闭小车显示屏显示中文功能
+     * 选择以打开小车显示屏显示中文功能
      * @param index
     */
     //% blockId=HuLuMaoCar1_OLEDShowChine block="显示中文|在第%index2行|第%index3处|显示%index1"
@@ -662,7 +662,7 @@ namespace HuLuMaoCar1{
         pins.i2cWriteBuffer(69, buf1);
     }
     /**
-     * 选择以打开或关闭小车显示屏显示字母功能
+     * 选择以打开小车显示屏显示字母功能
      * @param index
     */
     //% blockId=HuLuMaoCar1_OLEDShowEnglish block="显示字母|在第%index1行|第%index2处|显示%index3"
@@ -756,7 +756,7 @@ namespace HuLuMaoCar1{
         
     }
     /**
-     * 选择以打开或关闭小车显示屏显示数字功能,输入的数字不能超过255
+     * 选择以打开小车显示屏显示数字功能,输入的数字不能超过65535
      * @param index
     */
     //% blockId=HuLuMaoCar1_OLEDShowNumber block="显示数字|在第%index2行|第%index3|处|显示%index1"
@@ -800,7 +800,7 @@ namespace HuLuMaoCar1{
     }
 
     /**
-     * 选择以打开或关闭小车显示屏显示字符功能
+     * 选择以打开小车显示屏显示字符功能
      * @param index
     */
     //% blockId=HuLuMaoCar1_OLEDShowChar block="显示字符|在第%index2行|第%index3处|显示 %index1"
@@ -996,7 +996,7 @@ namespace HuLuMaoCar2{
         pins.i2cWriteBuffer(79, buf1);
     }
     /**
-     * 选择以打开或关闭小车舵机功能,角度可调
+     * 选择以打开小车舵机功能,角度可调
      * @param index
     */
     //% blockId=HuLuMaoCar2_Car_Gear block="舵机转动 %speed °"
