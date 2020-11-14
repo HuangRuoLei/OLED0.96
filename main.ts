@@ -78,21 +78,21 @@ namespace HuLuMaoCar {
         wo = 0,
         //% blockId="ni" block="你"
         ni = 1,
-        //% blockId="tuo" block="拓"
+        //% blockId="tuo" block="呼"
         tuo,
-        //% blockId="yu" block="宇"
+        //% blockId="yu" block="噜"
         yu,
-        //% blockId="ke" block="科"
+        //% blockId="ke" block="猫"
         ke,
-        //% blockId="ji" block="技"
+        //% blockId="ji" block="机"
         ji,
-        //% blockId="zhi" block="智"
+        //% blockId="zhi" block="器"
         zhi,
-        //% blockId="neng" block="能"
+        //% blockId="neng" block="人"
         neng,
-        //% blockId="xiao" block="小"
+        //% blockId="xiao" block="编"
         xiao,
-        //% blockId="che" block="车"
+        //% blockId="che" block="程"
         che
 
     }
@@ -325,7 +325,7 @@ namespace HuLuMaoCar {
      * @param index
     */
     //% blockId=HuLuMaoCar_Chao_Sheng_Bo block="超声波测距系统|%index"
-    //% weight=110
+    //% weight=112
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -342,7 +342,7 @@ namespace HuLuMaoCar {
      * @param index
     */
     //% blockId=HuLuMaoCar_Read_Chao_Sheng_Bo block="读取超声波测到的距离(cm)"
-    //% weight=109
+    //% weight=111
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -357,15 +357,45 @@ namespace HuLuMaoCar {
      * @param index
     */
     //% blockId=HuLuMaoCar_Flame block="读取火焰传感器返回的数据"
-    //% weight=108
+    //% weight=110
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Flame():number {
         let length;
         basic.pause(10);
-        length = pins.analogReadPin(AnalogPin.P2);
+        length = pins.analogReadPin(AnalogPin.P3);
         return length;
+    }
+    /**
+     * 调用此将返回光敏电阻返回的亮度值（0代表最暗，333代表最亮）
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_Photoresistor block="读取光敏电阻测到的亮度(0代表最暗，333代表最亮)"
+    //% weight=109
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Photoresistor(): number {
+        let data;
+        data=pins.analogReadPin(AnalogPin.P2);
+        data=data*3.18/10;
+        return Math.round(data);
+    }
+    /**
+     * 调用此将返回热敏电阻返回的温度值（0代表最冷，333代表最热）
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_Thermistor block="读取热敏电阻测到的热度(0代表最冷，333代表最热)"
+    //% weight=108
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Thermistor(): number {
+        let data;
+        data=pins.analogReadPin(AnalogPin.P2);
+        data=data*3.18/10;
+        return Math.round(data);
     }
     /**
      * 选择以打开小车循迹传感器功能
@@ -411,13 +441,19 @@ namespace HuLuMaoCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Bodycheck():boolean {
         let temp: boolean = false;
-        let temp1;
+       // let temp1;
         basic.pause(10);
-        temp1=pins.i2cReadNumber(72, NumberFormat.Int8LE);
-        if(temp1==1)
-            temp=true;
-        else
+      //  temp1=pins.i2cReadNumber(72, NumberFormat.Int8LE);
+        if (pins.digitalReadPin(DigitalPin.P3) == 1) {
+            temp = true;
+        }
+        else {
             temp=false;
+        }
+       // if(temp1==1)
+      //      temp=true;
+      //  else
+      //      temp=false;
         return temp;
     }
     /**
@@ -431,13 +467,19 @@ namespace HuLuMaoCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Rain():boolean {
         let temp: boolean = false;
-        let temp1;
+     //   let temp1;
         basic.pause(10);
-        temp1=pins.i2cReadNumber(73, NumberFormat.Int8LE);
-        if(temp1==1)
-            temp=true;
-        else
+        if (pins.digitalReadPin(DigitalPin.P3) == 0) {
+            temp = true;
+        }
+        else {
             temp=false;
+        }
+     //   temp1=pins.i2cReadNumber(73, NumberFormat.Int8LE);
+     //   if(temp1==1)
+     //       temp=true;
+     //   else
+     //       temp=false;
         return temp;
     }
     /**
@@ -451,13 +493,19 @@ namespace HuLuMaoCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Gas():boolean {
         let temp: boolean = false;
-        let temp1;
+      //  let temp1;
         basic.pause(10);
-        temp1=pins.i2cReadNumber(74, NumberFormat.Int8LE);
-        if(temp1==1)
-            temp=true;
-        else
+        if (pins.digitalReadPin(DigitalPin.P3) == 0) {
+            temp = true;
+        }
+        else {
             temp=false;
+        }
+      //  temp1=pins.i2cReadNumber(74, NumberFormat.Int8LE);
+       // if(temp1==1)
+       //     temp=true;
+       // else
+       //     temp=false;
         return temp;
     }
 
