@@ -1,7 +1,7 @@
 //% color="#006400" weight=50 icon="\uf1b9" block="呼噜猫小车通信确认"
 namespace HuLuMaoCar_connection {
     /**
-     * 调用此来建立与小车的通信
+     * 调用此来建立MicroBit与小车的通信
      * @param index
     */
     //% blockId=HuLuMaoCar_connection_con block="建立 MicroBit 与小车的通信"
@@ -1035,7 +1035,7 @@ namespace HuLuMaoCar2{
 namespace HuLuMaoCar_Remote {
     
     /**
-     *接收遥控器发送过来的指令 和  向遥控器发送指令 不可在同一程序中使用
+     *"接收遥控器发送过来的指令" 和  "向遥控器发送指令" 不可在同一程序中使用
      * @param index
     */
     //% blockId=HuLuMaoCar_Remote_Remote_Car block="接收遥控器发送过来的指令"
@@ -1048,7 +1048,7 @@ namespace HuLuMaoCar_Remote {
         pins.i2cWriteNumber(76, 1, NumberFormat.UInt8LE); 
     }
     /**
-     * 向遥控器发送指令 和 接收遥控器发送过来的指令 不可在同一程序中使用
+     *"向遥控器发送指令" 和 "接收遥控器发送过来的指令" 不可在同一程序中使用
      * @param index
     */
     //% blockId=HuLuMaoCar_Remote_Car_Remote block="向遥控器发送指令"
