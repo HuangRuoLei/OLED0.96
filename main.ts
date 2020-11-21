@@ -969,7 +969,7 @@ namespace HuLuMaoCar2{
         }
         pins.i2cWriteBuffer(77, buf1);
     }
-    //% blockId=HuLuMaoCar2_Car_DriveSpeed1 block="控制小车 左轮|%index|速度等级为 %index1 级,右轮|%index2|速度等级为 %index3 级"
+    //% blockId=HuLuMaoCar2_Car_DriveSpeed1 block="控制小车 左轮|%index|速度为 %index1 级,右轮|%index2|速度为 %index3 级"
     //% weight=101
     //% blockGap=10
     //% color="#006400"
