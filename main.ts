@@ -4,7 +4,7 @@ namespace HuLuMaoCar_connection {
      * 调用此来建立MicroBit与小车的通信
      * @param index
     */
-    //% blockId=HuLuMaoCar_connection_con block="建立 MicroBit 与小车的通信xinxinxixn"
+    //% blockId=HuLuMaoCar_connection_con block="建立 MicroBit 与小车的通信"
     //% weight=100
     //% blockGap=10
     //% color="#006400"
@@ -65,7 +65,7 @@ namespace HuLuMaoCar_connection {
      * 调用此以不建立小车与遥控器的通信
      * @param index
     */
-    //% blockId=HuLuMaoCar_connection_con9 block="不建立与遥控器的通信"
+    //% blockId=HuLuMaoCar_connection_con9 block="不建立小车与遥控器的通信"
     //% weight=99
     //% blockGap=10
     //% color="#006400"
@@ -984,12 +984,19 @@ namespace HuLuMaoCar2{
         }
         pins.i2cWriteBuffer(77, buf1);
     }
-    //% blockId=HuLuMaoCar2_Car_DriveSpeed1 block="控制小车 左轮|%index|速度为 %index1 级,右轮|%index2|速度为 %index3 级"
+
+    /**
+     * 选择以打开或关闭小车行驶功能,每个轮子的转速可调，最高160，约等于6级，最低1，约等于1级
+     * @param index
+    */
+    //% blockId=HuLuMaoCar2_Car_DriveSpeed1 block="控制小车左轮|%index|转速为%index1,右轮|%index2|转速为%index3"
     //% weight=101
     //% blockGap=10
+    //% index1.min=1 index1.max=160
+    //% index3.min=1 index3.max=160
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Car_DriveSpeed1(index:Drive2,index1:SpeedRank,index2:Drive2,index3:SpeedRank):void {
+    export function Car_DriveSpeed1(index:Drive2,index1:number,index2:Drive2,index3:number):void {
         let buf1 = pins.createBuffer(4);
         basic.pause(10);
         buf1[1]=index1;
