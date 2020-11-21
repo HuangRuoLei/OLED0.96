@@ -65,7 +65,7 @@ namespace HuLuMaoCar_connection {
     /**
      * @param index
     */
-    //% blockId=HuLuMaoCar_connection_con1 block="不建立与遥控器的通信"
+    //% blockId=HuLuMaoCar_connection_con2 block="不建立与遥控器的通信"
     //% weight=98
     //% blockGap=10
     //% color="#006400"
