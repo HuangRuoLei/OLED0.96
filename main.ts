@@ -989,7 +989,7 @@ namespace HuLuMaoCar2{
      * 选择以打开或关闭小车行驶功能,每个轮子的转速可调，最高160，约等于6级，最低1，约等于1级
      * @param index
     */
-    //% blockId=HuLuMaoCar2_Car_DriveSpeed1 block="控制小车左轮|%index|转速为%index1,右轮|%index2|转速为%index3"
+    //% blockId=HuLuMaoCar2_Car_DriveSpeed1 block="控制小车|左轮%index|转速为%index1右轮%index2|转速为%index3"
     //% weight=101
     //% blockGap=10
     //% index1.min=1 index1.max=160
