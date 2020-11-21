@@ -911,6 +911,14 @@ namespace HuLuMaoCar2{
         //% blockId="right_hand" block="原地右旋"
         right_hand
     }
+    export enum Drive2{
+        //% blockId="forward" block="前进"
+        forward,
+        //% blockId="back" block="后退"
+        back,
+        //% blockId="stop" block="停止"
+        stop
+    }
     export enum SpeedRank{
         //% blockId="_1" block="1"
         _1=1,
@@ -939,8 +947,8 @@ namespace HuLuMaoCar2{
      * @param index
     */
 
-    //% blockId=HuLuMaoCar2_Car_DriveSpeed block="控制小车|%index|速度等级为 %speed 级"
-    //% weight=99
+    //% blockId=HuLuMaoCar2_Car_DriveSpeed block="控制小车|%index|速度等级为 %index1 级"
+    //% weight=102
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -949,7 +957,7 @@ namespace HuLuMaoCar2{
         basic.pause(10);
         buf1[1]=index1;
         switch (index) {
-          case Drive.forward:buf1[0]=21;;break;
+          case Drive.forward:buf1[0]=21;break;
           case Drive.back:buf1[0]=22;break;
           case Drive.stop:buf1[0]=23;break;
           case Drive.turn_left:buf1[0]=24;break;
@@ -961,14 +969,36 @@ namespace HuLuMaoCar2{
         }
         pins.i2cWriteBuffer(77, buf1);
     }
-
+    //% blockId=HuLuMaoCar2_Car_DriveSpeed1 block="控制小车 左轮|%index|速度等级为 %index1 级,右轮|%index2|速度等级为 %index3 级"
+    //% weight=101
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Car_DriveSpeed1(index:Drive2,index1:SpeedRank,index2:Drive2,index3:SpeedRank):void {
+        let buf1 = pins.createBuffer(4);
+        basic.pause(10);
+        buf1[1]=index1;
+        switch (index) {
+            case Drive2.forward:buf1[0]=1;break;
+            case Drive2.back:buf1[0]=2;break;
+            case Drive2.stop:buf1[0]=3;break;
+        }
+        buf1[1]=index1;
+        switch(index2){
+            case Drive2.forward:buf1[2]=1;break;
+            case Drive2.back:buf1[2]=2;break;
+            case Drive2.stop:buf1[2]=3;break;
+        }
+        buf1[3]=index3;
+        pins.i2cWriteBuffer(81, buf1);
+    }
     /**
      * 选择以打开小车旋转角度
      * @param index
     */
 
     //% blockId=HuLuMaoCar2_Car_Rotation_angle block="控制小车|%index|旋转角度为 %speed °"
-    //% weight=99
+    //% weight=100
     //% blockGap=10
     //% speed.min=0 speed.max=360
     //% color="#006400"
