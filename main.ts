@@ -62,6 +62,19 @@ namespace HuLuMaoCar_connection {
         `);
     }
 
+    /**
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_connection_con1 block="不建立与遥控器的通信"
+    //% weight=98
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function con2(): void {
+        pins.i2cWriteNumber(65, 1, NumberFormat.UInt8LE);
+    }
+
+
 }
 
 //% color="#006400" weight=49 icon="\uf1b9" block="呼噜猫小车传感器类"
