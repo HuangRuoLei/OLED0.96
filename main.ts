@@ -63,6 +63,7 @@ namespace HuLuMaoCar_connection {
     }
 
     /**
+     * 调用此以不建立小车与遥控器的通信
      * @param index
     */
     //% blockId=HuLuMaoCar_connection_con2 block="不建立与遥控器的通信"
