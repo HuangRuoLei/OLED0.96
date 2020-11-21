@@ -4,7 +4,7 @@ namespace HuLuMaoCar_connection {
      * 调用此来建立MicroBit与小车的通信
      * @param index
     */
-    //% blockId=HuLuMaoCar_connection_con block="建立 MicroBit 与小车的通信"
+    //% blockId=HuLuMaoCar_connection_con block="建立 MicroBit 与小车的通信xinxinxixn"
     //% weight=100
     //% blockGap=10
     //% color="#006400"
