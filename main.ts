@@ -1,5 +1,12 @@
 //% color="#006400" weight=50 icon="\uf1b9" block="呼噜猫小车通信确认"
 namespace HuLuMaoCar_connection {
+
+    export enum connet{
+        //% blockId="no" block="不建立"
+        no = 0,
+        //% blockId="yes" block="建立"
+        yes = 1
+    }
     /**
      * 调用此来建立MicroBit与小车的通信
      * @param index
@@ -35,48 +42,37 @@ namespace HuLuMaoCar_connection {
      * 调用此来建立小车与遥控器的通信,并设置一个通信密码(最大为255)
      * @param index
     */
-    //% blockId=HuLuMaoCar_connection_con1 block="建立小车与遥控器的通信,通信密码为|%index"
+    //% blockId=HuLuMaoCar_connection_con1 block="|%index1小车与遥控器的通信,通信密码为|%index"
     //% weight=99
     //% blockGap=10
     //% index.min=1 index.max=255
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function con1(index:number): void {
+    export function con1(index1:connet,index:number): void {
         let data=0;
-        for(let i=0;i<8;i++){
-            pins.i2cWriteNumber(75, index, NumberFormat.UInt8LE);
+        if(connet.no){
+            pins.i2cWriteNumber(65, 1, NumberFormat.UInt8LE);
         }
-        while(data!=2){
-            basic.pause(10);
-            data=pins.i2cReadNumber(75, NumberFormat.Int8LE);
-            basic.showIcon(IconNames.SmallSquare);
+        else if(connet.yes){
+            for(let i=0;i<8;i++){
+                pins.i2cWriteNumber(75, index, NumberFormat.UInt8LE);
+            }
+            while(data!=2){
+                basic.pause(10);
+                data=pins.i2cReadNumber(75, NumberFormat.Int8LE);
+                basic.showIcon(IconNames.SmallSquare);
+            }
+            basic.showIcon(IconNames.Square);
+            basic.pause(1000);
+            basic.showLeds(`
+                    . . . . .
+                    . . . . .
+                    . . . . .
+                    . . . . .
+                    . . . . .
+            `);
         }
-        basic.showIcon(IconNames.Square);
-        basic.pause(1000);
-        basic.showLeds(`
-                . . . . .
-                . . . . .
-                . . . . .
-                . . . . .
-                . . . . .
-        `);
     }
-    /**
-     * 调用此以不建立小车与遥控器的通信
-     * @param index
-    */
-    //% blockId=HuLuMaoCar_connection_con9 block="不建立小车与遥控器的通信"
-    //% weight=99
-    //% blockGap=10
-    //% color="#006400"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function con9(): void {
-        basic.pause(10);
-        pins.i2cWriteNumber(65, 1, NumberFormat.UInt8LE);
-    }
-    
-
-
 }
 
 //% color="#006400" weight=49 icon="\uf1b9" block="呼噜猫小车传感器类"
