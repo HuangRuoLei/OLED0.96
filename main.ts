@@ -51,7 +51,7 @@ namespace HuLuMaoCar_connection {
     export function con1(index1:connet,index:number): void {
         let data=0;
         let aaa=0;
-        switch(index1{
+        switch(index1){
             case connet.yes:aaa=1;break;
             case connet.no:aaa=2;break;
         }
