@@ -50,10 +50,15 @@ namespace HuLuMaoCar_connection {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function con1(index1:connet,index:number): void {
         let data=0;
-        if(connet.no){
+        let aaa=0;
+        switch(index1{
+            case connet.yes:aaa=1;break;
+            case connet.no:aaa=2;break;
+        }
+        if(aaa==2){
             pins.i2cWriteNumber(65, 1, NumberFormat.UInt8LE);
         }
-        else if(connet.yes){
+        else if(aaa==1){
             for(let i=0;i<8;i++){
                 pins.i2cWriteNumber(75, index, NumberFormat.UInt8LE);
             }
