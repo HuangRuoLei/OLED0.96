@@ -42,7 +42,7 @@ namespace HuLuMaoCar_connection {
      * 调用此来建立小车与遥控器的通信,并设置一个通信密码(最大为255)
      * @param index
     */
-    //% blockId=HuLuMaoCar_connection_con1 block="|%index1小车与遥控器的通信,通信密码为|%index"
+    //% blockId=HuLuMaoCar_connection_con1 block="%index1小车与遥控器的通信,通信密码为|%index"
     //% weight=99
     //% blockGap=10
     //% index.min=1 index.max=255
