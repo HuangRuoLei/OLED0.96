@@ -1015,14 +1015,14 @@ namespace HuLuMaoCar2{
         pins.i2cWriteBuffer(81, buf1);
     }
     /**
-     * 选择以打开小车旋转角度
+     * 选择以打开小车旋转角度,最高180 °
      * @param index
     */
 
     //% blockId=HuLuMaoCar2_Car_Rotation_angle block="控制小车|%index|旋转角度为 %speed °"
     //% weight=100
     //% blockGap=10
-    //% speed.min=0 speed.max=360
+    //% speed.min=0 speed.max=180
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_Rotation_angle(index:Drive1,speed:number):void {
