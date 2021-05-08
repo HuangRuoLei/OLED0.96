@@ -1,6 +1,6 @@
 //% color="#006400" weight=50 icon="\uf1b9" block="初始化蜘蛛机器人"
 namespace HuLuMaoCar_connection {
-    const PCA9685_adrr1=0x80;
+    const PCA9685_adrr1=0x40;
     const PCA9685_MODE1=0x00;
     const PCA9685_PRESCALE=0xFE;	//控制周期寄存器
     export function IICWrite2(value:number,value1:number) {
@@ -47,7 +47,7 @@ namespace HuLuMaoCar_connection {
         leng=pins.i2cReadNumber(PCA9685_adrr1|0x01, NumberFormat.UInt8LE); 
         return leng;
     }
-    
+
     export function PCA9685_setpwm(value:number,value1:number){
         value1=102+408*value1/180;
         PCA9685_Write(0x06+4*value,0);
