@@ -44,7 +44,7 @@ namespace HuLuMaoCar_connection {
         let leng;
         //PCA9685_adrr1 芯片片选地址,代表写操作   PCA9685_adrr1|0x01 代表读操作
         IICWrite2(PCA9685_adrr1,value);
-        leng=pins.i2cReadNumber(PCA9685_adrr1|0x01, NumberFormat.UInt8LE); 
+        leng=pins.i2cReadNumber(PCA9685_adrr1, NumberFormat.UInt8LE); 
         return leng;
     }
 
