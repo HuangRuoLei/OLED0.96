@@ -1,4 +1,4 @@
-//% color="#006400" weight=50 icon="\uf1b9" block="初始化蜘蛛机器人"
+//% color="#F0E68C" weight=50 icon="\uf1b9" block="呼噜猫蜘蛛机器人"
 namespace HuLuMaoCar_connection {
     const PCA9685_adrr1=0x40;
     const PCA9685_MODE1=0x00;
@@ -28,6 +28,33 @@ namespace HuLuMaoCar_connection {
         pins.spiFormat(8, 3);
         pins.spiFrequency(100000);
         pins.spiWrite(value);
+    }
+
+    export enum SelectChannal{
+        //% blockId="right_first_H" block="右前H"
+        right_first_H=0,
+        //% blockId="right_first_L" block="右前L"
+        right_first_L=1,
+        //% blockId="left_first_H" block="左前H"
+        left_first_H=3,
+        //% blockId="left_first_L" block="左前L"
+        left_first_L=2,
+        //% blockId="right_mid_H" block="右中H"
+        right_mid_H=11,
+        //% blockId="right_mid_L" block="右中L"
+        right_mid_L=10,
+        //% blockId="left_mid_H" block="左中H"
+        left_mid_H=5,
+        //% blockId="left_mid_L" block="左中L"
+        left_mid_L=4,
+        //% blockId="right_third_H" block="右后H"
+        right_third_H=8,
+        //% blockId="right_third_L" block="右后L"
+        right_third_L=9,
+        //% blockId="left_third_H" block="左后H"
+        left_third_H=6,
+        //% blockId="left_third_L" block="左后L"
+        left_third_L=7,
     }
     /*向PCA9685指定的寄存器地址写入数据
     value:芯片寄存器地址
@@ -59,10 +86,10 @@ namespace HuLuMaoCar_connection {
      * 
      * @param index
     */
-    //% blockId=HuLuMaoCar_connection_con block="建立 MicroBit 与蜘蛛机器人的通信"
+    //% blockId=HuLuMaoCar_connection_con block="初始化蜘蛛机器人"
     //% weight=100
     //% blockGap=10
-    //% color="#006400"
+    //% color="#F0E68C"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function con(): void {
         let freq=50,prescale,oldmode,newmode;;
@@ -88,13 +115,14 @@ namespace HuLuMaoCar_connection {
      * 
      * @param index
     */
-    //% blockId=HuLuMaoCar_connection_control block="控制PWM输出"
+    //% blockId=HuLuMaoCar_connection_control block="控制|%value转动|%value1°"
     //% weight=99
     //% blockGap=10
-    //% color="#006400"
+    //% value1.min=0 value1.max=180
+    //% color="#F0E68C"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function control(): void {
-        PCA9685_setpwm(0,90);
+    export function control(value:SelectChannal,value1:number): void {
+        PCA9685_setpwm(value,value1);
     }  
 }
 
