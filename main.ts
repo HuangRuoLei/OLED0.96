@@ -1,4 +1,4 @@
-//% color="#F0E68C" weight=50 icon="\uf1b9" block="呼噜猫蜘蛛机器人"
+//% color="#006400" weight=50 icon="\uf1b9" block="呼噜猫蜘蛛机器人"
 namespace HuLuMaoCar_connection {
     const PCA9685_adrr1=0x40;
     const PCA9685_MODE1=0x00;
@@ -89,7 +89,7 @@ namespace HuLuMaoCar_connection {
     //% blockId=HuLuMaoCar_connection_con block="初始化蜘蛛机器人"
     //% weight=100
     //% blockGap=10
-    //% color="#F0E68C"
+    //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function con(): void {
         let freq=50,prescale,oldmode,newmode;;
@@ -119,7 +119,7 @@ namespace HuLuMaoCar_connection {
     //% weight=99
     //% blockGap=10
     //% value1.min=0 value1.max=180
-    //% color="#F0E68C"
+    //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function control(value:SelectChannal,value1:number): void {
         PCA9685_setpwm(value,value1);
