@@ -135,7 +135,7 @@ namespace HuLuMaoCar_connection {
     //% blockId=HuLuMaoCar_connection_controlAll block="控制所有脚转动|%value°"
     //% weight=98
     //% blockGap=10
-    //% value1.min=0 value1.max=180
+    //% value.min=0 value.max=180
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function controlAll(value:number): void {
@@ -146,7 +146,7 @@ namespace HuLuMaoCar_connection {
             if((num==SelectChannal.right_first_L)||(num==SelectChannal.right_mid_L)||(num==SelectChannal.right_third_L)){
                 value=180-value;
             }
-            control(num,value);
+            PCA9685_setpwm(num,value);
         }
         
     }  
