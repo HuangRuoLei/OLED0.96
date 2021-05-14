@@ -122,6 +122,9 @@ namespace HuLuMaoCar_connection {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function control(value:SelectChannal,value1:number): void {
+        if((value==SelectChannal.right_first_L)||(value==SelectChannal.right_mid_L)||(value==SelectChannal.right_third_L)){
+            value=180-value;
+        }
         PCA9685_setpwm(value,value1);
     }  
 
@@ -136,6 +139,9 @@ namespace HuLuMaoCar_connection {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function controlAll(value:number): void {
+        if((value==SelectChannal.right_first_L)||(value==SelectChannal.right_mid_L)||(value==SelectChannal.right_third_L)){
+            value=180-value;
+        }
         PCA9685_setpwm(61,value);
     }  
 }
