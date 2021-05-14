@@ -124,5 +124,19 @@ namespace HuLuMaoCar_connection {
     export function control(value:SelectChannal,value1:number): void {
         PCA9685_setpwm(value,value1);
     }  
+
+    /**
+     * 
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_connection_controlAll block="控制所有脚转动|%value°"
+    //% weight=98
+    //% blockGap=10
+    //% value1.min=0 value1.max=180
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function controlAll(value:number): void {
+        PCA9685_setpwm(61,value);
+    }  
 }
 
