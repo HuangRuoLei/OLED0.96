@@ -143,10 +143,10 @@ namespace HuLuMaoCar_connection {
         //   PCA9685_setpwm(61,value); 一次全部控制
         let num=0;
         for(num=0;num<12;num++){
-            if((num==SelectChannal.right_first_L)||(num==SelectChannal.right_mid_L)||(num==SelectChannal.right_third_L)){
-                value=180-value;
-            }
-            PCA9685_setpwm(num,value);
+            // if((num==SelectChannal.right_first_L)||(num==SelectChannal.right_mid_L)||(num==SelectChannal.right_third_L)){
+            //     value=180-value;
+            // }
+            control(num,value);
         }
         
     }  
