@@ -123,7 +123,7 @@ namespace HuLuMaoCar_connection {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function control(value:SelectChannal,value1:number): void {
         if((value==SelectChannal.right_first_L)||(value==SelectChannal.right_mid_L)||(value==SelectChannal.right_third_L)){
-            value=180-value;
+            value1=180-value1;
         }
         PCA9685_setpwm(value,value1);
     }  
@@ -139,10 +139,16 @@ namespace HuLuMaoCar_connection {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function controlAll(value:number): void {
-        if((value==SelectChannal.right_first_L)||(value==SelectChannal.right_mid_L)||(value==SelectChannal.right_third_L)){
-            value=180-value;
+
+        //   PCA9685_setpwm(61,value); 一次全部控制
+        let num=0;
+        for(num=0;num<12;num++){
+            if((num==SelectChannal.right_first_L)||(num==SelectChannal.right_mid_L)||(num==SelectChannal.right_third_L)){
+                value=180-value;
+            }
+            control(num,value);
         }
-        PCA9685_setpwm(61,value);
+        
     }  
 }
 
