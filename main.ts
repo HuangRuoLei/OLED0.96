@@ -161,16 +161,7 @@ namespace HuLuMaoCar_connection {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function NotcontrolAll(): void {
-
-        //   PCA9685_setpwm(61,value); 一次全部控制
-        let num=0;
-        for(num=0;num<12;num++){
-            // if((num==SelectChannal.right_first_L)||(num==SelectChannal.right_mid_L)||(num==SelectChannal.right_third_L)){
-            //     value=180-value;
-            // }
-            control(num,0);
-        }
-        
+        con();
     }  
 }
 
