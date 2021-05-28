@@ -31,29 +31,29 @@ namespace HuLuMaoCar_connection {
     }
 
     export enum SelectChannal{
-        //% blockId="right_first_H" block="右前H"
+        //% blockId="right_first_H" block="右前转节"
         right_first_H=0,
-        //% blockId="right_first_L" block="右前L"
+        //% blockId="right_first_L" block="右前基节"
         right_first_L=1,
-        //% blockId="left_first_H" block="左前H"
+        //% blockId="left_first_H" block="左前转节"
         left_first_H=3,
-        //% blockId="left_first_L" block="左前L"
+        //% blockId="left_first_L" block="左前基节"
         left_first_L=2,
-        //% blockId="right_mid_H" block="右中H"
+        //% blockId="right_mid_H" block="右中转节"
         right_mid_H=11,
-        //% blockId="right_mid_L" block="右中L"
+        //% blockId="right_mid_L" block="右中基节"
         right_mid_L=10,
-        //% blockId="left_mid_H" block="左中H"
+        //% blockId="left_mid_H" block="左中转节"
         left_mid_H=5,
-        //% blockId="left_mid_L" block="左中L"
+        //% blockId="left_mid_L" block="左中基节"
         left_mid_L=4,
-        //% blockId="right_third_H" block="右后H"
+        //% blockId="right_third_H" block="右后转节"
         right_third_H=8,
-        //% blockId="right_third_L" block="右后L"
+        //% blockId="right_third_L" block="右后基节"
         right_third_L=9,
-        //% blockId="left_third_H" block="左后H"
+        //% blockId="left_third_H" block="左后转节"
         left_third_H=6,
-        //% blockId="left_third_L" block="左后L"
+        //% blockId="left_third_L" block="左后基节"
         left_third_L=7,
     }
     /*向PCA9685指定的寄存器地址写入数据
@@ -132,7 +132,7 @@ namespace HuLuMaoCar_connection {
      * 
      * @param index
     */
-    //% blockId=HuLuMaoCar_connection_controlAll block="控制所有脚转动|%value°"
+    //% blockId=HuLuMaoCar_connection_controlAll block="控制所有关节转动|%value°"
     //% weight=98
     //% blockGap=10
     //% value.min=0 value.max=180
@@ -147,6 +147,28 @@ namespace HuLuMaoCar_connection {
             //     value=180-value;
             // }
             control(num,value);
+        }
+        
+    }  
+
+        /**
+     * 
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_connection_NotcontrolAll block="释放所有关节"
+    //% weight=97
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function NotcontrolAll(): void {
+
+        //   PCA9685_setpwm(61,value); 一次全部控制
+        let num=0;
+        for(num=0;num<12;num++){
+            // if((num==SelectChannal.right_first_L)||(num==SelectChannal.right_mid_L)||(num==SelectChannal.right_third_L)){
+            //     value=180-value;
+            // }
+            control(num,0);
         }
         
     }  
