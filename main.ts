@@ -56,6 +56,7 @@ namespace HuLuMaoCar_connection {
         //% blockId="left_third_L" block="左后基节"
         left_third_L=7,
     }
+    ·
     /*向PCA9685指定的寄存器地址写入数据
     value:芯片寄存器地址
     value1:写入的数据
@@ -128,12 +129,51 @@ namespace HuLuMaoCar_connection {
         PCA9685_setpwm(value,value1);
     }  
 
+        /**
+     * 
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_connection_controzhuan block="控制所有转节转动|%value1°"
+    //% weight=98
+    //% blockGap=10
+    //% value1.min=0 value1.max=180
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function controzhuan(value1:number): void {
+        PCA9685_setpwm(0,value1);
+        PCA9685_setpwm(3,value1);
+        PCA9685_setpwm(11,value1);
+        PCA9685_setpwm(5,value1);
+        PCA9685_setpwm(8,value1);
+        PCA9685_setpwm(6,value1);
+    } 
+         /**
+     * 
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_connection_controji block="控制所有基节转动|%value1°"
+    //% weight=97
+    //% blockGap=10
+    //% value1.min=0 value1.max=180
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function controji(value:SelectChannal,value1:number): void {
+        if((value==SelectChannal.right_first_L)||(value==SelectChannal.right_mid_L)||(value==SelectChannal.right_third_L)){
+            value1=180-value1;
+        }
+        PCA9685_setpwm(1,180-value1);
+        PCA9685_setpwm(2,value1);
+        PCA9685_setpwm(10,180-value1);
+        PCA9685_setpwm(4,value1);
+        PCA9685_setpwm(9,180-value1);
+        PCA9685_setpwm(7,value1);
+    } 
     /**
      * 
      * @param index
     */
     //% blockId=HuLuMaoCar_connection_controlAll block="控制所有关节转动|%value°"
-    //% weight=98
+    //% weight=90
     //% blockGap=10
     //% value.min=0 value.max=180
     //% color="#006400"
@@ -156,7 +196,7 @@ namespace HuLuMaoCar_connection {
      * @param index
     */
     //% blockId=HuLuMaoCar_connection_NotcontrolAll block="释放所有关节"
-    //% weight=97
+    //% weight=77
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
