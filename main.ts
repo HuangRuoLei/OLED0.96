@@ -157,10 +157,7 @@ namespace HuLuMaoCar_connection {
     //% value1.min=0 value1.max=180
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function controji(value:SelectChannal,value1:number): void {
-        if((value==SelectChannal.right_first_L)||(value==SelectChannal.right_mid_L)||(value==SelectChannal.right_third_L)){
-            value1=180-value1;
-        }
+    export function controji(value1:number): void {
         PCA9685_setpwm(1,180-value1);
         PCA9685_setpwm(2,value1);
         PCA9685_setpwm(10,180-value1);
