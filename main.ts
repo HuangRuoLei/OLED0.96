@@ -31,29 +31,29 @@ namespace HuLuMaoCar_connection {
     }
 
     export enum SelectChannal{
-        //% blockId="right_first_H" block="右前转节"
+        //% blockId="right_first_H" block="右前基节"
         right_first_H=0,
-        //% blockId="right_first_L" block="右前基节"
+        //% blockId="right_first_L" block="右前转节"
         right_first_L=1,
-        //% blockId="left_first_H" block="左前转节"
+        //% blockId="left_first_H" block="左前基节"
         left_first_H=3,
-        //% blockId="left_first_L" block="左前基节"
+        //% blockId="left_first_L" block="左前转节"
         left_first_L=2,
-        //% blockId="right_mid_H" block="右中转节"
+        //% blockId="right_mid_H" block="右中基节"
         right_mid_H=11,
-        //% blockId="right_mid_L" block="右中基节"
+        //% blockId="right_mid_L" block="右中转节"
         right_mid_L=10,
-        //% blockId="left_mid_H" block="左中转节"
+        //% blockId="left_mid_H" block="左中基节"
         left_mid_H=5,
-        //% blockId="left_mid_L" block="左中基节"
+        //% blockId="left_mid_L" block="左中转节"
         left_mid_L=4,
-        //% blockId="right_third_H" block="右后转节"
+        //% blockId="right_third_H" block="右后基节"
         right_third_H=8,
-        //% blockId="right_third_L" block="右后基节"
+        //% blockId="right_third_L" block="右后转节"
         right_third_L=9,
-        //% blockId="left_third_H" block="左后转节"
+        //% blockId="left_third_H" block="左后基节"
         left_third_H=6,
-        //% blockId="left_third_L" block="左后基节"
+        //% blockId="left_third_L" block="左后转节"
         left_third_L=7,
     }
     
@@ -93,7 +93,7 @@ namespace HuLuMaoCar_connection {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function con(): void {
-        let freq=50,prescale,oldmode,newmode;;
+        let freq=50,prescale,oldmode,newmode;
         let prescaleval;
         PCA9685_Write(PCA9685_MODE1,0);
         freq*=0.97;
