@@ -133,7 +133,7 @@ namespace HuLuMaoCar_connection {
      * 
      * @param index
     */
-    //% blockId=HuLuMaoCar_connection_controzhuan block="控制所有转节转动|%value1°"
+    //% blockId=HuLuMaoCar_connection_controzhuan block="控制所有基节转动|%value1°"
     //% weight=98
     //% blockGap=10
     //% value1.min=0 value1.max=180
@@ -151,7 +151,7 @@ namespace HuLuMaoCar_connection {
      * 
      * @param index
     */
-    //% blockId=HuLuMaoCar_connection_controji block="控制所有基节转动|%value1°"
+    //% blockId=HuLuMaoCar_connection_controji block="控制所有转节转动|%value1°"
     //% weight=97
     //% blockGap=10
     //% value1.min=0 value1.max=180
