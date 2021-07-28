@@ -307,7 +307,7 @@ namespace HuLuMaoGame {
      * 
      * @param index
     */
-    //% blockId=HuLuMaoGame_LCD_Gui_DrawFont_GBK16 block="在x=|%x,y=|%y处显示字符|%text,字符颜色为|%c1，底色为|%c2"
+    //% blockId=HuLuMaoGame_LCD_Gui_DrawFont_GBK16 block="在x=%x,y=%y处|显示字符%text|字符颜色为%c1，底色为%c2"
     //% weight=98 
     //% blockGap=10
     //% color="#006400"
@@ -315,7 +315,7 @@ namespace HuLuMaoGame {
     export function LCD_Gui_DrawFont_GBK16(x:number,y:number,text:string,c1:LCDcolor,c2:LCDcolor) {
         let i, j, k, x0
         x0 = x
-        /*
+        
         for (let n = 0; n < text.length; n++){
             if (text.charCodeAt(n)<128) {
                 k = text.charCodeAt(n)
@@ -340,7 +340,7 @@ namespace HuLuMaoGame {
                     }
                 }
             }
-        }*/
+        }
     }
 
 }
