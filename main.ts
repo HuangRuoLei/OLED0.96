@@ -325,19 +325,18 @@ namespace HuLuMaoGame {
                 else {
                     if (k > 32) k -= 32
                     else k = 0;
-                    for (i = 120; i>=0; i-=8){
-                        num = asc[k] >> i;
+                    for (i = 0; i<16; i++){
+                        num = asc[k] >>((15-i)*8)
                         for (j = 0; j < 8; j++){
-                            if (k <= 16) {
-                                if (num & (0x80 >> j)) {
-                                    Gui_DrawPoint(x + j, y + i, c1)
-                                }
-                                else {
-                                    if (c1 != c2) {
-                                        Gui_DrawPoint(x + j, y + i, c2)
-                                    }
+                            if (num & (0x80 >> j)) {
+                                Gui_DrawPoint(x + j, y + i, c1)
+                            }
+                            else {
+                                if (c1 != c2) {
+                                    Gui_DrawPoint(x + j, y + i, c2)
                                 }
                             }
+                            
                         }
                     }
                     x += 8
