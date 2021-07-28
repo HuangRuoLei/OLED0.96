@@ -338,14 +338,67 @@ namespace HuLuMaoGame {
                     else k = 0;
                     for (i = 0; i < 16; i++){
                         for (j = 0; j < 8; j++){
-                            if (asc0_16[k * 16 + i] & (0x80 >> j)) {
+                            if (k <= 16) {
+                                if (asc0_16[k * 16 + i] & (0x80 >> j)) {
                                 Gui_DrawPoint(x + j, y + i, c1)
-                            }
-                            else {
-                                if (c1 != c2) {
-                                    Gui_DrawPoint(x + j, y + i, c2)
+                                }
+                                else {
+                                    if (c1 != c2) {
+                                        Gui_DrawPoint(x + j, y + i, c2)
+                                    }
                                 }
                             }
+                            else if (k <= 32) {
+                                if (asc16_32[k * 16 + i] & (0x80 >> j)) {
+                                    Gui_DrawPoint(x + j, y + i, c1)
+                                    }
+                                    else {
+                                        if (c1 != c2) {
+                                            Gui_DrawPoint(x + j, y + i, c2)
+                                        }
+                                    }
+                            }
+                            else if (k <= 48) {
+                                if (asc32_48[k * 16 + i] & (0x80 >> j)) {
+                                    Gui_DrawPoint(x + j, y + i, c1)
+                                    }
+                                    else {
+                                        if (c1 != c2) {
+                                            Gui_DrawPoint(x + j, y + i, c2)
+                                        }
+                                    }
+                            }
+                            else if (k <= 64) {
+                                if (asc48_64[k * 16 + i] & (0x80 >> j)) {
+                                    Gui_DrawPoint(x + j, y + i, c1)
+                                    }
+                                    else {
+                                        if (c1 != c2) {
+                                            Gui_DrawPoint(x + j, y + i, c2)
+                                        }
+                                    }
+                            }
+                            else if (k <= 80) {
+                                if (asc64_80[k * 16 + i] & (0x80 >> j)) {
+                                    Gui_DrawPoint(x + j, y + i, c1)
+                                    }
+                                    else {
+                                        if (c1 != c2) {
+                                            Gui_DrawPoint(x + j, y + i, c2)
+                                        }
+                                    }
+                            }
+                            else {
+                                if (asc80_96[k * 16 + i] & (0x80 >> j)) {
+                                    Gui_DrawPoint(x + j, y + i, c1)
+                                    }
+                                    else {
+                                        if (c1 != c2) {
+                                            Gui_DrawPoint(x + j, y + i, c2)
+                                        }
+                                    }
+                            }
+                            
                         }
                     }
                     x += 8
