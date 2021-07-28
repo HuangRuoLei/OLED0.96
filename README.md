@@ -1,6 +1,6 @@
 # mbit
 
-This is HuLuMao Spider V1.0.0
+This is HuLuMao game V1.0.0
 
 ## License
 

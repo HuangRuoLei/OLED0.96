@@ -1,7 +1,7 @@
 {
-    "name": "HuLuMao-MicroBitSpider",
+    "name": "HuLuMao-MicroBit_game",
     "version": "1.0.0",
-    "description": "This is HuLuMao Micro_BitSpider V1.0.0",
+    "description": "This is HuLuMao Micro_Bit_game V1.0.0",
     "license": "MIT",
     "dependencies": {
         "core": "*",
