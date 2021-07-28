@@ -312,7 +312,7 @@ namespace HuLuMaoGame {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function LCD_Gui_DrawFont_GBK16(x:number,y:number,text:string,c1:LCDcolor,c2:LCDcolor) {
-        let i, j, k, x0
+        let i, j, k, x0,num
         x0 = x
         
         for (let n = 0; n < text.length; n++){
@@ -325,11 +325,12 @@ namespace HuLuMaoGame {
                 else {
                     if (k > 32) k -= 32
                     else k = 0;
-                    for (i = 0; i < 16; i++){
+                    for (i = 120; i>=0; i-=8){
+                        num = asc[k] >> i;
                         for (j = 0; j < 8; j++){
                             if (k <= 16) {
-                            //    if (asc0_16[k * 16 + i] & (0x80 >> j)) {
-                                Gui_DrawPoint(x + j, y + i, c1)
+                                if (num & (0x80 >> j)) {
+                                    Gui_DrawPoint(x + j, y + i, c1)
                                 }
                                 else {
                                     if (c1 != c2) {
