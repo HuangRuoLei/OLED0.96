@@ -327,6 +327,7 @@ namespace HuLuMaoGame {
                     else k = 0;
                     for (i = 0; i<16; i++){
                         num = asc[k] >>((15-i)*8)
+                        basic.showNumber(num)
                         for (j = 0; j < 8; j++){
                             if (num & (0x80 >> j)) {
                                 Gui_DrawPoint(x + j, y + i, c1)
