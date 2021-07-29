@@ -300,7 +300,7 @@ namespace HuLuMaoGame {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     //设置lcd显示区域，在此区域写点数据自动换行
-    function Lcd_SetRegion (x_s: number, y_s: number, x_e: number, y_e: number) {
+    export function Lcd_SetRegion (x_s: number, y_s: number, x_e: number, y_e: number) {
         LCDWriteindex(42)
         LCDWritedata(0)
         LCDWritedata(x_s)
