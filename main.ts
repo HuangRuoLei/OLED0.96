@@ -140,20 +140,7 @@ namespace HuLuMaoGame {
         pins.spiWrite(value)
         pins.digitalWritePin(DigitalPin.P16, 1)
     }
-    //设置lcd显示区域，在此区域写点数据自动换行
-    function Lcd_SetRegion (x_s: number, y_s: number, x_e: number, y_e: number) {
-        LCDWriteindex(42)
-        LCDWritedata(0)
-        LCDWritedata(x_s)
-        LCDWritedata(0)
-        LCDWritedata(x_e)
-        LCDWriteindex(43)
-        LCDWritedata(0)
-        LCDWritedata(y_s)
-        LCDWritedata(0)
-        LCDWritedata(y_e)
-        LCDWriteindex(44)
-    }
+    
     //LCD写Reg
     function Lcd_WriteReg (index: number, data: number) {
         LCDWriteindex(index)
@@ -307,8 +294,31 @@ namespace HuLuMaoGame {
      * 
      * @param index
     */
+    //% blockId=HuLuMaoGame_Lcd_SetRegion block="设置LCD的显示区域，在区域内写点数据会自动换行|起始x=%x_s y=%y_s 结束x=%x_e y=%y_e"
+    //% weight=97 
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    //设置lcd显示区域，在此区域写点数据自动换行
+    function Lcd_SetRegion (x_s: number, y_s: number, x_e: number, y_e: number) {
+        LCDWriteindex(42)
+        LCDWritedata(0)
+        LCDWritedata(x_s)
+        LCDWritedata(0)
+        LCDWritedata(x_e)
+        LCDWriteindex(43)
+        LCDWritedata(0)
+        LCDWritedata(y_s)
+        LCDWritedata(0)
+        LCDWritedata(y_e)
+        LCDWriteindex(44)
+    }
+    /**
+     * 
+     * @param index
+    */
     //% blockId=HuLuMaoGame_LCD_Gui_DrawFont_GBK16 block="在x=%x y=%y显示字符%text 字符颜色为%c1 底色为%c2"
-    //% weight=98 
+    //% weight=96 
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
