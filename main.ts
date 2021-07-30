@@ -25,7 +25,7 @@ namespace HuLuMaoGame {
         0x0000040C,0x14142424,0x4444FE04,0x040E0000 ,//"4"
         0x0000FC80,0x8080B8C4,0x82020282,0x84780000 ,//"5"
         0x00003C42,0x8280B8C4,0x82828282,0x44380000 ,//"6"
-        0x00007E42,0x82040408,0x08081010,0x010100000 ,//"7"
+        0x00007E42,0x82040408,0x08081010,0x10100000 ,//"7"
         0x00003844,0x82824438,0x44828282,0x44380000 ,//"8"
         0x00003844,0x82828282,0x463A0282,0x44380000 ,//"9"
         0x00000000,0x10100000,0x00001010,0x00000000 ,//":"
@@ -44,10 +44,10 @@ namespace HuLuMaoGame {
         0x0000344C,0x82808080,0x8E848484,0x4C340000 ,//"G"
         0x0000EE44,0x4444447C,0x44444444,0x44EE0000 ,//"H"
         0x00007C10,0x10101010,0x10101010,0x107C0000 ,//"I"
-        0x00003E08,0x08080808,0x08080888,0x088700000 ,//"J"
+        0x00003E08,0x08080808,0x08080888,0x88700000 ,//"J"
         0x0000EE44,0x48485060,0x50484844,0x44EE0000 ,//"K"
         0x0000E040,0x40404040,0x40404042,0x44FC0000 ,//"L"
-        0x0000C644,0x6C6C6C54,0x54544444,0x044EE0000 ,//"M"
+        0x0000C644,0x6C6C6C54,0x54544444,0x44EE0000 ,//"M"
         0x0000CE44,0x64646454,0x544C4C4C,0x44E40000 ,//"N"
         0x00003844,0x82828282,0x82828282,0x44380000 ,//"O"
         0x0000F844,0x42424244,0x78404040,0x40E00000 ,//"P"
@@ -140,6 +140,7 @@ namespace HuLuMaoGame {
         pins.spiWrite(value)
         pins.digitalWritePin(DigitalPin.P16, 1)
     }
+    //：设置lcd显示区域，在此区域写点数据自动换行
     function Lcd_SetRegion (x_s: number, y_s: number, x_e: number, y_e: number) {
         LCDWriteindex(42)
         LCDWritedata(0)
@@ -315,6 +316,50 @@ namespace HuLuMaoGame {
         let i, j, k, x0,num
         x0 = x
         
+        for (let n = 0; n < text.length; n++){
+            if (text.charCodeAt(n)<128) {
+                k = text.charCodeAt(n)
+                if (k == 13) {
+                    x = x0
+                    y += 16
+                }
+                else {
+                    if (k > 32) k -= 32
+                    else k = 0;
+                    for (i = 0; i<16; i++){
+                        num=asc16[k*4+i/4]
+                        for (j = 0; j < 8; j++){
+                            if (((num>>((3-(i%4))*8))&0x000000ff)&(0x80>>j)) {
+                                Gui_DrawPoint(x + j, y + i, c1)
+                            }
+                            else {
+                                if (c1 != c2) {
+                                    Gui_DrawPoint(x + j, y + i, c2)
+                                }
+                            }
+                            
+                        }
+                    }
+                    x += 8
+                }
+            }
+        }
+    }
+
+    /**
+     * 
+     * @param index
+    */
+    //% blockId=HuLuMaoGame_LCD_Gui_DrawFont_number block="在x=%x y=%y显示数字%data 数字颜色为%c1 底色为%c2"
+    //% weight=96
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function LCD_Gui_DrawFont_number(x:number,y:number,data:number,c1:LCDcolor,c2:LCDcolor) {
+        let i, j, k, x0,num
+        x0 = x
+        let text:string=null
+        text=data.toString()
         for (let n = 0; n < text.length; n++){
             if (text.charCodeAt(n)<128) {
                 k = text.charCodeAt(n)
