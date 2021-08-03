@@ -208,7 +208,7 @@ namespace HuLuMaoGame1 {
     //% blockGap=10
     //% color="#cc33ff"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function OLED_ShowNum(x:number,y:number,dat:string){
+    export function OLED_ShowNum(x:number,y:number,dat:number){
         OLED_ShowChar(x,y,dat.toString())
     }
 
