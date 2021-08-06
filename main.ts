@@ -4,7 +4,7 @@ namespace HuLuMaoGame1 {
     const OLED_CMD =0	//写命令
     const OLED_DATA=1	//写数据
 
-    let OLED_GRAM: any[][][144][8]=0 
+    let OLED_GRAM: Array<Array<number>> = []
     export enum display{
         //% blockId="on" block="开启"
         on = 0,
