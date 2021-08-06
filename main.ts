@@ -4,7 +4,7 @@ namespace HuLuMaoGame1 {
     const OLED_CMD =0	//写命令
     const OLED_DATA=1	//写数据
 
-    let OLED_GRAM: Array<Array<number>> = [[144],[8]]
+    let OLED_GRAM: Array<Array<number>> = [[],[]]
     export enum display{
         //% blockId="on" block="开启"
         on = 0,
@@ -84,7 +84,12 @@ namespace HuLuMaoGame1 {
         OLED_WR_Byte(0x14,OLED_CMD);//--set(0x10) disable
         OLED_WR_Byte(0xA4,OLED_CMD);// Disable Entire Display On (0xa4/0xa5)
         OLED_WR_Byte(0xA6,OLED_CMD);// Disable Inverse Display On (0xa6/a7) 
-        OLED_WR_Byte(0xAF,OLED_CMD);
+        OLED_WR_Byte(0xAF, OLED_CMD);
+        for (let i = 0; i < 8; i++){
+            for (let j = 0; j < 144; j++){
+                OLED_GRAM[j][i]=0
+            }
+        }
         OLED_Clear();
     }
 
